@@ -71,9 +71,8 @@ class OrcaClimate(CoordinatorEntity, ClimateEntity):
     def set_temperature(self, **kwargs):
         _LOGGER.debug(f"climate setting temperature: kw={kwargs}")
         """Set new target temperature."""
-
-        if temperature := kwargs.get('target_temp_low', 0) * 10:
-            self.orca.set_value('2_Temp_prostor_dnevna', temperature)
+        #if temperature := kwargs.get('target_temp_low', 0) * 10:
+        #    self.orca.set_value('2_Temp_prostor_dnevna', temperature)
         if temperature := kwargs.get('target_temp_high', 0) * 10:
             self.orca.set_value('2_Temp_prostor_dnevna', temperature)
         self.coordinator.async_refresh()
