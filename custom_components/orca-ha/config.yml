@@ -1,0 +1,191 @@
+
+
+## External sensors and settings ##
+2_Temp_Zunanja:
+  name: "HP Outside Temperature"
+  name_si: "TC Zunanja temperatura"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+
+2_Temp_Prostora:
+  name: "HP Room Temperature"
+  name_si: "TC Prostor"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+
+2_Zahtevana_RF_MK_1:
+  name: "HP Desired Room Temperature"
+  name_si: "TC Željena temperatura"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+
+2_Temp_prostor_dnevna:
+  name: "HP Desired Day Temperature"
+  name_si: "Željena dnevna temperatura"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+
+## Internal sensors ##
+2_Poti1:
+  name: "HP Internal Temperature"
+  name_si: "TC Interna temperatura"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+
+2_Izrac_temp_TC:
+  name: "HP Desired Internal Temperature"
+  name_si: "TC Tarčna interna temperatura"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+
+2_PRIKAZ_Reg_temp_vode:
+  name: "HP Outdoor Unit Power"
+  name_si: "TC Zunanja enota"
+  description: ""
+  type: "power_factor"
+  unit: "%"
+
+2_Preklop_PV1:
+  name: "HP Position of 3-way valve"
+  name_si: "TC Preklopni ventil"
+  description: "Preklaplja med sistemom ogrevanja sanitarne vode in gretja"
+  type: "multimode"
+
+2_Vklop_C0:
+  name: "HP Outdoor Unit Pump"
+  name_si: "TC Črpalka zunanja enota"
+  description: "Poganja vodo čez zunanjo enoto"
+  type: "boolean"
+
+2_Vklop_ele_grelca_1:
+  name: "HP Electric Heater"
+  name_si: "TC Delovanje električnega grelca"
+  description: "Za odtaljevanje zunanje enote"
+  type: "boolean"
+
+## Floor heating ##
+2_Delovanje_MP1:
+  name: "HP Mixing Valve Status - Floor"
+  name_si: "TC Delovanje motorja za mešalni ventil za talno gretje"
+  description: "Motor nastavlja mešalni ventil, da je temp vtoka čim bližje željeni temp"
+  type: "multimode"
+
+2_Odstotki_odprtosti_MP1:
+  name: "HP Mixing Valve Position - Floor"
+  name_si: "TC Odprtost mešalnega ventila za talno gretje"
+  description: "Motor nastavlja mešalni ventil, da je temp vtoka čim bližje željeni temp"
+  type: "power_factor"
+  unit: "%"
+
+2_Vklop_C1:
+  name: "HP Pump - Floor"
+  name_si: "TC Črpalka talnega gretja"
+  description: "Poganja vodo za talno gretje"
+  type: "boolean"
+
+2_Rezim_MK1:
+  name: "HP Mode of Operation"
+  name_si: "TC način delovanja"
+  description: ""
+  type: "multimode"
+  value_map:
+    1: "heat"
+    2: "cool"
+    3: "auto"
+  
+2_Poti2:
+  name: "HP Outlet Temperature - Floor"
+  name_si: "TC Vtok talno gretje"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+
+
+## Hot Water ##
+2_Poti3:
+  name: "HP Hot Water 1"
+  name_si: "TC Sanitarna voda zgoraj"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+
+2_Poti4:
+  name: "HP Hot Water 2"
+  name_si: "TC Sanitarna voda spodaj"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+
+2_Delovanje_MP2:
+  name: "HP Mixing Valve Status - Hot Water"
+  name_si: "TC Delovanje motorja za mešalni ventil za sanitarno vodo"
+  description: ""
+  type: "multimode"
+
+2_Odstotki_odprtosti_MP2:
+  name: "HP Mixing Valve Position - Hot Water"
+  name_si: "TC Odprtost mešalnega ventila za sanitarno vodo"
+  description: ""
+  type: "power_factor"
+  unit: "%"
+
+2_Vklop_C2:
+  name: "HP Hot Water Pump"
+  name_si: "TC Črpalka sanitarne vode"
+  description: "Poganja sanitarno vodo"
+  type: "boolean"
+  
+# Unknown
+##name: "TC "
+#2_Temp_RF2:
+#type: "temperature"
+#
+##name: "TC "
+#2_Zahtevana_RF_MK_2:
+#type: "temperature"
+#
+##name: "TC "
+#2_Temp_VF2:
+#type: "temperature"
+#
+##name: "TC "
+#2_Temp_zelena_MK_2:
+#type: "temperature"
+#
+##name: "TC "
+#2_Temp_RF3:
+#type: "temperature"
+#
+##name: "TC "
+#2_Zahtevana_RF_DK_3:
+#type: "temperature"
+#
+##name: "TC "
+#2_Temp_zelena_MK_1:
+#type: "temperature"
+#
+##name: "TC "
+#2_Pogoj_maska_pret_stik:
+#type: "temperature"
+#
+##name: "TC "
+#2_Rezim_delov_TC:
+#type: "temperature"
+#
+##name: "TC "
+#2_Temp_Zalog:
+#type: "temperature"
+#
+##name: "TC "
+#2_Poti5:
+#type: "temperature"
+#
+##name: "TC "
+#2_Vklop_C3:
+#type: "temperature"

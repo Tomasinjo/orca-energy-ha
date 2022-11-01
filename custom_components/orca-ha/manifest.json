@@ -1,0 +1,10 @@
+{
+  "codeowners": ["tomkern"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "-",
+  "domain": "orca",
+  "name": "Orca",
+  "version": "1.0",
+  "requirements": []
+}
