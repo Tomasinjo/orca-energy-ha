@@ -40,6 +40,7 @@ class OrcaClimate(CoordinatorEntity, ClimateEntity):
         self._attr_unique_id = 'b53d1ef8-17b9-49ca-8c82-73f16a4b9b5a'
         self._attr_temperature_unit = TEMP_CELSIUS
         self._attr_current_temperature = float()
+        #self._attr_target_temperature = float()
         self._attr_target_temperature_high = float()
         self._attr_target_temperature_low = float()
         self._attr_target_temperature_step = 0.1
@@ -53,12 +54,12 @@ class OrcaClimate(CoordinatorEntity, ClimateEntity):
         _LOGGER.debug(f"climate callback update")
         """Handle updated data from the coordinator."""
         self._attr_current_temperature = self.coordinator.data['2_Temp_Prostora'].value
+        #self._attr_target_temperature = self.coordinator.data['2_Temp_prostor_dnevna'].value
         self._attr_target_temperature_high = self.coordinator.data['2_Temp_prostor_dnevna'].value
         self._attr_target_temperature_low  = self.coordinator.data['2_Temp_prostor_nocna'].value
         self._attr_hvac_mode = MODE_MAPPING.get(self.coordinator.data['2_Rezim_MK1'].value)
         _LOGGER.debug(f"""Climate update: 
         _attr_current_temperature: {self._attr_current_temperature}
-        self._attr_target_temperature: {self._attr_target_temperature}
         self._attr_target_temperature_high: {self._attr_target_temperature_high}
         self._attr_target_temperature_low: {self._attr_target_temperature_low}
         self._attr_hvac_mode: {self._attr_hvac_mode}""")
@@ -67,14 +68,14 @@ class OrcaClimate(CoordinatorEntity, ClimateEntity):
 
 # 2022-11-01 00:43:33.235 DEBUG (SyncWorker_6) [custom_components.orca.climate] climate setting temperature: kw={'temperature': 20.3, 'entity_id': ['climate.orca_hp']}
 # 2022-11-01 00:42:19.296 DEBUG (SyncWorker_1) [custom_components.orca.climate] climate setting temperature: kw={'target_temp_low': 20.1, 'target_temp_high': 20.4, 'entity_id': ['climate.orca_hp']}
-
     def set_temperature(self, **kwargs):
         _LOGGER.debug(f"climate setting temperature: kw={kwargs}")
         """Set new target temperature."""
-        #if temperature := kwargs.get('target_temp_low', 0) * 10:
-        #    self.orca.set_value('2_Temp_prostor_dnevna', temperature)
+        if temperature := kwargs.get('target_temp_low', 0) * 10:
+            resp = self.orca.set_value('2_Temp_prostor_nocna', temperature)
         if temperature := kwargs.get('target_temp_high', 0) * 10:
-            self.orca.set_value('2_Temp_prostor_dnevna', temperature)
+            resp = self.orca.set_value('2_Temp_prostor_dnevna', temperature)
+        _LOGGER.debug(f'Set temperature response: {resp}')
         self.coordinator.async_refresh()
 
 
@@ -84,7 +85,8 @@ class OrcaClimate(CoordinatorEntity, ClimateEntity):
         if mode is None:
             _LOGGER.error(f'Unknown mode: {hvac_mode}')
             return
-        self.orca.set_value('2_Rezim_MK1', mode)
+        resp = self.orca.set_value('2_Rezim_MK1', mode)
+        _LOGGER.debug(f'Set mode response: {resp}')
         self.coordinator.async_refresh()
 
 

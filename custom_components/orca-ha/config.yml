@@ -29,6 +29,13 @@
   type: "temperature"
   unit: "°C"
 
+2_Temp_prostor_nocna:
+  name: "HP Desired Night Temperature"
+  name_si: "Željena nočna temperatura"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+
 ## Internal sensors ##
 2_Poti1:
   name: "HP Internal Temperature"
