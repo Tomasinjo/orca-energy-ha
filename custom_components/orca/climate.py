@@ -71,7 +71,11 @@ class OrcaClimate(CoordinatorEntity, ClimateEntity):
             self._attr_target_temperature_low  = self.coordinator.data['2_Temp_prostor_nocna'].value
             self._attr_supported_features = ClimateEntityFeature.TARGET_TEMPERATURE_RANGE
 
-        self._attr_hvac_action = ACTION_MAPPING.get(self.coordinator.data['2_Rezim_delov_TC'].value)
+        valve_status = self.coordinator.data['2_Preklop_PV1'].value
+        # current HP status is only set if HP has valve set to floor heating as otherwise HP action is not preformed on flor heating
+        self._attr_hvac_action = HVACAction.IDLE
+        if valve_status == 'floor_heating':
+            self._attr_hvac_action = ACTION_MAPPING.get(self.coordinator.data['2_Rezim_delov_TC'].value)
         
         # set based on mode only if HP is turned on
         if self.coordinator.data['2_MK1_vklop'].value == True:

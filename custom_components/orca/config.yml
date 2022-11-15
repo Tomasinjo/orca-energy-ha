@@ -36,6 +36,13 @@
   type: "temperature"
   unit: "°C"
 
+2_Temp_vode_sanitarna:
+  name: "HP Hot Water Desired Temperature"
+  name_si: "Željena temperatura sanitarne vode"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+
 ## Internal sensors ##
 2_Poti1:
   name: "HP Internal Temperature"
