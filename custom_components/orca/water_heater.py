@@ -45,7 +45,7 @@ class OrcaWaterHeater(CoordinatorEntity, WaterHeaterEntity):
     def _handle_coordinator_update(self) -> None:
         """Handle updated data from the coordinator."""
         
-        self._attr_target_temperature = self.coordinator.data['2_Temp_zelena_SV'].value
+        self._attr_target_temperature = self.coordinator.data['2_Temp_vode_sanitarna'].value
         self._attr_current_temperature = self.coordinator.data['2_Poti3'].value
 
         self._attr_current_operation = WH_ACTION_IDLE
