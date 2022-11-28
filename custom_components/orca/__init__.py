@@ -6,7 +6,7 @@ from .orca_api import OrcaApi
 from .coordinator import Coordinate
 
 _LOGGER = getLogger(__name__)
-PLATFORMS = ["sensor", "binary_sensor", "climate"]
+PLATFORMS = ["sensor", "binary_sensor", "climate", "water_heater"]
 DOMAIN = 'orca'
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):

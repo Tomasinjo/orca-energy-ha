@@ -1,5 +1,3 @@
-
-
 ## External sensors and settings ##
 2_Temp_Zunanja:
   name: "HP Outside Temperature"
@@ -36,11 +34,18 @@
   type: "temperature"
   unit: "°C"
 
+2_Temp_vode_sanitarna:
+  name: "HP Hot Water Desired Temperature"
+  name_si: "Željena temperatura sanitarne vode"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+
 ## Internal sensors ##
 2_Poti1:
   name: "HP Internal Temperature"
   name_si: "TC Interna temperatura"
-  description: ""
+  description: "Temperatura plina v TC"
   type: "temperature"
   unit: "°C"
 
@@ -63,6 +68,9 @@
   name_si: "TC Preklopni ventil"
   description: "Preklaplja med sistemom ogrevanja sanitarne vode in gretja"
   type: "multimode"
+  value_map:
+    0: "floor_heating"
+    1: "hot_water"
 
 2_Vklop_C0:
   name: "HP Outdoor Unit Pump"
@@ -105,6 +113,29 @@
     1: "heat"
     2: "cool"
     3: "auto"
+    
+2_Rezim_delov_TC:
+  name: "HP current state"
+  name_si: "TC trenutno stanje delovanja"
+  description: ""
+  type: "multimode"
+  value_map:
+    0: "idle"
+    1: "heating"
+    2: "cooling"
+    3: "defrost"
+
+2_Timer_MK1_24_ur:
+  name: "HP Floor heating 24h schedule"
+  name_si: "TC 24 urni rezim delovanja talno gretje"
+  description: "Ali talno gretje deluje v 24urnem nacinu"
+  type: "boolean"
+
+2_MK1_vklop:
+  name: "HP Floor heating"
+  name_si: "TC Talno gretje"
+  description: "Ali je ogrevanje/hlajenje talnega vklopljeno"
+  type: "boolean"
   
 2_Poti2:
   name: "HP Outlet Temperature - Floor"
@@ -115,15 +146,21 @@
 
 
 ## Hot Water ##
+2_SV_vklop:
+  name: "HP Hot Water"
+  name_si: "TC Ogrevanje sanitarne voda"
+  description: "Ali je ogrevanje sanitarne vode vklopljeno"
+  type: "boolean"
+
 2_Poti3:
-  name: "HP Hot Water 1"
+  name: "HP Hot Water top"
   name_si: "TC Sanitarna voda zgoraj"
   description: ""
   type: "temperature"
   unit: "°C"
 
 2_Poti4:
-  name: "HP Hot Water 2"
+  name: "HP Hot Water bottom"
   name_si: "TC Sanitarna voda spodaj"
   description: ""
   type: "temperature"
@@ -147,52 +184,3 @@
   name_si: "TC Črpalka sanitarne vode"
   description: "Poganja sanitarno vodo"
   type: "boolean"
-  
-# Unknown
-##name: "TC "
-#2_Temp_RF2:
-#type: "temperature"
-#
-##name: "TC "
-#2_Zahtevana_RF_MK_2:
-#type: "temperature"
-#
-##name: "TC "
-#2_Temp_VF2:
-#type: "temperature"
-#
-##name: "TC "
-#2_Temp_zelena_MK_2:
-#type: "temperature"
-#
-##name: "TC "
-#2_Temp_RF3:
-#type: "temperature"
-#
-##name: "TC "
-#2_Zahtevana_RF_DK_3:
-#type: "temperature"
-#
-##name: "TC "
-#2_Temp_zelena_MK_1:
-#type: "temperature"
-#
-##name: "TC "
-#2_Pogoj_maska_pret_stik:
-#type: "temperature"
-#
-##name: "TC "
-#2_Rezim_delov_TC:
-#type: "temperature"
-#
-##name: "TC "
-#2_Temp_Zalog:
-#type: "temperature"
-#
-##name: "TC "
-#2_Poti5:
-#type: "temperature"
-#
-##name: "TC "
-#2_Vklop_C3:
-#type: "temperature"
