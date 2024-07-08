@@ -1,5 +1,5 @@
 from homeassistant.components.water_heater import WaterHeaterEntity, WaterHeaterEntityFeature
-from homeassistant.const import TEMP_CELSIUS, ATTR_TEMPERATURE
+from homeassistant.const import ATTR_TEMPERATURE, UnitOfTemperature
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 from homeassistant.core import callback
 from typing import Any
@@ -27,7 +27,7 @@ class OrcaWaterHeater(CoordinatorEntity, WaterHeaterEntity):
         self.coordinator = coordinator
         self._attr_name = 'orca_water_heater'
         self._attr_unique_id = 'b53d1ef8-17b9-49ca-8c82-73f16a4b9b5b'
-        self._attr_temperature_unit = TEMP_CELSIUS
+        self._attr_temperature_unit = UnitOfTemperature.CELSIUS
         self._attr_min_temp = 30.0
         self._attr_max_temp = 60.0
         self._attr_current_temperature = float()

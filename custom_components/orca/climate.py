@@ -1,4 +1,4 @@
-from homeassistant.const import ATTR_TEMPERATURE, TEMP_CELSIUS
+from homeassistant.const import ATTR_TEMPERATURE, UnitOfTemperature
 from logging import getLogger
 from homeassistant.components.climate import ClimateEntity
 from homeassistant.core import callback
@@ -40,12 +40,12 @@ async def async_setup_entry(hass, entry, async_add_entities, discovery_info=None
 class OrcaClimate(CoordinatorEntity, ClimateEntity):
     def __init__(self, coordinator, orca):
         super().__init__(coordinator, orca)
-        _LOGGER.debug('Climate creating class HEHE')
+        _LOGGER.debug('Climate creating class')
         self.orca = orca
         self.coordinator = coordinator
         self._attr_name = 'orca_hp'
         self._attr_unique_id = 'b53d1ef8-17b9-49ca-8c82-73f16a4b9b5a'
-        self._attr_temperature_unit = TEMP_CELSIUS
+        self._attr_temperature_unit = UnitOfTemperature.CELSIUS
         self._attr_current_temperature = float()
         self._attr_target_temperature = float()
         self._attr_target_temperature_high = float()
