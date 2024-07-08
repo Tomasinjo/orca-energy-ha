@@ -62,8 +62,7 @@ class OrcaClimate(CoordinatorEntity, ClimateEntity):
         """Handle updated data from the coordinator."""
         self._attr_current_temperature = self.coordinator.data['2_Temp_Prostora'].value
 
-        floor_heating_24h_schedule = self.coordinator.data['2_Timer_MK1_24_ur'].value
-        if floor_heating_24h_schedule:
+        if self.coordinator.data.get('2_Timer_MK1_24_ur'):
             self._attr_target_temperature = self.coordinator.data['2_Temp_prostor_dnevna'].value
             self._attr_supported_features = ClimateEntityFeature.TARGET_TEMPERATURE
         else:
