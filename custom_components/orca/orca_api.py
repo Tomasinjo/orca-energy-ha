@@ -1,11 +1,12 @@
 import string
-import requests
+import aiohttp
+import asyncio
+import aiofiles
 import re
 import logging
-from time import sleep
 import yaml
 import os
-
+from typing import Any, Dict
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -15,54 +16,64 @@ class OrcaApi:
         self.username = username
         self.password = password
         self.host = host
-        self.config = self.read_config()
+        self.config = None
 
-    def test_connection(self):
+    async def initialize(self):
+        self.config = await self.read_config()
+
+    async def test_connection(self):
         url = f'http://{self.host}/cgi/readTags?client=OrcaTouch1172&n=1'
-        return self.fetch_data(url, test=True)
+        return await self.fetch_data(url, test=True)
 
-    def sensor_status_all(self):
+    async def sensor_status_all(self):
         uri = self.generate_uri(self.config.keys())
         url = f'http://{self.host}{uri}'
-        return self.fetch_data(url)
+        return await self.fetch_data(url)
 
-    def sensor_status_by_tag(self, fields: list):
+    async def sensor_status_by_tag(self, fields: list):
         uri = self.generate_uri(fields)
         url = f'http://{self.host}{uri}'
-        return self.fetch_data(url)
+        return await self.fetch_data(url)
 
-    def sensor_status_by_type(self, types: list):
+    async def sensor_status_by_type(self, types: list):
         filtered = { k:v for k,v in self.config.items() if v.get('type') in types }
         uri = self.generate_uri(filtered.keys())
         url = f'http://{self.host}{uri}'
-        return self.fetch_data(url)
+        return await self.fetch_data(url)
 
-    def set_value(self, attr, value):
+    async def set_value(self, attr, value):
         url = f'http://{self.host}/cgi/writeTags?n=1&t1={attr}&v1={value}'
-        return self.fetch_data(url)
+        return await self.fetch_data(url)
 
-    def auth(self):
+    async def auth(self):
         try:
-            auth_resp = requests.get(f'http://{self.host}/cgi/login?username={self.username}&password={self.password}').text
-        except requests.exceptions.ConnectionError as err:
-            _LOGGER.warning(f'Could not connect to Orca authentication URL, error: {err}')
-            sleep(3)
+            async with aiohttp.ClientSession() as session:
+                async with session.get(f'http://{self.host}/cgi/login?username={self.username}&password={self.password}') as resp:
+                    auth_resp = await resp.text()
+        except aiohttp.ClientError as err:
+            _LOGGER.debug(f'Could not connect to Orca authentication URL, error: {err}')
+            await asyncio.sleep(3)
             return
         if not 'IDALToken' in auth_resp:
             if '#E_TOO_MANY_USERS' in auth_resp:
-                _LOGGER.warning(f'Too many users, waiting 60 seconds')
-                sleep(60)
+                _LOGGER.debug(f'Too many users, waiting 60 seconds')
+                await asyncio.sleep(60)
                 return
             raise Exception(f'Authentication failed. Message from server: {auth_resp}')
         OrcaApi.token = re.search(r'IDALToken=([^\s]+)', auth_resp)[1]
     
-    def fetch_data(self, url, test=False):
+    async def fetch_data(self, url, test=False):
+        _LOGGER.debug(f'Fetching data from url {url}')
         cookies = {'IDALToken': OrcaApi.token}
-        data_raw = requests.get(url, cookies=cookies).text
+        async with aiohttp.ClientSession(cookies=cookies) as session:
+            async with session.get(url) as resp:
+                data_raw = await resp.text()
         if '#E_NEED_LOGIN' in data_raw:
-            self.auth()
-            return self.fetch_data(url, test=test)
+            _LOGGER.debug('Need to authenticate..')
+            await self.auth()
+            return await self.fetch_data(url, test=test)
         if 'E_UNKNOWNTAG' in data_raw and test is True:
+            _LOGGER.debug('unknown tag.')
             return True
         elif '#E_' in data_raw:
             raise Exception(f'Error while retrieving data. Response: {data_raw}')
@@ -70,9 +81,11 @@ class OrcaApi:
         return self.parse_data(data_raw)
     
     def parse_data(self, data_raw):
+        _LOGGER.debug(f'Parsing data:\n{data_raw}')
         sensors = []
         splited = data_raw.split('#')
         for sensor_entry in splited:
+            _LOGGER.debug('')
             success, fields = self.modify_response(sensor_entry)
             if not success:
                 continue # TODO handle better
@@ -82,7 +95,9 @@ class OrcaApi:
             value = fields[3]
             sensor_config = self.config.get(tag)
             if sensor_config:
-                sensors.append(Sensor(tag, sensor_config, reported_value=value))
+                s = Sensor(tag, sensor_config, reported_value=value)
+                _LOGGER.debug(f'Result: {s.__dict__}')
+                sensors.append(s)
         return sensors
             
     @staticmethod
@@ -107,13 +122,14 @@ class OrcaApi:
         return True, parsed
 
     @staticmethod
-    def read_config():
+    async def read_config():
         current_dir = os.path.dirname(os.path.realpath(__file__))
-        with open(f'{current_dir}/config.yml', mode='r', encoding='utf8') as C:
-            config = yaml.safe_load(C)
+        async with aiofiles.open(f'{current_dir}/config.yml', mode='r', encoding='utf8') as C:
+            config = yaml.safe_load(await C.read())
         if not config:
             raise Exception('nope friend, config was not found')
         return config
+
 
 class Sensor:
     def __init__(self, tag, sensor_config, reported_value):
@@ -163,6 +179,7 @@ class Sensor:
         except ValueError:
             pass
         return a
+
 """
 #2_Temp_Zunanja S_OK
 192     130
