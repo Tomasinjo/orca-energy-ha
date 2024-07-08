@@ -40,9 +40,7 @@ class Coordinate(DataUpdateCoordinator):
         Fetch data from API endpoint.
         """
         try:
-            data = await self.hass.async_add_executor_job(
-                self.orca.sensor_status_all
-                )
+            data = await self.orca.sensor_status_all()
         except Exception as err:
             raise UpdateFailed(f"Error communicating with API: {err}")
         

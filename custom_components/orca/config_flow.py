@@ -8,12 +8,17 @@ from logging import getLogger
 _LOGGER = getLogger(__name__)
 
 async def validate_input(hass: HomeAssistant, data: dict) -> dict[str, Any]:
+    success = False
     orca = OrcaApi(
         data["username"],
         data["password"],
         data["hostname"],
     )
-    success = await hass.async_add_executor_job(orca.test_connection)
+    await orca.initialize()
+    resp = await orca.sensor_status_all()
+    if isinstance(resp, list):
+        if len(resp) > 0:
+            success = True
     if not success:
         raise CannotConnect
     return {"title": data["hostname"]}
