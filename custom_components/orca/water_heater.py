@@ -64,17 +64,17 @@ class OrcaWaterHeater(CoordinatorEntity, WaterHeaterEntity):
         else:
             return True
 
-    def set_temperature(self, **kwargs: Any) -> None:
+    async def async_set_temperature(self, **kwargs: Any) -> None:
         if temperature := kwargs.get(ATTR_TEMPERATURE, 0) * 10:
-            resp = self.orca.set_value('2_Temp_vode_sanitarna', temperature)
-        self.coordinator.async_refresh()
+            resp = await self.orca.set_value('2_Temp_vode_sanitarna', temperature)
+        await self.coordinator.async_request_refresh()
 
-    def turn_away_mode_on(self) -> None:
+    async def async_turn_away_mode_on(self) -> None:
         """Disable hot water heating."""
-        self.orca.set_value('2_SV_vklop', 0)
-        self.coordinator.async_refresh()
+        await self.orca.set_value('2_SV_vklop', 0)
+        await self.coordinator.async_request_refresh()
 
-    def turn_away_mode_off(self) -> None:
+    async def async_turn_away_mode_off(self) -> None:
         """Enable hot water heating."""
-        self.orca.set_value('2_SV_vklop', 1)
-        self.coordinator.async_refresh()
+        await self.orca.set_value('2_SV_vklop', 1)
+        await self.coordinator.async_request_refresh()

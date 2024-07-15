@@ -93,20 +93,19 @@ class OrcaClimate(CoordinatorEntity, ClimateEntity):
 
 # 2022-11-01 00:43:33.235 DEBUG (SyncWorker_6) [custom_components.orca.climate] climate setting temperature: kw={'temperature': 20.3, 'entity_id': ['climate.orca_hp']}
 # 2022-11-01 00:42:19.296 DEBUG (SyncWorker_1) [custom_components.orca.climate] climate setting temperature: kw={'target_temp_low': 20.1, 'target_temp_high': 20.4, 'entity_id': ['climate.orca_hp']}
-    def set_temperature(self, **kwargs):
+    async def async_set_temperature(self, **kwargs):
         _LOGGER.debug(f"climate setting temperature: kw={kwargs}")
         """Set new target temperature."""
         if temperature := kwargs.get('target_temp_low', 0) * 10:
-            resp = self.orca.set_value('2_Temp_prostor_nocna', temperature)
+            resp = await self.orca.set_value('2_Temp_prostor_nocna', temperature)
         if temperature := kwargs.get('target_temp_high', 0) * 10:
-            resp = self.orca.set_value('2_Temp_prostor_dnevna', temperature)
+            resp = await self.orca.set_value('2_Temp_prostor_dnevna', temperature)
         if temperature := kwargs.get('temperature', 0) * 10:
-            resp = self.orca.set_value('2_Temp_prostor_dnevna', temperature)
+            resp = await self.orca.set_value('2_Temp_prostor_dnevna', temperature)
         _LOGGER.debug(f'Set temperature response: {resp}')
-        self.coordinator.async_refresh()
+        await self.coordinator.async_request_refresh()
 
-
-    def set_hvac_mode(self, hvac_mode) -> None:
+    async def async_set_hvac_mode(self, hvac_mode) -> None:
         _LOGGER.debug(f"climate setting mode: mode={hvac_mode}")
         mode = REVERSE_MODE_MAPPING.get(hvac_mode)
 
@@ -116,9 +115,9 @@ class OrcaClimate(CoordinatorEntity, ClimateEntity):
 
         # in case hp is turned off this is set with different value
         if mode == 0:
-            resp = self.orca.set_value('2_MK1_vklop', 0)
+            resp = await self.orca.set_value('2_MK1_vklop', 0)
         else:
-            self.orca.set_value('2_MK1_vklop', 1)
-            resp = self.orca.set_value('2_Rezim_MK1', mode)
+            await self.orca.set_value('2_MK1_vklop', 1)
+            resp = await  self.orca.set_value('2_Rezim_MK1', mode)
         _LOGGER.debug(f'Set mode response: {resp}')
-        self.coordinator.async_refresh()
+        await self.coordinator.async_request_refresh()
