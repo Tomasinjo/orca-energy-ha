@@ -93,7 +93,6 @@ class OrcaClimate(CoordinatorEntity, ClimateEntity):
 
 # 2022-11-01 00:43:33.235 DEBUG (SyncWorker_6) [custom_components.orca.climate] climate setting temperature: kw={'temperature': 20.3, 'entity_id': ['climate.orca_hp']}
 # 2022-11-01 00:42:19.296 DEBUG (SyncWorker_1) [custom_components.orca.climate] climate setting temperature: kw={'target_temp_low': 20.1, 'target_temp_high': 20.4, 'entity_id': ['climate.orca_hp']}
-    #def set_temperature(self, **kwargs):
     async def async_set_temperature(self, **kwargs):
         _LOGGER.debug(f"climate setting temperature: kw={kwargs}")
         """Set new target temperature."""
@@ -106,10 +105,6 @@ class OrcaClimate(CoordinatorEntity, ClimateEntity):
         _LOGGER.debug(f'Set temperature response: {resp}')
         await self.coordinator.async_request_refresh()
 
-
-
-
-    #def set_hvac_mode(self, hvac_mode) -> None:
     async def async_set_hvac_mode(self, hvac_mode) -> None:
         _LOGGER.debug(f"climate setting mode: mode={hvac_mode}")
         mode = REVERSE_MODE_MAPPING.get(hvac_mode)
