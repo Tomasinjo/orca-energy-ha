@@ -2,7 +2,7 @@ from homeassistant.const import ATTR_TEMPERATURE, UnitOfTemperature
 from logging import getLogger
 from homeassistant.components.climate import ClimateEntity
 from homeassistant.core import callback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from .coordinator import OrcaDevice
 from homeassistant.components.climate.const import HVACMode, HVACAction, ClimateEntityFeature
 
 _LOGGER = getLogger(__name__)
@@ -37,7 +37,7 @@ async def async_setup_entry(hass, entry, async_add_entities, discovery_info=None
             [OrcaClimate(coordinator, orca)]
         )
 
-class OrcaClimate(CoordinatorEntity, ClimateEntity):
+class OrcaClimate(OrcaDevice, ClimateEntity):
     def __init__(self, coordinator, orca):
         super().__init__(coordinator, orca)
         _LOGGER.debug('Climate creating class')

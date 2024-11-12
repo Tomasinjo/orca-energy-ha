@@ -4,8 +4,10 @@ from homeassistant.helpers.update_coordinator import (
 )
 from logging import getLogger
 from datetime import timedelta
+from homeassistant.helpers.entity import DeviceInfo
+from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
-
+DOMAIN = 'orca'
 _LOGGER = getLogger(__name__)
 
 class Coordinate(DataUpdateCoordinator):
@@ -24,17 +26,6 @@ class Coordinate(DataUpdateCoordinator):
         self.orca = orca
         self.hass = hass
 
-#    async def _async_update_data(self):
-#        """
-#        Fetch data from API endpoint.
-#        """
-#        try:
-#            return await self.hass.async_add_executor_job(
-#                self.orca.sensor_status_all
-#                )
-#        except Exception as err:
-#            raise UpdateFailed(f"Error communicating with API: {err}")
-
     async def _async_update_data(self):
         """
         Fetch data from API endpoint.
@@ -47,3 +38,16 @@ class Coordinate(DataUpdateCoordinator):
         return {
             obj.tag: obj for obj in data
         }
+        
+class OrcaDevice(CoordinatorEntity):
+    """Base class for all ORCA entities."""
+    @property
+    def device_info(self) -> DeviceInfo:
+        """Return device information about this entity."""
+        return DeviceInfo(
+            identifiers={(DOMAIN, "orca_device_1234")},
+            name="Orca Heat Pump",
+            manufacturer="Orca",
+            model="Orca",
+            sw_version="1.0",
+        )

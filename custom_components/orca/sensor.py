@@ -1,7 +1,8 @@
 from logging import getLogger
 from homeassistant.components.sensor import SensorEntity
 from homeassistant.core import callback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from .coordinator import OrcaDevice
+
 
 _LOGGER = getLogger(__name__)
 DOMAIN = 'orca'
@@ -14,7 +15,7 @@ async def async_setup_entry(hass, entry, async_add_entities, discovery_info=None
         OrcaSensor(coordinator, tag) for tag, obj in coordinator.data.items() if obj.type in SENSOR_TYPES
     )
 
-class OrcaSensor(CoordinatorEntity, SensorEntity):
+class OrcaSensor(OrcaDevice, SensorEntity):
     def __init__(self, coordinator, tag):
         """Pass coordinator to CoordinatorEntity."""
         super().__init__(coordinator)

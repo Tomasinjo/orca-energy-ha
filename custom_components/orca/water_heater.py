@@ -1,6 +1,6 @@
 from homeassistant.components.water_heater import WaterHeaterEntity, WaterHeaterEntityFeature
 from homeassistant.const import ATTR_TEMPERATURE, UnitOfTemperature
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from .coordinator import OrcaDevice
 from homeassistant.core import callback
 from typing import Any
 from logging import getLogger
@@ -20,7 +20,7 @@ async def async_setup_entry(hass, entry, async_add_entities, discovery_info=None
             [OrcaWaterHeater(coordinator, orca)]
         )
 
-class OrcaWaterHeater(CoordinatorEntity, WaterHeaterEntity):
+class OrcaWaterHeater(OrcaDevice, WaterHeaterEntity):
     def __init__(self, coordinator, orca):
         super().__init__(coordinator, orca)
         self.orca = orca
