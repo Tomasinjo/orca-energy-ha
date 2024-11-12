@@ -1,6 +1,10 @@
 ## Home Assistant integration with Orca Energy 
 Home Assistant Integration for Orca Energy Heat Pump. It was only tested with Duo 200 with Floor Heating and Mono with radiators.
 
+![alt text](dashboards/en-example.png?raw=true "")
+
+After installing and configuring the integration, [follow these instructions to import the dashboard](dashboards/)
+
 ## Requirements
 Orca Heat Pump should be accessible via network by HA. First test your access by connecting to http://{ip_addr_of_orca_hp}. You should see login prompt. Try default admin/admin credentials, it should let you in.
 
