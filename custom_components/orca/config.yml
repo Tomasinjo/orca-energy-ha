@@ -184,3 +184,24 @@
   name_si: "TC Črpalka sanitarne vode"
   description: "Poganja sanitarno vodo"
   type: "boolean"
+
+
+## Solar collectors ##
+2_SOLAR_VKLOP:
+  name: "HP Solar Heating"
+  name_si: "TC Sončna energija"
+  description: "Ali je ogrevanje sanitarne vode s sončno energijo vklopljeno"
+  type: "boolean"
+
+2_Vklop_C3:
+  name: "HP Solar Pump"
+  name_si: "TC Črpalka sončne energije"
+  description: "Poganja vodo skozi sončne kolektorje"
+  type: "boolean"
+
+2_Poti5:
+  name: "HP Solar Collector Temperature"
+  name_si: "TC Temperatura sončnih kolektorjev"
+  description: "Temperatura senzorja na sončnih kolektorjih"
+  type: "temperature"
+  unit: "°C"
