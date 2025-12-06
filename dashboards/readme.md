@@ -1,7 +1,7 @@
 
 ### How to install dashboards:
 
-1. Install [mini-graph-card](https://github.com/kalkih/mini-graph-card) 
+1. Install [mini-graph-card](https://github.com/kalkih/mini-graph-card) and [mushroom cards](https://github.com/piitaya/lovelace-mushroom/tree/main)
 2. Create two template sensors by adding the following to your configuration.yml:
 
 ```
