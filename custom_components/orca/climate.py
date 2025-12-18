@@ -1,123 +1,190 @@
-from homeassistant.const import ATTR_TEMPERATURE, UnitOfTemperature
-from logging import getLogger
-from homeassistant.components.climate import ClimateEntity
-from homeassistant.core import callback
-from .coordinator import OrcaDevice
-from homeassistant.components.climate.const import HVACMode, HVACAction, ClimateEntityFeature
+"""Climate platform for Orca integration."""
 
-_LOGGER = getLogger(__name__)
-DOMAIN = 'orca'
+from __future__ import annotations
 
+from typing import Any
+
+from homeassistant.components.climate import (
+    ClimateEntity,
+    ClimateEntityFeature,
+    HVACAction,
+    HVACMode,
+)
+from homeassistant.config_entries import ConfigEntry
+from homeassistant.const import UnitOfTemperature
+from homeassistant.core import HomeAssistant
+from homeassistant.helpers.entity_platform import AddEntitiesCallback
+
+from .const import CONF_LANGUAGE, DOMAIN, LANG_EN, LANG_SI, LOGGER
+from .coordinator import OrcaDataUpdateCoordinator
+from .entity import OrcaEntity
+from .orca_api import CIRCUIT_NAME_MAP_SI
+
+# Mapping of Orca modes to HA modes
 MODE_MAPPING = {
     "auto": HVACMode.HEAT_COOL,
     "cool": HVACMode.COOL,
-    "heat": HVACMode.HEAT
+    "heat": HVACMode.HEAT,
 }
 
 REVERSE_MODE_MAPPING = {
-    'heat_cool': 3,
-    'cool': 2,
-    'heat': 1,
-    'off': 0
+    HVACMode.HEAT_COOL: "auto",
+    HVACMode.COOL: "cool",
+    HVACMode.HEAT: "heat",
+    HVACMode.OFF: "off",  # cannot be directly used
 }
 
 ACTION_MAPPING = {
-    'idle': HVACAction.IDLE,
-    'heating': HVACAction.HEATING,
-    'cooling': HVACAction.COOLING
+    "idle": HVACAction.IDLE,
+    "heating": HVACAction.HEATING,
+    "cooling": HVACAction.COOLING,
+    "defrost": HVACAction.HEATING,  # Treat defrost as heating for consistency
 }
 
 
-async def async_setup_entry(hass, entry, async_add_entities, discovery_info=None):
-    _LOGGER.info(f'Configuring ORCA climate')
-    orca = hass.data[DOMAIN]['orca_obj']
-    coordinator = hass.data[DOMAIN][entry.entry_id]
+async def async_setup_entry(
+    hass: HomeAssistant,
+    entry: ConfigEntry,
+    async_add_entities: AddEntitiesCallback,
+) -> None:
+    """Set up the Orca climate platform."""
+    coordinator: OrcaDataUpdateCoordinator = hass.data[DOMAIN][entry.entry_id]
 
-    async_add_entities(
-            [OrcaClimate(coordinator, orca)]
+    # iterates thru integers representing available circuits, create separate climate entities for each circuit
+    # circuts 1 and 2 are used for room heating, usually floor and/or radiators
+    entities = [
+        OrcaClimate(coordinator, circuit_id)
+        for circuit_id in coordinator.api.available_circuits
+        if circuit_id in [1, 2]
+    ]
+    async_add_entities(entities)
+
+
+class OrcaClimate(OrcaEntity, ClimateEntity):
+    """Representation of an Orca Climate Device."""
+
+    _attr_temperature_unit = UnitOfTemperature.CELSIUS
+    _attr_hvac_modes = [HVACMode.OFF, HVACMode.HEAT, HVACMode.COOL, HVACMode.HEAT_COOL]
+    _attr_target_temperature_step = 0.1
+
+    def __init__(self, coordinator: OrcaDataUpdateCoordinator, circuit_id: int) -> None:
+        """Initialize the climate entity."""
+        self._circuit_id = circuit_id
+        super().__init__(coordinator, self._get_unique_id("hc_room_temp"))
+
+        # support for both languages
+        eng_name: str = self.coordinator.data.get(self._get_unique_id("hc_name")).value
+        if coordinator.config_entry.data.get(CONF_LANGUAGE, LANG_EN) == LANG_SI:
+            self._attr_name = str(CIRCUIT_NAME_MAP_SI[eng_name]).title()
+        else:
+            self._attr_name = eng_name
+        self._attr_unique_id = (
+            f"{coordinator.config_entry.entry_id}_climate_{eng_name.lower()}"
         )
 
-class OrcaClimate(OrcaDevice, ClimateEntity):
-    def __init__(self, coordinator, orca):
-        super().__init__(coordinator, orca)
-        _LOGGER.debug('Climate creating class')
-        self.orca = orca
-        self.coordinator = coordinator
-        self._attr_name = 'orca_hp'
-        self._attr_unique_id = 'b53d1ef8-17b9-49ca-8c82-73f16a4b9b5a'
-        self._attr_temperature_unit = UnitOfTemperature.CELSIUS
-        self._attr_current_temperature = float()
-        self._attr_target_temperature = float()
-        self._attr_target_temperature_high = float()
-        self._attr_target_temperature_low = float()
-        self._attr_target_temperature_step = 0.1
-        self._attr_hvac_mode = HVACMode.HEAT_COOL
-        self._attr_hvac_modes = [HVACMode.OFF, HVACMode.HEAT, HVACMode.COOL, HVACMode.HEAT_COOL]
-        self._attr_hvac_action = HVACAction.IDLE 
-        self._attr_supported_features = ClimateEntityFeature.TARGET_TEMPERATURE | ClimateEntityFeature.TARGET_TEMPERATURE_RANGE
+        self._attr_supported_features = (
+            ClimateEntityFeature.TARGET_TEMPERATURE
+            | ClimateEntityFeature.TARGET_TEMPERATURE_RANGE
+        )
 
-    @callback
-    def _handle_coordinator_update(self) -> None:
-        _LOGGER.debug(f"climate callback update")
-        """Handle updated data from the coordinator."""
-        self._attr_current_temperature = self.coordinator.data['2_Temp_Prostora'].value
+    @property
+    def current_temperature(self) -> float | None:
+        """Return the current temperature."""
+        return self._get_value("hc_room_temp")
 
-        if self.coordinator.data.get('2_Timer_MK1_24_ur'):
-            self._attr_target_temperature = self.coordinator.data['2_Temp_prostor_dnevna'].value
-            self._attr_supported_features = ClimateEntityFeature.TARGET_TEMPERATURE
-        else:
-            self._attr_target_temperature_high = self.coordinator.data['2_Temp_prostor_dnevna'].value
-            self._attr_target_temperature_low  = self.coordinator.data['2_Temp_prostor_nocna'].value
-            self._attr_supported_features = ClimateEntityFeature.TARGET_TEMPERATURE_RANGE
+    @property
+    def target_temperature(self) -> float | None:
+        """Return the temperature we try to reach."""
+        if not self._single_temp_in_use():
+            return None
+        return self._get_value("hc_desired_day_temp")
 
-        valve_status = self.coordinator.data['2_Preklop_PV1'].value
-        # current HP status is only set if HP has valve set to floor heating as otherwise HP action is not preformed on flor heating
-        self._attr_hvac_action = HVACAction.IDLE
-        if valve_status == 'floor_heating':
-            self._attr_hvac_action = ACTION_MAPPING.get(self.coordinator.data['2_Rezim_delov_TC'].value)
-        
-        # set based on mode only if HP is turned on
-        if self.coordinator.data['2_MK1_vklop'].value == True:
-            self._attr_hvac_mode = MODE_MAPPING.get(self.coordinator.data['2_Rezim_MK1'].value)
-        else:
-            self._attr_hvac_mode = HVACMode.OFF
-        _LOGGER.debug(f"""Climate update: 
-        _attr_current_temperature: {self._attr_current_temperature}
-        self._attr_target_temperature_high: {self._attr_target_temperature_high}
-        self._attr_target_temperature_low: {self._attr_target_temperature_low}
-        self._attr_target_temperature: {self._attr_target_temperature}
-        self._attr_hvac_mode: {self._attr_hvac_mode}
-        self._attr_hvac_action: {self._attr_hvac_action}""")
-        self.async_write_ha_state()
+    @property
+    def target_temperature_high(self) -> float | None:
+        """Return the highbound target temperature."""
+        if self._single_temp_in_use():
+            return None
+        return self._get_value("hc_desired_day_temp")
 
+    @property
+    def target_temperature_low(self) -> float | None:
+        """Return the lowbound target temperature."""
+        if self._single_temp_in_use():
+            return None
+        return self._get_value("hc_desired_night_temp")
 
-# 2022-11-01 00:43:33.235 DEBUG (SyncWorker_6) [custom_components.orca.climate] climate setting temperature: kw={'temperature': 20.3, 'entity_id': ['climate.orca_hp']}
-# 2022-11-01 00:42:19.296 DEBUG (SyncWorker_1) [custom_components.orca.climate] climate setting temperature: kw={'target_temp_low': 20.1, 'target_temp_high': 20.4, 'entity_id': ['climate.orca_hp']}
-    async def async_set_temperature(self, **kwargs):
-        _LOGGER.debug(f"climate setting temperature: kw={kwargs}")
+    @property
+    def hvac_mode(self) -> HVACMode | None:
+        """Return hvac operation ie. heat, cool mode."""
+        is_on = self._get_value("hc_turned_on")
+        if not is_on:
+            return HVACMode.OFF
+
+        mode_val = self._get_value("hc_mode")
+        return MODE_MAPPING.get(mode_val, HVACMode.HEAT_COOL)
+
+    @property
+    def hvac_action(self) -> HVACAction | None:
+        """Return the current running hvac operation if supported."""
+        valve_status = self._get_value("valve_pos", convert_to_unique=False)
+        pump_running = self._get_value("hc_pump_status")  # on circuit level
+
+        # "room_heating" indicates heating circuit active (and not hot water)
+        if valve_status == "room_heating" and pump_running:
+            hp_status = self._get_value("current_state", convert_to_unique=False)
+            return ACTION_MAPPING.get(hp_status, HVACAction.IDLE)
+        return HVACAction.IDLE
+
+    def _get_value(self, id_: str, convert_to_unique: bool = True) -> Any:
+        """Safe getter for mapped keys."""
+        if convert_to_unique:
+            id_ = self._get_unique_id(id_)
+        if id_ in self.coordinator.data:
+            return self.coordinator.data[id_].value
+        return None
+
+    def _get_unique_id(self, id_: str) -> str:
+        """Get the unique ID for a given tag ID based on circuit ID."""
+        return f"{id_}_{self._circuit_id}"
+
+    def _single_temp_in_use(self) -> bool:
+        """Check if we are in 24h regime. If yes, only single temp is used."""
+        if self._get_value("hc_24_sch"):
+            return True
+        return False  # Orca mono doesnt support 24h and will not return value
+
+    async def async_set_temperature(self, **kwargs: Any) -> None:
         """Set new target temperature."""
-        if temperature := kwargs.get('target_temp_low', 0) * 10:
-            resp = await self.orca.set_value('2_Temp_prostor_nocna', temperature)
-        if temperature := kwargs.get('target_temp_high', 0) * 10:
-            resp = await self.orca.set_value('2_Temp_prostor_dnevna', temperature)
-        if temperature := kwargs.get('temperature', 0) * 10:
-            resp = await self.orca.set_value('2_Temp_prostor_dnevna', temperature)
-        _LOGGER.debug(f'Set temperature response: {resp}')
+
+        if (temp_low := kwargs.get("target_temp_low")) is not None:
+            await self.coordinator.api.set_value_by_id(
+                self._get_unique_id("hc_desired_night_temp"), value=temp_low
+            )
+
+        if (temp_high := kwargs.get("target_temp_high")) is not None:
+            await self.coordinator.api.set_value_by_id(
+                self._get_unique_id("hc_desired_day_temp"), value=temp_high
+            )
+
+        if (temp := kwargs.get("temperature")) is not None:
+            await self.coordinator.api.set_value_by_id(
+                self._get_unique_id("hc_desired_day_temp"), value=temp
+            )
+
         await self.coordinator.async_request_refresh()
 
-    async def async_set_hvac_mode(self, hvac_mode) -> None:
-        _LOGGER.debug(f"climate setting mode: mode={hvac_mode}")
-        mode = REVERSE_MODE_MAPPING.get(hvac_mode)
-
-        if mode is None:
-            _LOGGER.error(f'Unknown mode: {hvac_mode}')
+    async def async_set_hvac_mode(self, hvac_mode: HVACMode) -> None:
+        """Set new target hvac mode."""
+        val = REVERSE_MODE_MAPPING.get(hvac_mode)
+        if val is None:
+            LOGGER.error("Unknown mode: %s", hvac_mode)
             return
 
-        # in case hp is turned off this is set with different value
-        if mode == 0:
-            resp = await self.orca.set_value('2_MK1_vklop', 0)
+        if val == "off":
+            await self.coordinator.api.set_value_by_id("hc_turned_on", False)
         else:
-            await self.orca.set_value('2_MK1_vklop', 1)
-            resp = await  self.orca.set_value('2_Rezim_MK1', mode)
-        _LOGGER.debug(f'Set mode response: {resp}')
+            # Ensure On, then set mode
+            await self.coordinator.api.set_value_by_id("hc_turned_on", True)
+            await self.coordinator.api.set_value_by_id("hc_mode", val)
+
         await self.coordinator.async_request_refresh()

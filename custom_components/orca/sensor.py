@@ -1,40 +1,73 @@
-from logging import getLogger
-from homeassistant.components.sensor import SensorEntity
-from homeassistant.core import callback
-from .coordinator import OrcaDevice
+"""Sensor platform for Orca integration."""
+
+from __future__ import annotations
+
+from homeassistant.components.sensor import (
+    SensorDeviceClass,
+    SensorEntity,
+    SensorStateClass,
+)
+from homeassistant.config_entries import ConfigEntry
+from homeassistant.core import HomeAssistant
+from homeassistant.helpers.entity_platform import AddEntitiesCallback
+
+from .const import DOMAIN, EXCLUDED_IDS
+from .coordinator import OrcaDataUpdateCoordinator
+from .entity import OrcaEntity
 
 
-_LOGGER = getLogger(__name__)
-DOMAIN = 'orca'
-SENSOR_TYPES = ['multimode', 'power_factor', 'temperature']
+async def async_setup_entry(
+    hass: HomeAssistant,
+    entry: ConfigEntry,
+    async_add_entities: AddEntitiesCallback,
+) -> None:
+    """Set up Orca sensors."""
+    coordinator: OrcaDataUpdateCoordinator = hass.data[DOMAIN][entry.entry_id]
 
-async def async_setup_entry(hass, entry, async_add_entities, discovery_info=None):
-    _LOGGER.info(f'Configuring ORCA sensors')
-    coordinator = hass.data[DOMAIN][entry.entry_id]
-    async_add_entities(
-        OrcaSensor(coordinator, tag) for tag, obj in coordinator.data.items() if obj.type in SENSOR_TYPES
-    )
+    entities = []
+    for unique_id, tag_value in coordinator.data.items():
+        # Skip if consumed by other entities
+        if tag_value.config.id in EXCLUDED_IDS:
+            continue
 
-class OrcaSensor(OrcaDevice, SensorEntity):
-    def __init__(self, coordinator, tag):
-        """Pass coordinator to CoordinatorEntity."""
-        super().__init__(coordinator)
-        self.tag = tag
-        _type = self.coordinator.data[self.tag].type
-        if _type not in ['temperature', 'multimode', 'power_factor']:
-            return
-        _LOGGER.debug(f'Setting up sensor {self.coordinator.data[self.tag].name}')
-        if _type != 'multimode':  # this is not a supported option
-            self._attr_device_class = _type
-        _unit = self.coordinator.data[self.tag].unit
-        _LOGGER.debug(f'Unit is {_unit}')
-        if _unit:
-            self._attr_native_unit_of_measurement = _unit
-        self._attr_name = self.coordinator.data[self.tag].name
-        self._attr_unique_id = self.coordinator.data[self.tag].name
+        config = tag_value.config
 
-    @callback
-    def _handle_coordinator_update(self) -> None:
-        """Handle updated data from the coordinator."""
-        self._attr_native_value  = self.coordinator.data[self.tag].value
-        self.async_write_ha_state()
+        # Skip adjustable tags (handled by Number/Switch)
+        if config.adjustable:
+            continue
+
+        # Create Sensor if type matches
+        if config.type in [
+            "temperature",
+            "percentage",
+            "power_factor",
+            "multimode",
+        ]:
+            entities.append(OrcaSensor(coordinator, unique_id))
+
+    async_add_entities(entities)
+
+
+class OrcaSensor(OrcaEntity, SensorEntity):
+    """Representation of an Orca sensor."""
+
+    def __init__(self, coordinator: OrcaDataUpdateCoordinator, unique_id: str) -> None:
+        """Initialize the sensor."""
+        super().__init__(coordinator, unique_id)
+
+        config = self.tag_data.config
+
+        if config.type == "temperature":
+            self._attr_device_class = SensorDeviceClass.TEMPERATURE
+            self._attr_state_class = SensorStateClass.MEASUREMENT
+        elif config.type in {"power_factor", "percentage"}:
+            self._attr_device_class = SensorDeviceClass.POWER_FACTOR
+            self._attr_state_class = SensorStateClass.MEASUREMENT
+
+        if config.unit:
+            self._attr_native_unit_of_measurement = config.unit
+
+    @property
+    def native_value(self):
+        """Return the state of the sensor."""
+        return self.tag_data.value

@@ -1,122 +1,415 @@
-## External sensors and settings ##
-2_Temp_Zunanja:
-  name: "HP Outside Temperature"
-  name_si: "TC Zunanja temperatura"
+# This file is read by orca_api.py to configure the various sensors
+# Function fetch_all will return all sensors defined here
+# Functions for fetching specific tags/ids can only return sensors defined here
+# Each sensor must have a unique combination of 'id' and 'heating_circuit'
+# Unique ID for circuits 1 and 2 are constructed from 'id' and 'heating_circuit' in orca_api.py
+#
+# Definitions:
+# top level: tag name, must match the tag from the orca heat pump
+# id: internal id used by orca_api.py to identify the sensor
+# name: English name of the sensor
+# name_si: Slovenian name of the sensor
+# description: description of the sensor
+# type: type of the sensor, defines how to interpret the value
+# unit: unit of the sensor value, if applicable
+# value_map: mapping of raw values to human-readable values, if applicable
+# adjustable: whether the sensor value can be adjusted (e.g. setpoint)
+# heating_circuit: which heating circuit the sensor belongs to (0 for internal sensors, 4 for hot water, 3 for solar collectors)
+
+MK1_IME:
+  id: hc_name
+  name: "name heating circuit"
+  name_si: "ime ogrevalnega kroga"
   description: ""
-  type: "temperature"
-  unit: "°C"
+  type: "multimode"
+  value_map:  # first three are default names, typically indicate unconfigured circuit
+    4: "Heating Circuit 2"
+    5: "Heating Circuit 3"
+    6: "Direct Circuit 1"
+    7: "Direct Circuit 2"
+    8: "Direct Circuit 3"
+    9: "Cellar"
+    10: "Ground Floor"
+    11: "Floor"
+    12: "1. Floor"
+    13: "2. Floor"
+    14: "Attic"
+    15: "Radiator"
+    16: "Floor"
+    17: "Convector"
+    18: "Heating"
+    19: "Cooling"
+    20: "Wall"
+    21: "Heating Circuit 1"
+    23: "Floor"
+    24: "Radiator"
+  heating_circuit: 1
 
 2_Temp_Prostora:
-  name: "HP Room Temperature"
-  name_si: "TC Prostor"
+  id: hc_room_temp
+  name: "room temperature"
+  name_si: "prostorska temperatura"
   description: ""
   type: "temperature"
   unit: "°C"
+  heating_circuit: 1
 
 2_Zahtevana_RF_MK_1:
-  name: "HP Desired Room Temperature"
-  name_si: "TC Željena temperatura"
+  id: hc_desired_room_temp
+  name: "desired room temperature"
+  name_si: "željena prostorska temperatura"
   description: ""
   type: "temperature"
   unit: "°C"
+  heating_circuit: 1
 
 2_Temp_prostor_dnevna:
-  name: "HP Desired Day Temperature"
-  name_si: "Željena dnevna temperatura"
+  id: hc_desired_day_temp
+  name: "desired day temperature"
+  name_si: "željena dnevna temperatura"
   description: ""
   type: "temperature"
   unit: "°C"
+  adjustable: true
+  heating_circuit: 1
 
 2_Temp_prostor_nocna:
-  name: "HP Desired Night Temperature"
-  name_si: "Željena nočna temperatura"
+  id: hc_desired_night_temp
+  name: "desired night temperature"
+  name_si: "željena nočna temperatura"
   description: ""
   type: "temperature"
   unit: "°C"
+  adjustable: true
+  heating_circuit: 1
 
-2_Temp_vode_sanitarna:
-  name: "HP Hot Water Desired Temperature"
-  name_si: "Željena temperatura sanitarne vode"
+2_Poti2:
+  id: hc_outlet_temp
+  name: "outlet temperature"
+  name_si: "temperatura vtoka"
   description: ""
   type: "temperature"
   unit: "°C"
+  heating_circuit: 1
 
-## Internal sensors ##
-2_Poti1:
-  name: "HP Internal Temperature"
-  name_si: "TC Interna temperatura"
-  description: "Temperatura plina v TC"
-  type: "temperature"
-  unit: "°C"
-
-2_Izrac_temp_TC:
-  name: "HP Desired Internal Temperature"
-  name_si: "TC Tarčna interna temperatura"
+2_Temp_zelena_MK_1:
+  id: hc_desired_outlet_temp
+  name: "desired outlet temperature"
+  name_si: "željena temperatura vtoka"
   description: ""
   type: "temperature"
   unit: "°C"
+  heating_circuit: 1
 
-2_PRIKAZ_Reg_temp_vode:
-  name: "HP Outdoor Unit Power"
-  name_si: "TC Zunanja enota"
-  description: ""
-  type: "power_factor"
-  unit: "%"
-
-2_Preklop_PV1:
-  name: "HP Position of 3-way valve"
-  name_si: "TC Preklopni ventil"
-  description: "Preklaplja med sistemom ogrevanja sanitarne vode in gretja"
+2_Delovanje_MP1: # 1= "Odpiranje" # 2= "Zapiranje" # 0= "Izklop"
+  id: hc_mix_valve_status
+  name: "mixing valve status"
+  name_si: "stanje mešalnega ventila"
+  description: "Motor nastavlja mešalni ventil, da je temp vtoka čim bližje željeni temp"
   type: "multimode"
   value_map:
-    0: "floor_heating"
-    1: "hot_water"
-
-2_Vklop_C0:
-  name: "HP Outdoor Unit Pump"
-  name_si: "TC Črpalka zunanja enota"
-  description: "Poganja vodo čez zunanjo enoto"
-  type: "boolean"
-
-2_Vklop_ele_grelca_1:
-  name: "HP Electric Heater"
-  name_si: "TC Delovanje električnega grelca"
-  description: "Za odtaljevanje zunanje enote"
-  type: "boolean"
-
-## Floor heating ##
-2_Delovanje_MP1:
-  name: "HP Mixing Valve Status - Floor"
-  name_si: "TC Delovanje motorja za mešalni ventil za talno gretje"
-  description: "Motor nastavlja mešalni ventil, da je temp vtoka čim bližje željeni temp"
-  type: "multimode"
+    0: "off"
+    1: "opening"
+    2: "closing"
+  heating_circuit: 1
 
 2_Odstotki_odprtosti_MP1:
-  name: "HP Mixing Valve Position - Floor"
-  name_si: "TC Odprtost mešalnega ventila za talno gretje"
+  id: hc_mix_valve_pos
+  name: "mixing valve position"
+  name_si: "odprtost mešalnega ventila"
   description: "Motor nastavlja mešalni ventil, da je temp vtoka čim bližje željeni temp"
   type: "power_factor"
   unit: "%"
+  heating_circuit: 1
 
 2_Vklop_C1:
-  name: "HP Pump - Floor"
-  name_si: "TC Črpalka talnega gretja"
-  description: "Poganja vodo za talno gretje"
+  id: hc_pump_status
+  name: "pump status"
+  name_si: "stanje obtočne črpalke"
+  description: "Poganja vodo za gretje"
   type: "boolean"
+  heating_circuit: 1
 
 2_Rezim_MK1:
-  name: "HP Mode of Operation"
-  name_si: "TC način delovanja"
+  id: hc_mode
+  name: "mode of operation"
+  name_si: "način delovanja"
   description: ""
   type: "multimode"
   value_map:
     1: "heat"
     2: "cool"
     3: "auto"
-    
+  heating_circuit: 1
+
+2_Timer_MK1_24_ur:  # duo only, missing on mono
+  id: hc_24_sch
+  name: "24h schedule"
+  name_si: "24 urni režim"
+  description: "Ali talno gretje deluje v 24urnem nacinu"
+  type: "boolean"
+  adjustable: true
+  heating_circuit: 1
+
+2_MK1_vklop:
+  id: hc_turned_on
+  name: "turned on"
+  name_si: "vklopljeno"
+  description: "Ali je ogrevanje/hlajenje vklopljeno"
+  type: "boolean"
+  adjustable: true
+  heating_circuit: 1
+
+2_Zamik_krivulje_MK1:
+  id: hc_curve_shift_paralell
+  name: "parallel curve shift"
+  name_si: "vzporedna korekcija krivulje"
+  description: ""
+  type: curve_shift
+  adjustable: true
+  heating_circuit: 1
+
+2_Nagib_krivulje_MK1:
+  id: hc_curve_shift_slope
+  name: "slope curve shift"
+  name_si: "korekcija nagiba krivulje"
+  description: ""
+  type: curve_shift
+  adjustable: true
+  heating_circuit: 1
+
+
+## Heating loop 2 (Orgrevalni krog 2)
+MK1_IME(2):
+  id: hc_name
+  name: "name heating circuit"
+  name_si: "ime ogrevalnega kroga"
+  description: ""
+  type: "multimode"
+  value_map:
+    4: "Heating Circuit 2"
+    5: "Heating Circuit 3"
+    6: "Direct Circuit 1"
+    7: "Direct Circuit 2"
+    8: "Direct Circuit 3"
+    9: "Cellar"
+    10: "Ground Floor"
+    11: "Floor"
+    12: "1. Floor"
+    13: "2. Floor"
+    14: "Attic"
+    15: "Radiator"
+    16: "Floor"
+    17: "Convector"
+    18: "Heating"
+    19: "Cooling"
+    20: "Wall"
+    21: "Heating Circuit 1"
+    23: "Floor"
+    24: "Radiator"
+  heating_circuit: 2
+
+2_Temp_RF2:
+  id: hc_room_temp
+  name: "room temperature"
+  name_si: "prostorska temperatura"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+  heating_circuit: 2
+
+2_Zahtevana_RF_MK_2:
+  id: hc_desired_room_temp
+  name: "desired room temperature"
+  name_si: "željena prostorska temperatura"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+  heating_circuit: 2
+
+2_Temp_prostor_dnevna_OK2:
+  id: hc_desired_day_temp
+  name: "desired day temperature"
+  name_si: "željena dnevna temperatura"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+  adjustable: true
+  heating_circuit: 2
+
+2_Temp_prostor_nocna_OK2:
+  id: hc_desired_night_temp
+  name: "desired night temperature"
+  name_si: "željena nočna temperatura"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+  adjustable: true
+  heating_circuit: 2
+
+2_Temp_VF2:
+  id: hc_outlet_temp
+  name: "outlet temperature"
+  name_si: "temperatura vtoka"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+  heating_circuit: 2
+
+2_Temp_zelena_MK_2:
+  id: hc_desired_outlet_temp
+  name: "desired outlet temperature"
+  name_si: "željena temperatura vtoka"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+  heating_circuit: 2
+
+2_Delovanje_MP2:
+  id: hc_mix_valve_status
+  name: "mixing valve status"
+  name_si: "stanje mešalnega ventila"
+  description: "Motor nastavlja mešalni ventil, da je temp vtoka čim bližje željeni temp"
+  type: "multimode"
+  value_map:
+    0: "off"
+    1: "opening"
+    2: "closing"
+  heating_circuit: 2
+
+2_Odstotki_odprtosti_MP2:
+  id: hc_mix_valve_pos
+  name: "mixing valve position"
+  name_si: "odprtost mešalnega ventila"
+  description: "Motor nastavlja mešalni ventil, da je temp vtoka čim bližje željeni temp"
+  type: "power_factor"
+  unit: "%"
+  heating_circuit: 2
+
+2_Vklop_C2:
+  id: hc_pump_status
+  name: "pump status"
+  name_si: "stanje obtočne črpalke"
+  description: "Poganja vodo za gretje"
+  type: "boolean"
+  heating_circuit: 2
+
+2_Rezim_MK2:
+  id: hc_mode
+  name: "mode of operation"
+  name_si: "način delovanja"
+  description: ""
+  type: "multimode"
+  value_map:
+    1: "heat"
+    2: "cool"
+    3: "auto"
+  heating_circuit: 2
+
+2_Timer_MK2_24_ur: # duo only, missing on mono
+  id: hc_24_sch
+  name: "24h schedule"
+  name_si: "24 urni režim"
+  description: "Ali talno gretje deluje v 24urnem nacinu"
+  type: "boolean"
+  heating_circuit: 2
+
+2_MK2_vklop:
+  id: hc_turned_on
+  name: "turned on"
+  name_si: "vklopljeno"
+  description: "Ali je ogrevanje/hlajenje vklopljeno"
+  type: "boolean"
+  adjustable: true
+  heating_circuit: 2
+
+2_Zamik_krivulje_MK2:
+  id: hc_curve_shift_paralell
+  name: "parallel curve shift"
+  name_si: "vzporedna korekcija krivulje"
+  description: ""
+  type: curve_shift
+  adjustable: true
+  heating_circuit: 2
+
+2_Nagib_krivulje_MK2:
+  id: hc_curve_shift_slope
+  name: "slope curve shift"
+  name_si: "korekcija nagiba krivulje"
+  description: ""
+  type: curve_shift
+  adjustable: true
+  heating_circuit: 2
+
+
+## Internal sensors ##
+2_Temp_Zunanja:
+  id: outdoor_temp
+  name: "outside temperature"
+  name_si: "zunanja temperatura"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+  heating_circuit: 0
+
+2_Poti1:
+  id: internal_temp
+  name: "internal temperature"
+  name_si: "interna temperatura"
+  description: "Temperatura plina v TC"
+  type: "temperature"
+  unit: "°C"
+  heating_circuit: 0
+
+2_Izrac_temp_TC:
+  id: desired_internal_temp
+  name: "internal desired temperature"
+  name_si: "interna tarčna temperatura"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+  heating_circuit: 0
+
+2_PRIKAZ_Reg_temp_vode:
+  id: outdoor_unit_power
+  name: "outdoor unit power"
+  name_si: "zunanja enota moč"
+  description: ""
+  type: "power_factor"
+  unit: "%"
+  heating_circuit: 0
+
+2_Preklop_PV1:
+  id: valve_pos
+  name: "position of 3-way valve"
+  name_si: "preklopni ventil"
+  description: "Preklaplja med sistemom ogrevanja sanitarne vode in gretja"
+  type: "multimode"
+  value_map:
+    0: "room_heating"
+    1: "hot_water"
+  heating_circuit: 0
+
+2_Vklop_C0:
+  id: outdoor_unit_pump
+  name: "outdoor unit pump"
+  name_si: "zunanja enota črpalka"
+  description: "Poganja vodo čez zunanjo enoto"
+  type: "boolean"
+  heating_circuit: 0
+
+2_Vklop_ele_grelca_1:
+  id: electric_heater
+  name: "electric heater"
+  name_si: "delovanje električnega grelca"
+  description: "Za odtaljevanje zunanje enote"
+  type: "boolean"
+  heating_circuit: 0
+
 2_Rezim_delov_TC:
-  name: "HP current state"
-  name_si: "TC trenutno stanje delovanja"
+  id: current_state
+  name: "current state"
+  name_si: "stanje delovanja"
   description: ""
   type: "multimode"
   value_map:
@@ -124,84 +417,168 @@
     1: "heating"
     2: "cooling"
     3: "defrost"
+  heating_circuit: 0
 
-2_Timer_MK1_24_ur:
-  name: "HP Floor heating 24h schedule"
-  name_si: "TC 24 urni rezim delovanja talno gretje"
-  description: "Ali talno gretje deluje v 24urnem nacinu"
-  type: "boolean"
-
-2_MK1_vklop:
-  name: "HP Floor heating"
-  name_si: "TC Talno gretje"
-  description: "Ali je ogrevanje/hlajenje talnega vklopljeno"
-  type: "boolean"
-  
-2_Poti2:
-  name: "HP Outlet Temperature - Floor"
-  name_si: "TC Vtok talno gretje"
-  description: ""
-  type: "temperature"
-  unit: "°C"
-
-
-## Hot Water ##
-2_SV_vklop:
-  name: "HP Hot Water"
-  name_si: "TC Ogrevanje sanitarne voda"
-  description: "Ali je ogrevanje sanitarne vode vklopljeno"
-  type: "boolean"
-
-2_Poti3:
-  name: "HP Hot Water top"
-  name_si: "TC Sanitarna voda zgoraj"
-  description: ""
-  type: "temperature"
-  unit: "°C"
-
-2_Poti4:
-  name: "HP Hot Water bottom"
-  name_si: "TC Sanitarna voda spodaj"
-  description: ""
-  type: "temperature"
-  unit: "°C"
-
-2_Delovanje_MP2:
-  name: "HP Mixing Valve Status - Hot Water"
-  name_si: "TC Delovanje motorja za mešalni ventil za sanitarno vodo"
-  description: ""
-  type: "multimode"
-
-2_Odstotki_odprtosti_MP2:
-  name: "HP Mixing Valve Position - Hot Water"
-  name_si: "TC Odprtost mešalnega ventila za sanitarno vodo"
+2_Max_moc_TC_pri_OGR:
+  id: max_power_heating
+  name: "max power heating"
+  name_si: "max moč ogrevanje"
   description: ""
   type: "power_factor"
   unit: "%"
+  adjustable: true
+  heating_circuit: 0
 
-2_Vklop_C2:
-  name: "HP Hot Water Pump"
-  name_si: "TC Črpalka sanitarne vode"
-  description: "Poganja sanitarno vodo"
+2_Max_moc_TC_pri_SV:
+  id: max_power_water
+  name: "max power hot water"
+  name_si: "max moč sanitarna voda"
+  description: ""
+  type: "power_factor"
+  unit: "%"
+  adjustable: true
+  heating_circuit: 0
+
+2_Zun_temp_za_vklop_Grelec_1:
+  id: electric_heater_on_temp_1
+  name: "electric heater level 1"
+  name_si: "vklop električnega grelca stopnja 1"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+  adjustable: true
+  heating_circuit: 0
+
+2_Zun_temp_za_vklop_Grelec_2:
+  id: electric_heater_on_temp_2
+  name: "electric heater level 2"
+  name_si: "vklop električnega grelca stopnja 2"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+  adjustable: true
+  heating_circuit: 0
+
+2_Zun_temp_za_vklop_Grelec_3:
+  id: electric_heater_on_temp_3
+  name: "electric heater level 3"
+  name_si: "vklop električnega grelca stopnja 3"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+  adjustable: true
+  heating_circuit: 0
+
+## Hot Water (not really a heating circuit, but is defined as such to remove results if someone doesnt have it) ##
+2_SV_vklop:
+  id: wh_turned_on
+  name: "hot water enabled"
+  name_si: "sanitarna voda vklop"
+  description: "Ali je ogrevanje sanitarne vode vklopljeno"
   type: "boolean"
+  adjustable: true
+  heating_circuit: 4
 
+2_Poti3:
+  id: wh_temp_top
+  name: "hot water top"
+  name_si: "sanitarna voda zgoraj"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+  heating_circuit: 4
 
-## Solar collectors ##
+2_Poti4:
+  id: wh_temp_bottom
+  name: "hot water bottom"
+  name_si: "sanitarna voda spodaj"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+  heating_circuit: 4
+
+2_Temp_vode_sanitarna:
+  id: wh_desired_temp
+  name: "hot water desired temperature"
+  name_si: "sanitarna voda željena temperatura"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+  adjustable: true
+  heating_circuit: 4
+
+## Solar collectors (ogrevalni krog 3) ##
 2_SOLAR_VKLOP:
-  name: "HP Solar Heating"
-  name_si: "TC Sončna energija"
+  id: wh_solar_turned_on
+  name: "solar heating"
+  name_si: "sončna energija"
   description: "Ali je ogrevanje sanitarne vode s sončno energijo vklopljeno"
   type: "boolean"
+  adjustable: true
+  heating_circuit: 3
 
 2_Vklop_C3:
-  name: "HP Solar Pump"
-  name_si: "TC Črpalka sončne energije"
+  id: wh_solar_pump
+  name: "solar pump"
+  name_si: "sončna energija črpalka"
   description: "Poganja vodo skozi sončne kolektorje"
   type: "boolean"
+  heating_circuit: 3
 
 2_Poti5:
-  name: "HP Solar Collector Temperature"
-  name_si: "TC Temperatura sončnih kolektorjev"
+  id: wh_solar_temp
+  name: "solar collector temperature"
+  name_si: "sončni kolektorji temperatura"
   description: "Temperatura senzorja na sončnih kolektorjih"
   type: "temperature"
   unit: "°C"
+  heating_circuit: 3
+
+## Buffer tank - zalogovnik, simulated heating circuit 5 ##
+2_Temp_Zalog:
+  id: buffer_temp
+  name: "buffer temperature"
+  name_si: "zalogovnik temperatura"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+  heating_circuit: 5
+
+2_Izrac_temp_ZALOG:
+  id: buffer_desired_temp
+  name: "buffer desired temperature"
+  name_si: "zalogovnik željena temperatura"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+  heating_circuit: 5
+
+2_VISJA_Temp_ZALOG_OGR:
+  id: buffer_high_temp
+  name: "buffer high temperature"
+  name_si: "zalogovnik višja temperatura"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+  adjustable: true
+  heating_circuit: 5
+
+2_NIZJA_Temp_ZALOG_OGR:
+  id: buffer_low_temp
+  name: "buffer low temperature"
+  name_si: "zalogovnik nižja temperatura"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+  adjustable: true
+  heating_circuit: 5
+
+2_Diferenca_vklopa_ZALOG:
+  id: buffer_on_diff
+  name: "buffer on difference"
+  name_si: "zalogovnik diferenca vklopa"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+  adjustable: true
+  heating_circuit: 5

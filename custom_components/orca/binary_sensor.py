@@ -1,33 +1,42 @@
-from logging import getLogger
+"""Binary sensor platform for Orca integration."""
+
+from __future__ import annotations
+
 from homeassistant.components.binary_sensor import BinarySensorEntity
-from homeassistant.core import callback
-from .coordinator import OrcaDevice
+from homeassistant.config_entries import ConfigEntry
+from homeassistant.core import HomeAssistant
+from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-_LOGGER = getLogger(__name__)
-DOMAIN = 'orca'
-BINARY_SENSOR_TYPES = ['boolean']
+from .const import DOMAIN, EXCLUDED_IDS
+from .coordinator import OrcaDataUpdateCoordinator
+from .entity import OrcaEntity
 
-async def async_setup_entry(hass, entry, async_add_entities, discovery_info=None):
-    _LOGGER.info(f'Configuring ORCA binary sensors')
-    coordinator = hass.data[DOMAIN][entry.entry_id]
-    async_add_entities(
-        OrcaBinarySensor(coordinator, tag) for tag, obj in coordinator.data.items() if obj.type in BINARY_SENSOR_TYPES
-    )
 
-class OrcaBinarySensor(OrcaDevice, BinarySensorEntity):
-    def __init__(self, coordinator, tag):
-        """Pass coordinator to CoordinatorEntity."""
-        super().__init__(coordinator)
-        self.tag = tag
-        _type = self.coordinator.data[self.tag].type
-        if _type not in ['boolean']:
-            return
-        _LOGGER.debug(f'Setting up sensor {self.coordinator.data[self.tag].name}')
-        self._attr_name = self.coordinator.data[self.tag].name
-        self._attr_unique_id = self.coordinator.data[self.tag].name
+async def async_setup_entry(
+    hass: HomeAssistant,
+    entry: ConfigEntry,
+    async_add_entities: AddEntitiesCallback,
+) -> None:
+    """Set up Orca binary sensors."""
+    coordinator: OrcaDataUpdateCoordinator = hass.data[DOMAIN][entry.entry_id]
 
-    @callback
-    def _handle_coordinator_update(self) -> None:
-        """Handle updated data from the coordinator."""
-        self._attr_is_on  = self.coordinator.data[self.tag].value
-        self.async_write_ha_state()
+    entities = []
+    for unique_id, tag_value in coordinator.data.items():
+        if tag_value.config.id in EXCLUDED_IDS:
+            continue
+
+        config = tag_value.config
+
+        if config.type == "boolean" and not config.adjustable:
+            entities.append(OrcaBinarySensor(coordinator, unique_id))
+
+    async_add_entities(entities)
+
+
+class OrcaBinarySensor(OrcaEntity, BinarySensorEntity):
+    """Representation of an Orca binary sensor."""
+
+    @property
+    def is_on(self) -> bool | None:
+        """Return true if the binary sensor is on."""
+        return self.tag_data.value
