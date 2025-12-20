@@ -60,7 +60,7 @@ class OrcaNumber(OrcaEntity, NumberEntity):
             self._attr_native_min_value = -9.9
             self._attr_native_max_value = 9.9
             self._attr_native_step = 0.1
-            self._attr_mode = NumberMode.SLIDER
+            self._attr_mode = NumberMode.BOX
         elif "electric_heater_on_temp" in config.id:
             self._attr_native_min_value = -30.0  # lowest temp allowed by heat pump
             self._attr_native_max_value = 10.0  # heat pump allows higher values, but not really necessary to have it higher
@@ -74,6 +74,11 @@ class OrcaNumber(OrcaEntity, NumberEntity):
         elif config.id == "buffer_on_diff":
             self._attr_native_min_value = 0.0  # lowest allowed by heat pump
             self._attr_native_max_value = 9.0  # highest allowed by heat pump
+            self._attr_native_step = 0.1
+            self._attr_mode = NumberMode.BOX
+        elif config.id == "wh_on_diff":
+            self._attr_native_min_value = 0.0  # lowest allowed by heat pump
+            self._attr_native_max_value = 8.0  # highest allowed by heat pump
             self._attr_native_step = 0.1
             self._attr_mode = NumberMode.BOX
 

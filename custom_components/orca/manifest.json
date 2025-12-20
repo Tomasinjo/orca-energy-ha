@@ -6,7 +6,7 @@
   "iot_class": "local_polling",
   "domain": "orca",
   "name": "Orca",
-  "version": "2.0.3-b",
+  "version": "2.0.4-b",
   "requirements": [
     "aiofiles>=0.8.0"
   ]
