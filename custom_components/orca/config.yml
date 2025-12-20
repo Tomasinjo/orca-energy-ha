@@ -142,13 +142,19 @@ MK1_IME:
     3: "auto"
   heating_circuit: 1
 
-2_Timer_MK1_24_ur:  # duo only, missing on mono
-  id: hc_24_sch
-  name: "24h schedule"
-  name_si: "24 urni režim"
-  description: "Ali talno gretje deluje v 24urnem nacinu"
-  type: "boolean"
-  adjustable: true
+2_Izbira_TIMERJA_MK1:
+  id: timer_programme
+  name: "timer programme"
+  name_si: "časovni program"
+  description: ""
+  type: "multimode"
+  value_map:
+    0: "24h"
+    1: "program 1"
+    2: "program 2"
+    3: "program 3"
+    4: "program 4"
+    5: "program 5"
   heating_circuit: 1
 
 2_MK1_vklop:
@@ -306,12 +312,19 @@ MK1_IME(2):
     3: "auto"
   heating_circuit: 2
 
-2_Timer_MK2_24_ur: # duo only, missing on mono
-  id: hc_24_sch
-  name: "24h schedule"
-  name_si: "24 urni režim"
-  description: "Ali talno gretje deluje v 24urnem nacinu"
-  type: "boolean"
+2_Izbira_TIMERJA_MK2:
+  id: timer_programme
+  name: "timer programme"
+  name_si: "časovni program"
+  description: ""
+  type: "multimode"
+  value_map:
+    0: "24h"
+    1: "program 1"
+    2: "program 2"
+    3: "program 3"
+    4: "program 4"
+    5: "program 5"
   heating_circuit: 2
 
 2_MK2_vklop:
@@ -507,6 +520,16 @@ MK1_IME(2):
   adjustable: true
   heating_circuit: 4
 
+2_Diferenca_vklopa_SV:
+  id: wh_on_diff
+  name: "hot water on difference"
+  name_si: "sanitarna voda diferenca vklopa"
+  description: ""
+  type: "temperature"
+  unit: "°C"
+  adjustable: true
+  heating_circuit: 4
+
 ## Solar collectors (ogrevalni krog 3) ##
 2_SOLAR_VKLOP:
   id: wh_solar_turned_on
@@ -533,6 +556,7 @@ MK1_IME(2):
   type: "temperature"
   unit: "°C"
   heating_circuit: 3
+
 
 ## Buffer tank - zalogovnik, simulated heating circuit 5 ##
 2_Temp_Zalog:

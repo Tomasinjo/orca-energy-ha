@@ -200,7 +200,12 @@ class OrcaApi:
         Returns only circuits that are actually configured.
         """
         # Tags that define the name of heating circuit
-        name_tags = {1: "MK1_IME", 2: "MK2_IME"}
+        # likely result: {1: "MK1_IME", 2: "MK1_IME(2)"}
+        name_tags = {
+            cfg.heating_circuit: tag
+            for tag, cfg in self._config_by_tags.items()
+            if cfg.id == "hc_name"
+        }
 
         # The following defines which fields must be available (return non-9999 value)
         # to treat the heating circle as in use.

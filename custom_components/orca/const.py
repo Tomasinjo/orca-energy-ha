@@ -21,6 +21,7 @@ EXCLUDED_IDS = {
     "hc_desired_day_temp",
     "hc_desired_night_temp",
     "hc_turned_on",
+    "timer_programme",
     # set by water heater entity
     "wh_turned_on",
     "wh_desired_temp",

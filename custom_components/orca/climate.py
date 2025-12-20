@@ -149,9 +149,10 @@ class OrcaClimate(OrcaEntity, ClimateEntity):
 
     def _single_temp_in_use(self) -> bool:
         """Check if we are in 24h regime. If yes, only single temp is used."""
-        if self._get_value("hc_24_sch"):
+        if self._get_value("timer_programme") == "24h":
+            # means timer (časovni program) is not used
             return True
-        return False  # Orca mono doesnt support 24h and will not return value
+        return False
 
     async def async_set_temperature(self, **kwargs: Any) -> None:
         """Set new target temperature."""
