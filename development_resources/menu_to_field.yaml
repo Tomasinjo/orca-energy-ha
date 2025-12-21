@@ -1,0 +1,2924 @@
+## WARNING, MAY CONTAIN ERRORS, ALWAYS DOUBLE CHECK WITH WIRESHARK
+
+V meniju: začetek, brez naslova
+
+Temp.sanit.vode zgoraj:: 2_Poti3
+Temp.sanit.vode spodaj:: 2_Poti4
+Zunanja temperatura:: 2_Temp_Zunanja
+Temperatura zalogovnika:: 2_Temp_Zalog
+Temp.sončnih kolektorjev:: 2_Poti5
+Stanje obt.črp.kolektorjev:: 2_Vklop_C3
+Dodatni vir:: 2_Vklop_ele_grelca_1
+
+--- File: /home/tom/dev/orca-dump/workspace/Project/Page75.jmx ---
+V meniju: TALNO (Ogrevalnik krog 1)
+Prostorska temperatura:: 2_Temp_Prostora
+Želena prostorska temp:: 2_Zahtevana_RF_MK_1
+Temperatura vtoka:: 2_Poti2
+Želena temperatura vtoka:: 2_Temp_zelena_MK_1
+Stanje mešalnega ventila:: 2_Delovanje_MP1
+Odprtost mešalnega ventila:: 2_Odstotki_odprtosti_MP1
+Stanje obtočne črpalke C1:: 2_Vklop_C1
+
+--- File: /home/tom/dev/orca-dump/workspace/Project/Page83.jmx ---
+V meniju: TOPLOTNA ČRPALKA:
+Temperatura toplotne črpalke:: 2_Poti1
+Želena temp.toplotne črpalke:: 2_Izrac_temp_TC
+Stanje obt.črpalke C0:: 2_Vklop_C0
+Stanje pretočnega stikala:: 2_Pogoj_maska_pret_stik
+Stanje zunanje enote:: 2_Rezim_delov_TC
+Delovna moč zunanje enote:: 2_PRIKAZ_Reg_temp_vode
+Smer prekl.ventila:: 2_Preklop_PV1
+
+--- File: /home/tom/dev/orca-dump/workspace/Project/Page75 - Kopija.jmx ---
+V meniju: Orgrevalni Krog 2:
+Prostorska temperatura:: 2_Temp_RF2
+Želena prostorska temp:: 2_Zahtevana_RF_MK_2
+Temperatura vtoka:: 2_Temp_VF2
+Želena temperatura vtoka:: 2_Temp_zelena_MK_2
+Stanje mešalnega ventila:: 2_Delovanje_MP2
+Odprtost mešalnega ventila:: 2_Odstotki_odprtosti_MP2
+Stanje obtočne črpalke C2:: 2_Vklop_C2
+
+--- File: /home/tom/dev/orca-dump/workspace/Project/Page75 - Kopija (2).jmx ---
+V meniju: Orgrevalni Krog 3:
+Prostorska temperatura:: 2_Temp_RF3
+Želena prostorska temp:: 2_Zahtevana_RF_DK_3
+Stanje obtočne črpalke C3:: 2_Vklop_C3
+Hitrost solarne črpalke:: 2_Odstotki_SOLAR_PWM
+
+
+
+
+
+
+
+
+Scanning: /home/tom/dev/orca-dump/workspace/Project/ ...
+
+--- File: Page30 - Kopija.jmx ---
+Diferenca vklopa:: SV_Diferenca
+
+--- File: Page58 - Kopija.jmx ---
+Kalibracija tipala
+prostorske temperature:: MK1_IME(2)
+Kalibracija tipala
+prostorske temperature:: MK1_Kalibracija RF1(2)
+
+--- File: Page104 - 2.jmx ---
+KODA SERVISERJA:: GESLO Serviserja 1 AA
+Shrani: 2_Verzija_programa_ZAPOREDJE
+VERZIJA PROGRAMA:: 2_Verzija_programa_DAN
+VERZIJA PROGRAMA:: 2_Verzija_programa_LETO
+VERZIJA PROGRAMA:: 2_Verzija_programa_MESEC
+VERZIJA PROGRAMA:: GESLO Serviserja 2 BB
+VERZIJA PROGRAMA:: GESLO Serviserja 3 CC
+VERZIJA PROGRAMA:: GESLO Serviserja 4 DD
+
+--- File: Page42 - Kopija.jmx ---
+Reguliranje hlajenja po:: MK1_IME(3)
+Reguliranje hlajenja po:: MK1_Reguliranje HL po(3)
+
+--- File: Page48 - Kopija (2) - Kopija.jmx ---
+Želena temp.vtoka
+pri zunanji temp. +30°C:: MK1_IME
+Želena temp.vtoka
+pri zunanji temp. +30°C:: MK1_Tocka2_HL
+
+--- File: Page94 - Kopija.jmx ---
+Zakasnitev vklopa
+3.stopnje:: EH_Zakasn STOPNJA 3
+
+--- File: Page16.jmx ---
+Vrsta kontakta
+pretočnega stikala:: OSN_Kontakt PRETOCNO ST
+
+--- File: Nizanje_OK2 - Kopija.jmx ---
+Delovanje ob preklopu
+na nižji režim:: MK1_Delovanje pri nizjem rezimu(2)
+Delovanje ob preklopu
+na nižji režim:: MK1_IME(2)
+
+--- File: PARTY_CAS.jmx ---
+TRAJANJE PARTY REŽIMA:: PARTY_CAS
+
+--- File: Page84.jmx ---
+NIŽJA TEMPERATURA:: MK1_IME
+NIŽJA TEMPERATURA:: MK1_Temp NOCNA
+VIŠJA TEMPERATURA:: MK1_Temp DNEVNA
+
+--- File: Page59 - Kopija (2).jmx ---
+Korekcija vzporednega
+premika ogrevalne krivulje:: MK1_IME
+Korekcija vzporednega
+premika ogrevalne krivulje:: MK1_Vzp premik KRIVULJE
+
+--- File: Page121 - Kopija.jmx ---
+Naprej: 2_Pogoj_maska_pret_stik
+Nazaj: 2_Max_cas_test_C0
+Nazaj: 2_Preostanek_sekund_C1
+Črpalka Č1:: 2_TEST_C1
+
+--- File: Page96.jmx ---
+Zunanja temperatura
+za vklop 2. stopnje:: EH_AF za vklop ST 2
+
+--- File: Page121_TEST_AUTO.jmx ---
+Avtom. odzračevanje:: 2_TEST_ODZRA
+Naprej: 2_Pogoj_maska_pret_stik
+Nazaj: 2_Max_cas_test_C0
+Nazaj: 2_Preostanek_sekund_ODZRA
+
+--- File: Page201 - 2.jmx ---
+IZKLOP 2:: CASOVNIK 2 MINUTA IZKLOP(2)
+IZKLOP 2:: CASOVNIK 2 URA IZKLOP(2)
+NED: 2_TIMER_2_Nedelja_2
+NED: 2_TIMER_2_Sobota_2
+PET: 2_TIMER_2_Sreda_2
+PET: 2_TIMER_2_Torek_2
+PON: 2_TIMER_2_Ponedeljek_2
+PON: 2_TIMER_2_Torek_2
+SOB: 2_TIMER_2_Cetrtek_2
+SOB: 2_TIMER_2_Petek_2
+SRE: 2_TIMER_2_Petek_2
+SRE: 2_TIMER_2_Sobota_2
+TOR: 2_TIMER_2_Cetrtek_2
+TOR: 2_TIMER_2_Sreda_2
+VKLOP 2:: CASOVNIK 2 MINUTA VKLOP(2)
+VKLOP 2:: CASOVNIK 2 URA VKLOP(2)
+ČET: 2_TIMER_2_Nedelja_2
+ČET: 2_TIMER_2_Ponedeljek_2
+
+--- File: Page55 - Kopija - Kopija.jmx ---
+Zakasnitev izklopa
+obtočne črpalke Č2:: MK1_IME(2)
+Zakasnitev izklopa
+obtočne črpalke Č2:: MK1_ZAKAS izklop C1(2)
+
+--- File: Page53 - Kopija - Kopija - Kopija - Kopija.jmx ---
+Zakasnitev za vklop-izklop
+ogrevanja ZIMA-POLETJE:: MK1_IME
+Zakasnitev za vklop-izklop
+ogrevanja ZIMA-POLETJE:: MK1_ZAKAS avtom preklop OGR
+
+--- File: Page38 - Kopija - Kopija.jmx ---
+Ime ogrevalne veje 3:: MK1_IME(3)
+
+--- File: Nizanje_OK1.jmx ---
+Delovanje ob preklopu
+na nižji režim:: MK1_Delovanje pri nizjem rezimu
+Delovanje ob preklopu
+na nižji režim:: MK1_IME
+
+--- File: Page60.jmx ---
+Korekcija nagiba
+ogrevalne krivulje:: MK1_IME
+Korekcija nagiba
+ogrevalne krivulje:: MK1_Nagib KRIVULJE
+
+--- File: Page51 - Kopija.jmx ---
+Izbira časovnega programa
+tišjega delovanja:: OSN_TISJE_Rezim 24 Timerji 12345
+
+--- File: Page6.jmx ---
+Zakasnitev izklopa TČ
+po doseženi limiti:: OSN_Zakasn_IZKLOPA_TC
+
+--- File: Page2.jmx ---
+Aktiviranje sistema:: OSN_Vklop_Izklop
+
+--- File: Page76.jmx ---
+Dodatni vir:: 2_Vklop_ele_grelca_1
+Stanje obt.črp.kolektorjev:: 2_Vklop_C3
+Temp.sanit.vode spodaj:: 2_Poti4
+Temp.sanit.vode zgoraj:: 2_Poti3
+Temp.sončnih kolektorjev:: 2_Poti5
+Temperatura zalogovnika:: 2_Temp_Zalog
+Zunanja temperatura:: 2_Temp_Zunanja
+
+--- File: Page33.jmx ---
+Kalibracija tipala
+sanitarne vode - SPODAJ:: SV_Kalib_BF2
+
+--- File: Page18.jmx ---
+Limita diference TČ
+pri ogrevanju prostorov:: OSN_Limita_moci_pri_OGR_PROST
+
+--- File: Page401 - 2.jmx ---
+IZKLOP 2:: CASOVNIK 4 MINUTA IZKLOP(2)
+IZKLOP 2:: CASOVNIK 4 URA IZKLOP(2)
+NED: 2_TIMER_4_Nedelja_2
+NED: 2_TIMER_4_Sobota_2
+PET: 2_TIMER_4_Sreda_2
+PET: 2_TIMER_4_Torek_2
+PON: 2_TIMER_4_Ponedeljek_2
+PON: 2_TIMER_4_Torek_2
+SOB: 2_TIMER_4_Cetrtek_2
+SOB: 2_TIMER_4_Petek_2
+SRE: 2_TIMER_4_Petek_2
+SRE: 2_TIMER_4_Sobota_2
+TOR: 2_TIMER_4_Cetrtek_2
+TOR: 2_TIMER_4_Sreda_2
+VKLOP 2:: CASOVNIK 4 MINUTA VKLOP(2)
+VKLOP 2:: CASOVNIK 4 URA VKLOP(2)
+ČET: 2_TIMER_4_Nedelja_2
+ČET: 2_TIMER_4_Ponedeljek_2
+
+--- File: Page402.jmx ---
+IZKLOP 1:: CASOVNIK 4 MINUTA IZKLOP
+IZKLOP 1:: CASOVNIK 4 URA IZKLOP
+NED: 2_TIMER_4_Nedelja_1
+NED: 2_TIMER_4_Sobota_1
+PET: 2_TIMER_4_Sreda_1
+PET: 2_TIMER_4_Torek_1
+PON: 2_TIMER_4_Ponedeljek_1
+PON: 2_TIMER_4_Torek_1
+SOB: 2_TIMER_4_Cetrtek_1
+SOB: 2_TIMER_4_Petek_1
+SRE: 2_TIMER_4_Petek_1
+SRE: 2_TIMER_4_Sobota_1
+TOR: 2_TIMER_4_Cetrtek_1
+TOR: 2_TIMER_4_Sreda_1
+VKLOP 1:: CASOVNIK 4 MINUTA VKLOP
+VKLOP 1:: CASOVNIK 4 URA VKLOP
+ČET: 2_TIMER_4_Nedelja_1
+ČET: 2_TIMER_4_Ponedeljek_1
+
+--- File: Page504 - 3.jmx ---
+IZKLOP 3:: CASOVNIK 5 MINUTA IZKLOP(3)
+IZKLOP 3:: CASOVNIK 5 URA IZKLOP(3)
+NED: 2_TIMER_5_Nedelja_3
+NED: 2_TIMER_5_Sobota_3
+PET: 2_TIMER_5_Sreda_3
+PET: 2_TIMER_5_Torek_3
+PON: 2_TIMER_5_Ponedeljek_3
+PON: 2_TIMER_5_Torek_3
+SOB: 2_TIMER_5_Cetrtek_3
+SOB: 2_TIMER_5_Petek_3
+SRE: 2_TIMER_5_Petek_3
+SRE: 2_TIMER_5_Sobota_3
+TOR: 2_TIMER_5_Cetrtek_3
+TOR: 2_TIMER_5_Sreda_3
+VKLOP 3:: CASOVNIK 5 MINUTA VKLOP(3)
+VKLOP 3:: CASOVNIK 5 URA VKLOP(3)
+ČET: 2_TIMER_5_Nedelja_3
+ČET: 2_TIMER_5_Ponedeljek_3
+
+--- File: Page71 - Kopija - Kopija.jmx ---
+Čas trajanja testov:: TEST_Cas trajanja
+
+--- File: Page75.jmx ---
+INFO: MK1_IME
+Odprtost mešalnega ventila:: 2_Odstotki_odprtosti_MP1
+Prostorska temperatura:: 2_Temp_Prostora
+Stanje mešalnega ventila:: 2_Delovanje_MP1
+Stanje obtočne črpalke C1:: 2_Vklop_C1
+Temperatura vtoka:: 2_Poti2
+Želena prostorska temp:: 2_Zahtevana_RF_MK_1
+Želena temperatura vtoka:: 2_Temp_zelena_MK_1
+
+--- File: Page38.jmx ---
+Ime ogrevalne veje 1:: MK1_IME
+
+--- File: Page20 - Kopija (2).jmx ---
+Tišje delovanje
+zunanje enote:: OSN Tisje delov
+
+--- File: Page404 - 2.jmx ---
+IZKLOP 2:: CASOVNIK 4 MINUTA IZKLOP(2)
+IZKLOP 2:: CASOVNIK 4 URA IZKLOP(2)
+NED: 2_TIMER_4_Nedelja_2
+NED: 2_TIMER_4_Sobota_2
+PET: 2_TIMER_4_Sreda_2
+PET: 2_TIMER_4_Torek_2
+PON: 2_TIMER_4_Ponedeljek_2
+PON: 2_TIMER_4_Torek_2
+SOB: 2_TIMER_4_Cetrtek_2
+SOB: 2_TIMER_4_Petek_2
+SRE: 2_TIMER_4_Petek_2
+SRE: 2_TIMER_4_Sobota_2
+TOR: 2_TIMER_4_Cetrtek_2
+TOR: 2_TIMER_4_Sreda_2
+VKLOP 2:: CASOVNIK 4 MINUTA VKLOP(2)
+VKLOP 2:: CASOVNIK 4 URA VKLOP(2)
+ČET: 2_TIMER_4_Nedelja_2
+ČET: 2_TIMER_4_Ponedeljek_2
+
+--- File: Page51 - Kopija - Kopija - Kopija - Kopija.jmx ---
+Zun. temp. za vklop-izklop
+ogrevanja ZIMA-POLETJE:: MK1_AF za avtom preklop OGR
+Zun. temp. za vklop-izklop
+ogrevanja ZIMA-POLETJE:: MK1_IME
+
+--- File: Page82.jmx ---
+SPLOŠNE NASTAVITVE: MK1_IME
+SPLOŠNE NASTAVITVE: MK1_IME(2)
+SPLOŠNE NASTAVITVE: MK1_IME(3)
+
+--- File: Page25.jmx ---
+Aktiviranje ogrevanja
+sanitarne vode:: SV_Vklop
+
+--- File: Page300.jmx ---
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_3_Minute_OFF_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_3_Minute_OFF_2
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_3_Minute_ON_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_3_Ponedeljek_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_3_Ponedeljek_2
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_3_Torek_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_3_Torek_2
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_3_Ura_OFF_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_3_Ura_OFF_2
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_3_Ura_ON_1
+Naprej: 2_TIMER_3_Cetrtek_3
+Naprej: 2_TIMER_3_Nedelja_2
+Naprej: 2_TIMER_3_Nedelja_3
+Naprej: 2_TIMER_3_Petek_3
+Naprej: 2_TIMER_3_Sobota_2
+Naprej: 2_TIMER_3_Sobota_3
+Nazaj: 2_TIMER_3_Minute_OFF_3
+Nazaj: 2_TIMER_3_Minute_ON_2
+Nazaj: 2_TIMER_3_Minute_ON_3
+Nazaj: 2_TIMER_3_Ponedeljek_3
+Nazaj: 2_TIMER_3_Sreda_3
+Nazaj: 2_TIMER_3_Torek_3
+Nazaj: 2_TIMER_3_Ura_OFF_3
+Nazaj: 2_TIMER_3_Ura_ON_2
+Nazaj: 2_TIMER_3_Ura_ON_3
+ČASOVNI PROGRAM 3: 2_TIMER_3_Cetrtek_1
+ČASOVNI PROGRAM 3: 2_TIMER_3_Cetrtek_2
+ČASOVNI PROGRAM 3: 2_TIMER_3_Nedelja_1
+ČASOVNI PROGRAM 3: 2_TIMER_3_Petek_1
+ČASOVNI PROGRAM 3: 2_TIMER_3_Petek_2
+ČASOVNI PROGRAM 3: 2_TIMER_3_Sobota_1
+ČASOVNI PROGRAM 3: 2_TIMER_3_Sreda_1
+ČASOVNI PROGRAM 3: 2_TIMER_3_Sreda_2
+
+--- File: Page7.jmx ---
+Minimalni čas mirovanja
+zunanje enote:: OSN_Cas_mirovanja_TC
+
+--- File: GESLO.jmx ---
+GESLO: GESLO
+
+--- File: Page28 - Kopija (2).jmx ---
+Izbira časovnega programa:: SV_Rezim 24 Timerji 12345
+
+--- File: Page37 - Kopija - Kopija (2).jmx ---
+Aktiviranje:: MK1_IME(2)
+Aktiviranje:: MK1_Vklop(2)
+
+--- File: Temp_Legionela.jmx ---
+Želena temperatura
+protilegionelnega programa:: SV Temp_LEGIONELA
+
+--- File: OK1_RF_Osvezevanje.jmx ---
+Čas osveževanja podatkov
+iz prostorskega tipala:: Cas_osvezevanja_RF1
+Čas osveževanja podatkov
+iz prostorskega tipala:: MK1_IME
+
+--- File: Zascita_DEF_CAS.jmx ---
+Čas delovanja
+zaščite odtaljevanja:: OSN_Zascita_DEF_CAS
+
+--- File: Page49.jmx ---
+Min. temperatura
+vtoka pri hlajenju:: MK1_IME
+Min. temperatura
+vtoka pri hlajenju:: MK1_MIN_temp vtoka HL
+
+--- File: Page6 - Kopija.jmx ---
+Sprememba gesla:: NOVO GESLO
+
+--- File: Page70.jmx ---
+Solarni sistem
+za ogrevanje:: OSN_solar za prost SV
+
+--- File: Page58 - Kopija - Kopija.jmx ---
+Kalibracija tipala
+prostorske temperature:: MK1_IME(3)
+Kalibracija tipala
+prostorske temperature:: MK1_Kalibracija RF1(3)
+
+--- File: Page35.jmx ---
+Ura pričetka delovanja
+protilegionelnega programa:: SV_Legionela_URA
+
+--- File: NOVA OSNOVNA.jmx ---
+20: 2_CURRENT_DAY
+20: 2_CURRENT_MONTH
+20: 2_CURRENT_YEAR
+20: 2_Temp_RF2
+20: MK1_IME
+20: MK1_IME(2)
+EVU: 2_Poti3
+EVU: 2_Temp_Prostora
+EVU: 2_Temp_RF3
+EVU: MK1_IME(3)
+PV: 2_Delovanje_MENI
+TOPLOTNA ČRPALKA: 2_Poti1
+TOPLOTNA ČRPALKA: 2_Temp_Zunanja
+ZUNAJ: 2_CURRENT_HOUR
+ZUNAJ: 2_CURRENT_MINUTE
+
+--- File: Page43 - Kopija - Kopija.jmx ---
+Vrsta tipala
+prostorske temperature:: MK1_IME(3)
+Vrsta tipala
+prostorske temperature:: MK1_Vrsta prost tipala(3)
+
+--- File: Page95.jmx ---
+Zunanja temperatura
+za vklop 1. stopnje:: EH_AF za vklop ST 1
+
+--- File: Page104 - 4.jmx ---
+KODA SERVISERJA:: GESLO Serviserja 1 AA
+Shrani: 2_Verzija_programa_ZAPOREDJE
+VERZIJA PROGRAMA:: 2_Verzija_programa_DAN
+VERZIJA PROGRAMA:: 2_Verzija_programa_LETO
+VERZIJA PROGRAMA:: 2_Verzija_programa_MESEC
+VERZIJA PROGRAMA:: GESLO Serviserja 2 BB
+VERZIJA PROGRAMA:: GESLO Serviserja 3 CC
+VERZIJA PROGRAMA:: GESLO Serviserja 4 DD
+
+--- File: Page17.jmx ---
+Shema z
+zalogovnikom:: OSN_Shema_ZALOG
+
+--- File: Izhod_8.jmx ---
+Uporaba releja KR3 za:: OSN_Izhod_13
+
+--- File: Page83.jmx ---
+Delovna moč zunanje enote:: 2_PRIKAZ_Reg_temp_vode
+Smer prekl.ventila:: 2_Preklop_PV1
+Stanje obt.črpalke C0:: 2_Vklop_C0
+Stanje pretočnega stikala:: 2_Pogoj_maska_pret_stik
+Stanje zunanje enote:: 2_Rezim_delov_TC
+Temperatura toplotne črpalke:: 2_Poti1
+Želena temp.toplotne črpalke:: 2_Izrac_temp_TC
+
+--- File: Page402 - 3.jmx ---
+IZKLOP 3:: CASOVNIK 4 MINUTA IZKLOP(3)
+IZKLOP 3:: CASOVNIK 4 URA IZKLOP(3)
+NED: 2_TIMER_4_Nedelja_3
+NED: 2_TIMER_4_Sobota_3
+PET: 2_TIMER_4_Sreda_3
+PET: 2_TIMER_4_Torek_3
+PON: 2_TIMER_4_Ponedeljek_3
+PON: 2_TIMER_4_Torek_3
+SOB: 2_TIMER_4_Cetrtek_3
+SOB: 2_TIMER_4_Petek_3
+SRE: 2_TIMER_4_Petek_3
+SRE: 2_TIMER_4_Sobota_3
+TOR: 2_TIMER_4_Cetrtek_3
+TOR: 2_TIMER_4_Sreda_3
+VKLOP 3:: CASOVNIK 4 MINUTA VKLOP(3)
+VKLOP 3:: CASOVNIK 4 URA VKLOP(3)
+ČET: 2_TIMER_4_Nedelja_3
+ČET: 2_TIMER_4_Ponedeljek_3
+
+--- File: Page121 - Kopija (4) - Kopija.jmx ---
+Naprej: 2_Pogoj_maska_pret_stik
+Nazaj: 2_Max_cas_test_C0
+Nazaj: 2_Preostanek_sekund_MP1_ZAP
+Zapiranje MP1:: 2_TEST_MP1_ZAP
+
+--- File: Page47.jmx ---
+Max. temperatura
+vtoka pri ogrevanju:: MK1_IME
+Max. temperatura
+vtoka pri ogrevanju:: MK1_MAX_temp vtoka OGR
+
+--- File: Page49 - Kopija - Kopija.jmx ---
+Min. temperatura
+vtoka pri hlajenju:: MK1_IME(2)
+Min. temperatura
+vtoka pri hlajenju:: MK1_MIN_temp vtoka HL(2)
+
+--- File: POCITNISKI_CAS - Kopija.jmx ---
+20: Pocitniski_LETO
+20: Pocitniski_MESEC
+KONEC POČITNIŠKEGA REŽIMA:: Pocitniski_DAN
+
+--- File: TemplatePage2.jmx ---
+NED: CASOVNIK 1 Nedelja
+NED: CASOVNIK 1 Sobota
+PET: CASOVNIK 1 Sreda
+PET: CASOVNIK 1 Torek
+PON: CASOVNIK 1 Torek
+PON: CASOVNIK 1 ponedeljek
+SOB: CASOVNIK 1 Cetrtek
+SOB: CASOVNIK 1 Petek
+SRE: CASOVNIK 1 Petek
+SRE: CASOVNIK 1 Sobota
+TOR: CASOVNIK 1 Cetrtek
+TOR: CASOVNIK 1 Sreda
+ČET: CASOVNIK 1 Nedelja
+ČET: CASOVNIK 1 ponedeljek
+
+--- File: Page51 - Kopija - Kopija.jmx ---
+Zun. temp. za vklop-izklop
+ogrevanja ZIMA-POLETJE:: MK1_AF za avtom preklop OGR(3)
+Zun. temp. za vklop-izklop
+ogrevanja ZIMA-POLETJE:: MK1_IME(3)
+
+--- File: Page10.jmx ---
+Vrsta kontakta
+preklopnega ventila:: OSN_Kontakt PREKLOPNI
+
+--- File: Page115.jmx ---
+NIŽJA TEMPERATURA:: ZALOG Temp Nizja OGR
+VIŠJA TEMPERATURA:: ZALOG Temp Visja OGR
+
+--- File: Page42 - Kopija - Kopija - Kopija.jmx ---
+Reguliranje hlajenja po:: MK1_IME(2)
+Reguliranje hlajenja po:: MK1_Reguliranje HL po(2)
+
+--- File: Page401 - 3.jmx ---
+IZKLOP 3:: CASOVNIK 4 MINUTA IZKLOP(3)
+IZKLOP 3:: CASOVNIK 4 URA IZKLOP(3)
+NED: 2_TIMER_4_Nedelja_3
+NED: 2_TIMER_4_Sobota_3
+PET: 2_TIMER_4_Sreda_3
+PET: 2_TIMER_4_Torek_3
+PON: 2_TIMER_4_Ponedeljek_3
+PON: 2_TIMER_4_Torek_3
+SOB: 2_TIMER_4_Cetrtek_3
+SOB: 2_TIMER_4_Petek_3
+SRE: 2_TIMER_4_Petek_3
+SRE: 2_TIMER_4_Sobota_3
+TOR: 2_TIMER_4_Cetrtek_3
+TOR: 2_TIMER_4_Sreda_3
+VKLOP 3:: CASOVNIK 4 MINUTA VKLOP(3)
+VKLOP 3:: CASOVNIK 4 URA VKLOP(3)
+ČET: 2_TIMER_4_Nedelja_3
+ČET: 2_TIMER_4_Ponedeljek_3
+
+--- File: Page42.jmx ---
+Reguliranje hlajenja po:: MK1_IME
+Reguliranje hlajenja po:: MK1_Reguliranje HL po
+
+--- File: Page2 - Kopija.jmx ---
+Aktiviranje sistema:: OSN_Vklop_Izklop
+
+--- File: Page201.jmx ---
+IZKLOP 1:: CASOVNIK 2 MINUTA IZKLOP
+IZKLOP 1:: CASOVNIK 2 URA IZKLOP
+NED: 2_TIMER_2_Nedelja_1
+NED: 2_TIMER_2_Sobota_1
+PET: 2_TIMER_2_Sreda_1
+PET: 2_TIMER_2_Torek_1
+PON: 2_TIMER_2_Ponedeljek_1
+PON: 2_TIMER_2_Torek_1
+SOB: 2_TIMER_2_Cetrtek_1
+SOB: 2_TIMER_2_Petek_1
+SRE: 2_TIMER_2_Petek_1
+SRE: 2_TIMER_2_Sobota_1
+TOR: 2_TIMER_2_Cetrtek_1
+TOR: 2_TIMER_2_Sreda_1
+VKLOP 1:: CASOVNIK 2 MINUTA VKLOP
+VKLOP 1:: CASOVNIK 2 URA VKLOP
+ČET: 2_TIMER_2_Nedelja_1
+ČET: 2_TIMER_2_Ponedeljek_1
+
+--- File: Page Datum1.jmx ---
+20: LETO
+20: MESEC
+Nastavitev datuma:: DAN
+
+--- File: Party ECO.jmx ---
+20: 2_CURRENT_DAY
+20: 2_CURRENT_MONTH
+20: 2_CURRENT_YEAR
+POČITNIŠKI REŽIM: 2_Delovanje_MENI
+TOPLOTNA ČRPALKA: 2_Poti1
+TOPLOTNA ČRPALKA: 2_Temp_Zunanja
+ZUNAJ: 2_CURRENT_HOUR
+ZUNAJ: 2_CURRENT_MINUTE
+
+--- File: Temp_Legionela - Kopija.jmx ---
+Želena temperatura
+protilegionelnega programa:: SV Temp_LEGIONELA
+
+--- File: Page44 - Kopija - Kopija (2).jmx ---
+Režim delovanja:: MK1_IME(2)
+Režim delovanja:: MK1_Rezim OGR_HLAJ(2)
+
+--- File: Page48 - Kopija (3) - Kopija - Kopija.jmx ---
+Želena temp.vtoka
+pri zunanji temp. +30°C:: DK3_Tocka2_HL
+Želena temp.vtoka
+pri zunanji temp. +30°C:: MK1_IME(3)
+
+--- File: Page51 - Kopija - Kopija - Kopija.jmx ---
+Zun. temp. za vklop-izklop
+ogrevanja ZIMA-POLETJE:: MK1_AF za avtom preklop OGR(2)
+Zun. temp. za vklop-izklop
+ogrevanja ZIMA-POLETJE:: MK1_IME(2)
+
+--- File: EH_CAS_Za_izklop.jmx ---
+Čas pri vklopu z
+omejenim časom:: EH_Casovno_CAS
+
+--- File: Page34 - Kopija.jmx ---
+Dan pričetka delovanja
+protilegionelnega programa:: SV_Legionela_DAN
+
+--- File: Page53 - Kopija - Kopija.jmx ---
+Zakasnitev za vklop-izklop
+ogrevanja ZIMA-POLETJE:: MK1_IME(3)
+Zakasnitev za vklop-izklop
+ogrevanja ZIMA-POLETJE:: MK1_ZAKAS avtom preklop OGR(3)
+
+--- File: Page80 - 3.jmx ---
+IZKLOP 3:: CASOVNIK 1 MINUTA IZKLOP(3)
+IZKLOP 3:: CASOVNIK 1 URA IZKLOP(3)
+NED: 2_TIMER_1_Nedelja_3
+NED: 2_TIMER_1_Sobota_3
+PET: 2_TIMER_1_Sreda_3
+PET: 2_TIMER_1_Torek_3
+PON: 2_TIMER_1_Ponedeljek_3
+PON: 2_TIMER_1_Torek_3
+SOB: 2_TIMER_1_Cetrtek_3
+SOB: 2_TIMER_1_Petek_3
+SRE: 2_TIMER_1_Petek_3
+SRE: 2_TIMER_1_Sobota_3
+TOR: 2_TIMER_1_Cetrtek_3
+TOR: 2_TIMER_1_Sreda_3
+VKLOP 3:: CASOVNIK 1 MINUTA VKLOP(3)
+VKLOP 3:: CASOVNIK 1 URA VKLOP(3)
+ČET: 2_TIMER_1_Nedelja_3
+ČET: 2_TIMER_1_Ponedeljek_3
+
+--- File: Page40 - Kopija (2).jmx ---
+Izbira časovnega programa:: MK1_IME
+Izbira časovnega programa:: MK1_Rezim 24 Timerji 12345
+
+--- File: Page68.jmx ---
+Zakasnitev ogrevanja SV
+po delovanju solarja:: SOLAR Cas zakasnitve po solarju
+
+--- File: Page101 - 3.jmx ---
+IZKLOP 3:: CASOVNIK 1 MINUTA IZKLOP(3)
+IZKLOP 3:: CASOVNIK 1 URA IZKLOP(3)
+NED: 2_TIMER_1_Nedelja_3
+NED: 2_TIMER_1_Sobota_3
+PET: 2_TIMER_1_Sreda_3
+PET: 2_TIMER_1_Torek_3
+PON: 2_TIMER_1_Ponedeljek_3
+PON: 2_TIMER_1_Torek_3
+SOB: 2_TIMER_1_Cetrtek_3
+SOB: 2_TIMER_1_Petek_3
+SRE: 2_TIMER_1_Petek_3
+SRE: 2_TIMER_1_Sobota_3
+TOR: 2_TIMER_1_Cetrtek_3
+TOR: 2_TIMER_1_Sreda_3
+VKLOP 3:: CASOVNIK 1 MINUTA VKLOP(3)
+VKLOP 3:: CASOVNIK 1 URA VKLOP(3)
+ČET: 2_TIMER_1_Nedelja_3
+ČET: 2_TIMER_1_Ponedeljek_3
+
+--- File: Page5.jmx ---
+Zakasnitev izklopa Č0,
+po izklopu TČ:: OSN_Zakasn_IZKLOPA_C0
+
+--- File: Page99.jmx ---
+Zunanja
+temperatura za vklop:: DOD VIR AF za vklop
+
+--- File: Page304 - 2.jmx ---
+IZKLOP 2:: CASOVNIK 3 MINUTA IZKLOP(2)
+IZKLOP 2:: CASOVNIK 3 URA IZKLOP(2)
+NED: 2_TIMER_3_Nedelja_2
+NED: 2_TIMER_3_Sobota_2
+PET: 2_TIMER_3_Sreda_2
+PET: 2_TIMER_3_Torek_2
+PON: 2_TIMER_3_Ponedeljek_2
+PON: 2_TIMER_3_Torek_2
+SOB: 2_TIMER_3_Cetrtek_2
+SOB: 2_TIMER_3_Petek_2
+SRE: 2_TIMER_3_Petek_2
+SRE: 2_TIMER_3_Sobota_2
+TOR: 2_TIMER_3_Cetrtek_2
+TOR: 2_TIMER_3_Sreda_2
+VKLOP 2:: CASOVNIK 3 MINUTA VKLOP(2)
+VKLOP 2:: CASOVNIK 3 URA VKLOP(2)
+ČET: 2_TIMER_3_Nedelja_2
+ČET: 2_TIMER_3_Ponedeljek_2
+
+--- File: Page44 - Kopija - Kopija - Kopija.jmx ---
+Režim delovanja:: MK1_IME(3)
+Režim delovanja:: MK1_Rezim OGR_HLAJ(3)
+
+--- File: Page403.jmx ---
+IZKLOP 1:: CASOVNIK 4 MINUTA IZKLOP
+IZKLOP 1:: CASOVNIK 4 URA IZKLOP
+NED: 2_TIMER_4_Nedelja_1
+NED: 2_TIMER_4_Sobota_1
+PET: 2_TIMER_4_Sreda_1
+PET: 2_TIMER_4_Torek_1
+PON: 2_TIMER_4_Ponedeljek_1
+PON: 2_TIMER_4_Torek_1
+SOB: 2_TIMER_4_Cetrtek_1
+SOB: 2_TIMER_4_Petek_1
+SRE: 2_TIMER_4_Petek_1
+SRE: 2_TIMER_4_Sobota_1
+TOR: 2_TIMER_4_Cetrtek_1
+TOR: 2_TIMER_4_Sreda_1
+VKLOP 1:: CASOVNIK 4 MINUTA VKLOP
+VKLOP 1:: CASOVNIK 4 URA VKLOP
+ČET: 2_TIMER_4_Nedelja_1
+ČET: 2_TIMER_4_Ponedeljek_1
+
+--- File: Page92.jmx ---
+Zakasnitev vklopa
+1.stopnje:: EH_Zakasn STOPNJA 1
+
+--- File: Page80 - 2.jmx ---
+IZKLOP 2:: CASOVNIK 1 MINUTA IZKLOP(2)
+IZKLOP 2:: CASOVNIK 1 URA IZKLOP(2)
+NED: 2_TIMER_1_Nedelja_2
+NED: 2_TIMER_1_Sobota_2
+PET: 2_TIMER_1_Sreda_2
+PET: 2_TIMER_1_Torek_2
+PON: 2_TIMER_1_Ponedeljek_2
+PON: 2_TIMER_1_Torek_2
+SOB: 2_TIMER_1_Cetrtek_2
+SOB: 2_TIMER_1_Petek_2
+SRE: 2_TIMER_1_Petek_2
+SRE: 2_TIMER_1_Sobota_2
+TOR: 2_TIMER_1_Cetrtek_2
+TOR: 2_TIMER_1_Sreda_2
+VKLOP 2:: CASOVNIK 1 MINUTA VKLOP(2)
+VKLOP 2:: CASOVNIK 1 URA VKLOP(2)
+ČET: 2_TIMER_1_Nedelja_2
+ČET: 2_TIMER_1_Ponedeljek_2
+
+--- File: Page203 - 3.jmx ---
+IZKLOP 3:: CASOVNIK 2 MINUTA IZKLOP(3)
+IZKLOP 3:: CASOVNIK 2 URA IZKLOP(3)
+NED: 2_TIMER_2_Nedelja_3
+NED: 2_TIMER_2_Sobota_3
+PET: 2_TIMER_2_Sreda_3
+PET: 2_TIMER_2_Torek_3
+PON: 2_TIMER_2_Ponedeljek_3
+PON: 2_TIMER_2_Torek_3
+SOB: 2_TIMER_2_Cetrtek_3
+SOB: 2_TIMER_2_Petek_3
+SRE: 2_TIMER_2_Petek_3
+SRE: 2_TIMER_2_Sobota_3
+TOR: 2_TIMER_2_Cetrtek_3
+TOR: 2_TIMER_2_Sreda_3
+VKLOP 3:: CASOVNIK 2 MINUTA VKLOP(3)
+VKLOP 3:: CASOVNIK 2 URA VKLOP(3)
+ČET: 2_TIMER_2_Nedelja_3
+ČET: 2_TIMER_2_Ponedeljek_3
+
+--- File: Page89.jmx ---
+Način vklopa
+električnih grelcev:: EH_Nacin vklopa
+
+--- File: Page42 - Kopija - Kopija.jmx ---
+Reguliranje hlajenja po:: MK1_IME(2)
+Reguliranje hlajenja po:: MK1_Reguliranje HL po(2)
+
+--- File: Page45 - Kopija - Kopija.jmx ---
+Avtom. vklop-izklop
+ogrevanja ZIMA-POLETJE:: MK1_IME(3)
+Avtom. vklop-izklop
+ogrevanja ZIMA-POLETJE:: MK1_Preklop zima OGR(3)
+
+--- File: Page50.jmx ---
+Povišanje temp. TČ
+za potrebe mešalne veje:: MK1_IME
+Povišanje temp. TČ
+za potrebe mešalne veje:: MK1_Povisanje
+
+--- File: Nizanje_OK1 - Kopija.jmx ---
+Delovanje ob preklopu
+na nižji režim:: MK1_Delovanje pri nizjem rezimu
+Delovanje ob preklopu
+na nižji režim:: MK1_IME
+
+--- File: SV_EKST_GRELEC.jmx ---
+Ogrevanje sanit.vode z:: Vklop_el_grelci_za_SV
+
+--- File: Page60 - Kopija.jmx ---
+Korekcija nagiba
+ogrevalne krivulje:: MK1_IME(2)
+Korekcija nagiba
+ogrevalne krivulje:: MK1_Nagib KRIVULJE(2)
+
+--- File: Page98.jmx ---
+Vzporedno delovanje el.
+grelca in toplotne črpalke:: EH_Stevilo ST VZPOREDNEGA
+
+--- File: Page47 - Kopija.jmx ---
+Max. temperatura
+vtoka pri ogrevanju:: MK1_IME(2)
+Max. temperatura
+vtoka pri ogrevanju:: MK1_MAX_temp vtoka OGR(2)
+
+--- File: Page29_UP.jmx ---
+Želena višja temperatura
+sanitarne vode:: SV Temperatura
+Želena višja temperatura
+sanitarne vode:: SV_z_EH_Temperatura
+
+--- File: Page65.jmx ---
+Najvišja temp. SV, pri
+ogrevanju s kolektorji:: SOLAR Max VARNOSTNA Temp BF
+
+--- File: Page72 - Kopija.jmx ---
+Vzporedno delovanje
+s toplotno črpalko:: DOD VIR Vzporedno
+
+--- File: Page69.jmx ---
+Želena višja temperatura
+pri režimu ogrevanja:: ZALOG Temp Visja OGR
+
+--- File: Page118.jmx ---
+Vrsta kontakta
+eksternega vklopa:: MK1_IME
+Vrsta kontakta
+eksternega vklopa:: MK1_Kontakt_RF1
+
+--- File: Page28.jmx ---
+Izbira časovnega programa:: SV_Rezim 24 Timerji 12345
+
+--- File: Page202.jmx ---
+IZKLOP 1:: CASOVNIK 2 MINUTA IZKLOP
+IZKLOP 1:: CASOVNIK 2 URA IZKLOP
+NED: 2_TIMER_2_Nedelja_1
+NED: 2_TIMER_2_Sobota_1
+PET: 2_TIMER_2_Sreda_1
+PET: 2_TIMER_2_Torek_1
+PON: 2_TIMER_2_Ponedeljek_1
+PON: 2_TIMER_2_Torek_1
+SOB: 2_TIMER_2_Cetrtek_1
+SOB: 2_TIMER_2_Petek_1
+SRE: 2_TIMER_2_Petek_1
+SRE: 2_TIMER_2_Sobota_1
+TOR: 2_TIMER_2_Cetrtek_1
+TOR: 2_TIMER_2_Sreda_1
+VKLOP 1:: CASOVNIK 2 MINUTA VKLOP
+VKLOP 1:: CASOVNIK 2 URA VKLOP
+ČET: 2_TIMER_2_Nedelja_1
+ČET: 2_TIMER_2_Ponedeljek_1
+
+--- File: Page94.jmx ---
+Zakasnitev vklopa
+3.stopnje:: EH_Zakasn STOPNJA 3
+
+--- File: Zascita_DEF_TEMP.jmx ---
+Temperatura za izklop
+zaščite odtaljevanja:: OSN_Zascita_DEF_TEMP
+
+--- File: Page103.jmx ---
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_2_Minute_OFF_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_2_Minute_OFF_2
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_2_Minute_ON_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_2_Ponedeljek_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_2_Ponedeljek_2
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_2_Torek_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_2_Torek_2
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_2_Ura_OFF_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_2_Ura_OFF_2
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_2_Ura_ON_1
+Naprej: 2_TIMER_2_Cetrtek_3
+Naprej: 2_TIMER_2_Nedelja_2
+Naprej: 2_TIMER_2_Nedelja_3
+Naprej: 2_TIMER_2_Petek_3
+Naprej: 2_TIMER_2_Sobota_2
+Naprej: 2_TIMER_2_Sobota_3
+Nazaj: 2_TIMER_2_Minute_OFF_3
+Nazaj: 2_TIMER_2_Minute_ON_2
+Nazaj: 2_TIMER_2_Minute_ON_3
+Nazaj: 2_TIMER_2_Ponedeljek_3
+Nazaj: 2_TIMER_2_Sreda_3
+Nazaj: 2_TIMER_2_Torek_3
+Nazaj: 2_TIMER_2_Ura_OFF_3
+Nazaj: 2_TIMER_2_Ura_ON_2
+Nazaj: 2_TIMER_2_Ura_ON_3
+ČASOVNI PROGRAM 2: 2_TIMER_2_Cetrtek_1
+ČASOVNI PROGRAM 2: 2_TIMER_2_Cetrtek_2
+ČASOVNI PROGRAM 2: 2_TIMER_2_Nedelja_1
+ČASOVNI PROGRAM 2: 2_TIMER_2_Petek_1
+ČASOVNI PROGRAM 2: 2_TIMER_2_Petek_2
+ČASOVNI PROGRAM 2: 2_TIMER_2_Sobota_1
+ČASOVNI PROGRAM 2: 2_TIMER_2_Sreda_1
+ČASOVNI PROGRAM 2: 2_TIMER_2_Sreda_2
+
+--- File: Page43.jmx ---
+Vrsta tipala
+prostorske temperature:: MK1_IME
+Vrsta tipala
+prostorske temperature:: MK1_Vrsta prost tipala
+
+--- File: MK2_OGR_Krivulja.jmx ---
+Naprej: MK2_OGR_Krivulja_Y2
+RealTime Trend: MK1_IME(2)
+TEMP. VTOKA:: MK2_OGR_Krivulja_Y1
+ZUNANJA TEMP.:: MK2_OGR_Krivulja_X1
+ZUNANJA TEMP.:: MK2_OGR_Krivulja_X2
+
+--- File: Page41 - Kopija.jmx ---
+Reguliranje ogrevanja po:: MK1_IME(2)
+Reguliranje ogrevanja po:: MK1_Reguliranje OGR po(2)
+
+--- File: Page46 - Kopija - Kopija - Kopija - Kopija.jmx ---
+Avtom. vklop-izklop
+hlajenja ZIMA-POLETJE:: MK1_IME
+Avtom. vklop-izklop
+hlajenja ZIMA-POLETJE:: MK1_Preklop poletje HL
+
+--- File: Page19.jmx ---
+Limita diference TČ
+pri hlajenju:: OSN_Limita_moci_pri_HLAJ
+
+--- File: Page503 - 3.jmx ---
+IZKLOP 3:: CASOVNIK 5 MINUTA IZKLOP(3)
+IZKLOP 3:: CASOVNIK 5 URA IZKLOP(3)
+NED: 2_TIMER_5_Nedelja_3
+NED: 2_TIMER_5_Sobota_3
+PET: 2_TIMER_5_Sreda_3
+PET: 2_TIMER_5_Torek_3
+PON: 2_TIMER_5_Ponedeljek_3
+PON: 2_TIMER_5_Torek_3
+SOB: 2_TIMER_5_Cetrtek_3
+SOB: 2_TIMER_5_Petek_3
+SRE: 2_TIMER_5_Petek_3
+SRE: 2_TIMER_5_Sobota_3
+TOR: 2_TIMER_5_Cetrtek_3
+TOR: 2_TIMER_5_Sreda_3
+VKLOP 3:: CASOVNIK 5 MINUTA VKLOP(3)
+VKLOP 3:: CASOVNIK 5 URA VKLOP(3)
+ČET: 2_TIMER_5_Nedelja_3
+ČET: 2_TIMER_5_Ponedeljek_3
+
+--- File: Page302 - 2.jmx ---
+IZKLOP 2:: CASOVNIK 3 MINUTA IZKLOP(2)
+IZKLOP 2:: CASOVNIK 3 URA IZKLOP(2)
+NED: 2_TIMER_3_Nedelja_2
+NED: 2_TIMER_3_Sobota_2
+PET: 2_TIMER_3_Sreda_2
+PET: 2_TIMER_3_Torek_2
+PON: 2_TIMER_3_Ponedeljek_2
+PON: 2_TIMER_3_Torek_2
+SOB: 2_TIMER_3_Cetrtek_2
+SOB: 2_TIMER_3_Petek_2
+SRE: 2_TIMER_3_Petek_2
+SRE: 2_TIMER_3_Sobota_2
+TOR: 2_TIMER_3_Cetrtek_2
+TOR: 2_TIMER_3_Sreda_2
+VKLOP 2:: CASOVNIK 3 MINUTA VKLOP(2)
+VKLOP 2:: CASOVNIK 3 URA VKLOP(2)
+ČET: 2_TIMER_3_Nedelja_2
+ČET: 2_TIMER_3_Ponedeljek_2
+
+--- File: SV_Ekst_Gr_TEMP.jmx ---
+Temperatura SV za
+vklop el.grelcev:: Temp_SV_za_preklop_EH
+
+--- File: Page60 - Kopija (2).jmx ---
+Korekcija nagiba
+ogrevalne krivulje:: MK1_IME
+Korekcija nagiba
+ogrevalne krivulje:: MK1_Nagib KRIVULJE
+
+--- File: Page78.jmx ---
+Želena nižja temperatura
+pri režimu hlajenja:: ZALOG Temp Nizja HL
+
+--- File: Page116.jmx ---
+IZBIRA ČASOVNEGA PROGRAMA:: ZALOG_Rezim 24 Timerji 12345
+
+--- File: Page87.jmx ---
+NIŽJA TEMPERATURA:: MK1_IME(2)
+NIŽJA TEMPERATURA:: MK1_Temp NOCNA(2)
+VIŠJA TEMPERATURA:: MK1_Temp DNEVNA(2)
+
+--- File: Page97.jmx ---
+Zunanja temperatura
+za vklop 3. stopnje:: EH_AF za vklop ST 3
+
+--- File: Page5 - Kopija.jmx ---
+Čas aktivnega
+servisnega gesla:: Cas_GESLO
+
+--- File: Page41.jmx ---
+Reguliranje ogrevanja po:: MK1_IME
+Reguliranje ogrevanja po:: MK1_Reguliranje OGR po
+
+--- File: Page401.jmx ---
+IZKLOP 1:: CASOVNIK 4 MINUTA IZKLOP
+IZKLOP 1:: CASOVNIK 4 URA IZKLOP
+NED: 2_TIMER_4_Nedelja_1
+NED: 2_TIMER_4_Sobota_1
+PET: 2_TIMER_4_Sreda_1
+PET: 2_TIMER_4_Torek_1
+PON: 2_TIMER_4_Ponedeljek_1
+PON: 2_TIMER_4_Torek_1
+SOB: 2_TIMER_4_Cetrtek_1
+SOB: 2_TIMER_4_Petek_1
+SRE: 2_TIMER_4_Petek_1
+SRE: 2_TIMER_4_Sobota_1
+TOR: 2_TIMER_4_Cetrtek_1
+TOR: 2_TIMER_4_Sreda_1
+VKLOP 1:: CASOVNIK 4 MINUTA VKLOP
+VKLOP 1:: CASOVNIK 4 URA VKLOP
+ČET: 2_TIMER_4_Nedelja_1
+ČET: 2_TIMER_4_Ponedeljek_1
+
+--- File: Dod_vir_Vklop.jmx ---
+Način vklopa
+dodatnega vira:: DOD_VIR_Nacin vklopa
+
+--- File: PV Kontakt.jmx ---
+Vrsta kontakta
+PV funkcije:: OSN_Kontakt PV
+
+--- File: Page54 - Kopija - Kopija.jmx ---
+Zakasnitev za vklop-izklop
+hlajenja ZIMA-POLETJE:: MK1_IME(3)
+Zakasnitev za vklop-izklop
+hlajenja ZIMA-POLETJE:: MK1_ZAKAS avtom preklop HL(3)
+
+--- File: URE_DELOVANJA_straro.jmx ---
+EL.g.:: 2_URE_EH3kW_OGR_MAJ_17
+EL.g.:: 2_URE_EH3kW_SV_MAJ_17
+EL.g.:: 2_URE_Komp_HLAJ_JAN_24
+EL.g.:: 2_Ure_Delov_PRIKAZ_MESEC
+Hlajenje:: 2_URE_Komp_HLAJ_JAN_24
+Hlajenje:: 2_URE_Komp_HLAJ_MAJ_17
+Hlajenje:: 2_URE_Komp_OGR_MAJ_17
+Hlajenje:: 2_URE_Komp_SKUP_MAJ_17
+Hlajenje:: 2_URE_Komp_SV_MAJ_17
+Leto:: 2_Ure_Delov_PRIKAZ_LETO
+
+--- File: Page304.jmx ---
+IZKLOP 1:: CASOVNIK 3 MINUTA IZKLOP
+IZKLOP 1:: CASOVNIK 3 URA IZKLOP
+NED: 2_TIMER_3_Nedelja_1
+NED: 2_TIMER_3_Sobota_1
+PET: 2_TIMER_3_Sreda_1
+PET: 2_TIMER_3_Torek_1
+PON: 2_TIMER_3_Ponedeljek_1
+PON: 2_TIMER_3_Torek_1
+SOB: 2_TIMER_3_Cetrtek_1
+SOB: 2_TIMER_3_Petek_1
+SRE: 2_TIMER_3_Petek_1
+SRE: 2_TIMER_3_Sobota_1
+TOR: 2_TIMER_3_Cetrtek_1
+TOR: 2_TIMER_3_Sreda_1
+VKLOP 1:: CASOVNIK 3 MINUTA VKLOP
+VKLOP 1:: CASOVNIK 3 URA VKLOP
+ČET: 2_TIMER_3_Nedelja_1
+ČET: 2_TIMER_3_Ponedeljek_1
+
+--- File: Page502 - 2.jmx ---
+IZKLOP 2:: CASOVNIK 5 MINUTA IZKLOP(2)
+IZKLOP 2:: CASOVNIK 5 URA IZKLOP(2)
+NED: 2_TIMER_5_Nedelja_2
+NED: 2_TIMER_5_Sobota_2
+PET: 2_TIMER_5_Sreda_2
+PET: 2_TIMER_5_Torek_2
+PON: 2_TIMER_5_Ponedeljek_2
+PON: 2_TIMER_5_Torek_2
+SOB: 2_TIMER_5_Cetrtek_2
+SOB: 2_TIMER_5_Petek_2
+SRE: 2_TIMER_5_Petek_2
+SRE: 2_TIMER_5_Sobota_2
+TOR: 2_TIMER_5_Cetrtek_2
+TOR: 2_TIMER_5_Sreda_2
+VKLOP 2:: CASOVNIK 5 MINUTA VKLOP(2)
+VKLOP 2:: CASOVNIK 5 URA VKLOP(2)
+ČET: 2_TIMER_5_Nedelja_2
+ČET: 2_TIMER_5_Ponedeljek_2
+
+--- File: Page9.jmx ---
+Vrsta kontakta
+vhoda ID2:: OSN_Kontakt ID2
+
+--- File: Page71.jmx ---
+Zakasnitev vklopa:: DOD VIR Zakasn vklopa
+
+--- File: Page38 - Kopija (2).jmx ---
+Ime ogrevalne veje 1:: MK1_IME
+
+--- File: Page1.jmx ---
+Omejitev moči TČ
+pri hlajenju prostorov:: OSN_MAX_Moc_pri_HLAJ_PROSTOROV
+
+--- File: Page104 - 3.jmx ---
+KODA SERVISERJA:: GESLO Serviserja 1 AA
+Shrani: 2_Verzija_programa_ZAPOREDJE
+VERZIJA PROGRAMA:: 2_Verzija_programa_DAN
+VERZIJA PROGRAMA:: 2_Verzija_programa_LETO
+VERZIJA PROGRAMA:: 2_Verzija_programa_MESEC
+VERZIJA PROGRAMA:: GESLO Serviserja 2 BB
+VERZIJA PROGRAMA:: GESLO Serviserja 3 CC
+VERZIJA PROGRAMA:: GESLO Serviserja 4 DD
+
+--- File: DK3_OGR_Krivulja.jmx ---
+Naprej: DK3_OGR_Krivulja_Y2
+RealTime Trend: MK1_IME(3)
+TEMP. VTOKA:: DK3_OGR_Krivulja_Y1
+ZUNANJA TEMP.:: DK3_OGR_Krivulja_X1
+ZUNANJA TEMP.:: MK1_OGR_Krivulja_X2
+
+--- File: Page48 - Kopija (2) - Kopija - Kopija.jmx ---
+Želena temp.vtoka
+pri zunanji temp. +30°C:: MK1_IME(2)
+Želena temp.vtoka
+pri zunanji temp. +30°C:: MK2_Tocka2_HL
+
+--- File: Page117.jmx ---
+Želena nižja temperatura
+sanitarne vode:: SV Temperatura NIZJA
+Želena nižja temperatura
+sanitarne vode:: SV_z_EH_Temperatura NIZJA
+
+--- File: Page202 - 2.jmx ---
+IZKLOP 2:: CASOVNIK 2 MINUTA IZKLOP(2)
+IZKLOP 2:: CASOVNIK 2 URA IZKLOP(2)
+NED: 2_TIMER_2_Nedelja_2
+NED: 2_TIMER_2_Sobota_2
+PET: 2_TIMER_2_Sreda_2
+PET: 2_TIMER_2_Torek_2
+PON: 2_TIMER_2_Ponedeljek_2
+PON: 2_TIMER_2_Torek_2
+SOB: 2_TIMER_2_Cetrtek_2
+SOB: 2_TIMER_2_Petek_2
+SRE: 2_TIMER_2_Petek_2
+SRE: 2_TIMER_2_Sobota_2
+TOR: 2_TIMER_2_Cetrtek_2
+TOR: 2_TIMER_2_Sreda_2
+VKLOP 2:: CASOVNIK 2 MINUTA VKLOP(2)
+VKLOP 2:: CASOVNIK 2 URA VKLOP(2)
+ČET: 2_TIMER_2_Nedelja_2
+ČET: 2_TIMER_2_Ponedeljek_2
+
+--- File: Page48 - Kopija.jmx ---
+Min. temperatura
+vtoka pri ogrevanju:: MK1_IME(2)
+Min. temperatura
+vtoka pri ogrevanju:: MK1_MIN_temp vtoka OGR(2)
+
+--- File: Page59 - Kopija - Kopija - Kopija.jmx ---
+Korekcija vzporednega
+premika ogrevalne krivulje:: MK1_IME(3)
+Korekcija vzporednega
+premika ogrevalne krivulje:: MK1_Vzp premik KRIVULJE(3)
+
+--- File: Page37 - Kopija (2).jmx ---
+Aktiviranje:: MK1_IME
+Aktiviranje:: MK1_Vklop
+
+--- File: Page502.jmx ---
+IZKLOP 1:: CASOVNIK 5 MINUTA IZKLOP
+IZKLOP 1:: CASOVNIK 5 URA IZKLOP
+NED: 2_TIMER_5_Nedelja_1
+NED: 2_TIMER_5_Sobota_1
+PET: 2_TIMER_5_Sreda_1
+PET: 2_TIMER_5_Torek_1
+PON: 2_TIMER_5_Ponedeljek_1
+PON: 2_TIMER_5_Torek_1
+SOB: 2_TIMER_5_Cetrtek_1
+SOB: 2_TIMER_5_Petek_1
+SRE: 2_TIMER_5_Petek_1
+SRE: 2_TIMER_5_Sobota_1
+TOR: 2_TIMER_5_Cetrtek_1
+TOR: 2_TIMER_5_Sreda_1
+VKLOP 1:: CASOVNIK 5 MINUTA VKLOP
+VKLOP 1:: CASOVNIK 5 URA VKLOP
+ČET: 2_TIMER_5_Nedelja_1
+ČET: 2_TIMER_5_Ponedeljek_1
+
+--- File: Page101.jmx ---
+IZKLOP 1:: CASOVNIK 1 MINUTA IZKLOP
+IZKLOP 1:: CASOVNIK 1 URA IZKLOP
+NED: 2_TIMER_1_Nedelja_1
+NED: 2_TIMER_1_Sobota_1
+PET: 2_TIMER_1_Sreda_1
+PET: 2_TIMER_1_Torek_1
+PON: 2_TIMER_1_Ponedeljek_1
+PON: 2_TIMER_1_Torek_1
+SOB: 2_TIMER_1_Cetrtek_1
+SOB: 2_TIMER_1_Petek_1
+SRE: 2_TIMER_1_Petek_1
+SRE: 2_TIMER_1_Sobota_1
+TOR: 2_TIMER_1_Cetrtek_1
+TOR: 2_TIMER_1_Sreda_1
+VKLOP 1:: CASOVNIK 1 MINUTA VKLOP
+VKLOP 1:: CASOVNIK 1 URA VKLOP
+ČET: 2_TIMER_1_Nedelja_1
+ČET: 2_TIMER_1_Ponedeljek_1
+
+--- File: Page50 - Kopija.jmx ---
+Povišanje temp. TČ
+za potrebe mešalne veje:: MK1_IME(2)
+Povišanje temp. TČ
+za potrebe mešalne veje:: MK1_Povisanje(2)
+
+--- File: Page24.jmx ---
+Kalibracija
+zunanjega tipala:: OSN_Kalib_AF
+
+--- File: Page102.jmx ---
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_1_Minute_OFF_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_1_Minute_OFF_2
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_1_Minute_ON_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_1_Minute_ON_2
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_1_Ponedeljek_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_1_Ponedeljek_2
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_1_Ura_OFF_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_1_Ura_OFF_2
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_1_Ura_ON_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_1_Ura_ON_2
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_1_Ura_ON_3
+Naprej: 2_TIMER_1_Cetrtek_3
+Naprej: 2_TIMER_1_Nedelja_2
+Naprej: 2_TIMER_1_Nedelja_3
+Naprej: 2_TIMER_1_Petek_3
+Naprej: 2_TIMER_1_Sobota_2
+Naprej: 2_TIMER_1_Sobota_3
+Nazaj: 2_TIMER_1_Minute_OFF_3
+Nazaj: 2_TIMER_1_Minute_ON_3
+Nazaj: 2_TIMER_1_Ponedeljek_3
+Nazaj: 2_TIMER_1_Sreda_3
+Nazaj: 2_TIMER_1_Torek_3
+Nazaj: 2_TIMER_1_Ura_OFF_3
+ČASOVNI PROGRAM 1: 2_TIMER_1_Cetrtek_1
+ČASOVNI PROGRAM 1: 2_TIMER_1_Cetrtek_2
+ČASOVNI PROGRAM 1: 2_TIMER_1_Nedelja_1
+ČASOVNI PROGRAM 1: 2_TIMER_1_Petek_1
+ČASOVNI PROGRAM 1: 2_TIMER_1_Petek_2
+ČASOVNI PROGRAM 1: 2_TIMER_1_Sobota_1
+ČASOVNI PROGRAM 1: 2_TIMER_1_Sreda_1
+ČASOVNI PROGRAM 1: 2_TIMER_1_Sreda_2
+ČASOVNI PROGRAM 1: 2_TIMER_1_Torek_1
+ČASOVNI PROGRAM 1: 2_TIMER_1_Torek_2
+
+--- File: PV_Cas_za_vklop.jmx ---
+Zakasnitev vklopa:: PV_Cas_za_vklop
+
+--- File: Page41 - Kopija (2).jmx ---
+Reguliranje ogrevanja po:: MK1_IME
+Reguliranje ogrevanja po:: MK1_Reguliranje OGR po
+
+--- File: Page38 - Kopija - Kopija - Kopija.jmx ---
+Ime ogrevalne veje 3:: MK1_IME(3)
+
+--- File: Page8.jmx ---
+Min. temp. vtoka
+pri sušenju estrihov:: OSN_MIN_temp Estrihi
+
+--- File: Page88 - Kopija.jmx ---
+KOR.NAGIBA KRIVULJE:: MK1_IME(3)
+KOR.NAGIBA KRIVULJE:: MK1_Nagib KRIVULJE(3)
+VZPOR.KOR.KRIVULJE:: MK1_Vzp premik KRIVULJE(3)
+
+--- File: Nizanje_OK3 - Kopija.jmx ---
+Delovanje ob preklopu
+na nižji režim:: MK1_Delovanje pri nizjem rezimu(3)
+Delovanje ob preklopu
+na nižji režim:: MK1_IME(3)
+
+--- File: Page59 - Kopija - Kopija (2).jmx ---
+Korekcija vzporednega
+premika ogrevalne krivulje:: MK1_IME(2)
+Korekcija vzporednega
+premika ogrevalne krivulje:: MK1_Vzp premik KRIVULJE(2)
+
+--- File: Page56 - Kopija.jmx ---
+Čas rotacije mot. pogona
+mešalnega ventila, za 90°:: MK1_Cas pomika MP1(2)
+Čas rotacije mot. pogona
+mešalnega ventila, za 90°:: MK1_IME(2)
+
+--- File: Page97 - Kopija.jmx ---
+Zunanja temperatura
+za vklop 3. stopnje:: EH_AF za vklop ST 3
+
+--- File: Page92 - Kopija.jmx ---
+Zakasnitev vklopa
+1.stopnje:: EH_Zakasn STOPNJA 1
+
+--- File: Page35 - Kopija.jmx ---
+Ura pričetka delovanja
+protilegionelnega programa:: SV_Legionela_URA
+
+--- File: Page20.jmx ---
+Tišje delovanje
+zunanje enote:: OSN Tisje delov
+
+--- File: Page77.jmx ---
+Želena višja temperatura
+pri režimu hlajenja:: ZALOG Temp Visja HL
+
+--- File: Page41 - Kopija - Kopija (2).jmx ---
+Reguliranje ogrevanja po:: MK1_IME(2)
+Reguliranje ogrevanja po:: MK1_Reguliranje OGR po(2)
+
+--- File: PV_EL_Grelci.jmx ---
+ELEKTRIČNI GRELEC:: PV_El_Grelci
+
+--- File: Page44 - Kopija.jmx ---
+Režim delovanja:: MK1_IME(2)
+Režim delovanja:: MK1_Rezim OGR_HLAJ(2)
+
+--- File: Page202 - 3.jmx ---
+IZKLOP 3:: CASOVNIK 2 MINUTA IZKLOP(3)
+IZKLOP 3:: CASOVNIK 2 URA IZKLOP(3)
+NED: 2_TIMER_2_Nedelja_3
+NED: 2_TIMER_2_Sobota_3
+PET: 2_TIMER_2_Sreda_3
+PET: 2_TIMER_2_Torek_3
+PON: 2_TIMER_2_Ponedeljek_3
+PON: 2_TIMER_2_Torek_3
+SOB: 2_TIMER_2_Cetrtek_3
+SOB: 2_TIMER_2_Petek_3
+SRE: 2_TIMER_2_Petek_3
+SRE: 2_TIMER_2_Sobota_3
+TOR: 2_TIMER_2_Cetrtek_3
+TOR: 2_TIMER_2_Sreda_3
+VKLOP 3:: CASOVNIK 2 MINUTA VKLOP(3)
+VKLOP 3:: CASOVNIK 2 URA VKLOP(3)
+ČET: 2_TIMER_2_Nedelja_3
+ČET: 2_TIMER_2_Ponedeljek_3
+
+--- File: Page404 - 3.jmx ---
+IZKLOP 3:: CASOVNIK 4 MINUTA IZKLOP(3)
+IZKLOP 3:: CASOVNIK 4 URA IZKLOP(3)
+NED: 2_TIMER_4_Nedelja_3
+NED: 2_TIMER_4_Sobota_3
+PET: 2_TIMER_4_Sreda_3
+PET: 2_TIMER_4_Torek_3
+PON: 2_TIMER_4_Ponedeljek_3
+PON: 2_TIMER_4_Torek_3
+SOB: 2_TIMER_4_Cetrtek_3
+SOB: 2_TIMER_4_Petek_3
+SRE: 2_TIMER_4_Petek_3
+SRE: 2_TIMER_4_Sobota_3
+TOR: 2_TIMER_4_Cetrtek_3
+TOR: 2_TIMER_4_Sreda_3
+VKLOP 3:: CASOVNIK 4 MINUTA VKLOP(3)
+VKLOP 3:: CASOVNIK 4 URA VKLOP(3)
+ČET: 2_TIMER_4_Nedelja_3
+ČET: 2_TIMER_4_Ponedeljek_3
+
+--- File: Page26.jmx ---
+Omejitev moči TČ
+pri tišjem delovanju:: OSN_MAX_Moc_TISJE
+
+--- File: Page201 - 3.jmx ---
+IZKLOP 3:: CASOVNIK 2 MINUTA IZKLOP(3)
+IZKLOP 3:: CASOVNIK 2 URA IZKLOP(3)
+NED: 2_TIMER_2_Nedelja_3
+NED: 2_TIMER_2_Sobota_3
+PET: 2_TIMER_2_Sreda_3
+PET: 2_TIMER_2_Torek_3
+PON: 2_TIMER_2_Ponedeljek_3
+PON: 2_TIMER_2_Torek_3
+SOB: 2_TIMER_2_Cetrtek_3
+SOB: 2_TIMER_2_Petek_3
+SRE: 2_TIMER_2_Petek_3
+SRE: 2_TIMER_2_Sobota_3
+TOR: 2_TIMER_2_Cetrtek_3
+TOR: 2_TIMER_2_Sreda_3
+VKLOP 3:: CASOVNIK 2 MINUTA VKLOP(3)
+VKLOP 3:: CASOVNIK 2 URA VKLOP(3)
+ČET: 2_TIMER_2_Nedelja_3
+ČET: 2_TIMER_2_Ponedeljek_3
+
+--- File: Page81 - 2.jmx ---
+IZKLOP 2:: CASOVNIK 1 MINUTA IZKLOP(2)
+IZKLOP 2:: CASOVNIK 1 URA IZKLOP(2)
+NED: 2_TIMER_1_Nedelja_2
+NED: 2_TIMER_1_Sobota_2
+PET: 2_TIMER_1_Sreda_2
+PET: 2_TIMER_1_Torek_2
+PON: 2_TIMER_1_Ponedeljek_2
+PON: 2_TIMER_1_Torek_2
+SOB: 2_TIMER_1_Cetrtek_2
+SOB: 2_TIMER_1_Petek_2
+SRE: 2_TIMER_1_Petek_2
+SRE: 2_TIMER_1_Sobota_2
+TOR: 2_TIMER_1_Cetrtek_2
+TOR: 2_TIMER_1_Sreda_2
+VKLOP 2:: CASOVNIK 1 MINUTA VKLOP(2)
+VKLOP 2:: CASOVNIK 1 URA VKLOP(2)
+ČET: 2_TIMER_1_Nedelja_2
+ČET: 2_TIMER_1_Ponedeljek_2
+
+--- File: Page37 - Kopija - Kopija - Kopija.jmx ---
+Aktiviranje:: MK1_IME(3)
+Aktiviranje:: MK1_Vklop(3)
+
+--- File: Page301.jmx ---
+IZKLOP 1:: CASOVNIK 3 MINUTA IZKLOP
+IZKLOP 1:: CASOVNIK 3 URA IZKLOP
+NED: 2_TIMER_3_Nedelja_1
+NED: 2_TIMER_3_Sobota_1
+PET: 2_TIMER_3_Sreda_1
+PET: 2_TIMER_3_Torek_1
+PON: 2_TIMER_3_Ponedeljek_1
+PON: 2_TIMER_3_Torek_1
+SOB: 2_TIMER_3_Cetrtek_1
+SOB: 2_TIMER_3_Petek_1
+SRE: 2_TIMER_3_Petek_1
+SRE: 2_TIMER_3_Sobota_1
+TOR: 2_TIMER_3_Cetrtek_1
+TOR: 2_TIMER_3_Sreda_1
+VKLOP 1:: CASOVNIK 3 MINUTA VKLOP
+VKLOP 1:: CASOVNIK 3 URA VKLOP
+ČET: 2_TIMER_3_Nedelja_1
+ČET: 2_TIMER_3_Ponedeljek_1
+
+--- File: Page Ura2.jmx ---
+Nastavitev minut:: URA
+Shrani: MINUTA
+
+--- File: Page44.jmx ---
+Režim delovanja:: MK1_IME
+Režim delovanja:: MK1_Rezim OGR_HLAJ
+
+--- File: Page40 - Kopija - Kopija - Kopija.jmx ---
+Izbira časovnega programa:: MK1_IME(3)
+Izbira časovnega programa:: MK1_Rezim 24 Timerji 12345(3)
+
+--- File: Page48 - Kopija - Kopija.jmx ---
+Min. temperatura
+vtoka pri ogrevanju:: MK1_IME(3)
+Min. temperatura
+vtoka pri ogrevanju:: MK1_MIN_temp vtoka OGR(3)
+
+--- File: Page Ura1.jmx ---
+Nastavitev ure:: URA
+Shrani: MINUTA
+
+--- File: Page52 - Kopija - Kopija - Kopija - Kopija.jmx ---
+Zun. temp. za vklop-izklop
+hlajenja ZIMA-POLETJE:: MK1_AF za avtom preklop HL
+Zun. temp. za vklop-izklop
+hlajenja ZIMA-POLETJE:: MK1_IME
+
+--- File: Page3.jmx ---
+Vezalna shema:: OSN_Shema
+
+--- File: Page Datum1 - Kopija.jmx ---
+20: LETO
+20: MESEC
+Nastavitev datuma:: DAN
+
+--- File: Page100.jmx ---
+IZKLOP 1:: CASOVNIK 1 MINUTA IZKLOP
+IZKLOP 1:: CASOVNIK 1 URA IZKLOP
+NED: 2_TIMER_1_Nedelja_1
+NED: 2_TIMER_1_Sobota_1
+PET: 2_TIMER_1_Sreda_1
+PET: 2_TIMER_1_Torek_1
+PON: 2_TIMER_1_Ponedeljek_1
+PON: 2_TIMER_1_Torek_1
+SOB: 2_TIMER_1_Cetrtek_1
+SOB: 2_TIMER_1_Petek_1
+SRE: 2_TIMER_1_Petek_1
+SRE: 2_TIMER_1_Sobota_1
+TOR: 2_TIMER_1_Cetrtek_1
+TOR: 2_TIMER_1_Sreda_1
+VKLOP 1:: CASOVNIK 1 MINUTA VKLOP
+VKLOP 1:: CASOVNIK 1 URA VKLOP
+ČET: 2_TIMER_1_Nedelja_1
+ČET: 2_TIMER_1_Ponedeljek_1
+
+--- File: ECO_CAS.jmx ---
+TRAJANJE ECO REŽIMA:: ECO_CAS
+
+--- File: Page75 - Kopija (2).jmx ---
+Hitrost solarne črpalke:: 2_Odstotki_SOLAR_PWM
+INFO: MK1_IME(3)
+Prostorska temperatura:: 2_Temp_RF3
+Stanje obtočne črpalke C3:: 2_Vklop_C3
+Želena prostorska temp:: 2_Zahtevana_RF_DK_3
+
+--- File: Page504 - 2.jmx ---
+IZKLOP 2:: CASOVNIK 5 MINUTA IZKLOP(2)
+IZKLOP 2:: CASOVNIK 5 URA IZKLOP(2)
+NED: 2_TIMER_5_Nedelja_2
+NED: 2_TIMER_5_Sobota_2
+PET: 2_TIMER_5_Sreda_2
+PET: 2_TIMER_5_Torek_2
+PON: 2_TIMER_5_Ponedeljek_2
+PON: 2_TIMER_5_Torek_2
+SOB: 2_TIMER_5_Cetrtek_2
+SOB: 2_TIMER_5_Petek_2
+SRE: 2_TIMER_5_Petek_2
+SRE: 2_TIMER_5_Sobota_2
+TOR: 2_TIMER_5_Cetrtek_2
+TOR: 2_TIMER_5_Sreda_2
+VKLOP 2:: CASOVNIK 5 MINUTA VKLOP(2)
+VKLOP 2:: CASOVNIK 5 URA VKLOP(2)
+ČET: 2_TIMER_5_Nedelja_2
+ČET: 2_TIMER_5_Ponedeljek_2
+
+--- File: Nizanje_OK2.jmx ---
+Delovanje ob preklopu
+na nižji režim:: MK1_Delovanje pri nizjem rezimu(2)
+Delovanje ob preklopu
+na nižji režim:: MK1_IME(2)
+
+--- File: Page42 - Kopija - Kopija (2).jmx ---
+Reguliranje hlajenja po:: MK1_IME(3)
+Reguliranje hlajenja po:: MK1_Reguliranje HL po(3)
+
+--- File: Page48 - Kopija (2).jmx ---
+Želena temp.vtoka
+pri zunanji temp. +20°C:: MK1_IME
+Želena temp.vtoka
+pri zunanji temp. +20°C:: MK1_Tocka1_HL
+
+--- File: Page404.jmx ---
+IZKLOP 1:: CASOVNIK 4 MINUTA IZKLOP
+IZKLOP 1:: CASOVNIK 4 URA IZKLOP
+NED: 2_TIMER_4_Nedelja_1
+NED: 2_TIMER_4_Sobota_1
+PET: 2_TIMER_4_Sreda_1
+PET: 2_TIMER_4_Torek_1
+PON: 2_TIMER_4_Ponedeljek_1
+PON: 2_TIMER_4_Torek_1
+SOB: 2_TIMER_4_Cetrtek_1
+SOB: 2_TIMER_4_Petek_1
+SRE: 2_TIMER_4_Petek_1
+SRE: 2_TIMER_4_Sobota_1
+TOR: 2_TIMER_4_Cetrtek_1
+TOR: 2_TIMER_4_Sreda_1
+VKLOP 1:: CASOVNIK 4 MINUTA VKLOP
+VKLOP 1:: CASOVNIK 4 URA VKLOP
+ČET: 2_TIMER_4_Nedelja_1
+ČET: 2_TIMER_4_Ponedeljek_1
+
+--- File: Page48 - Kopija (4) - Kopija.jmx ---
+Želena temp.vtoka
+pri zunanji temp. +20°C:: DK3_Tocka1_HL
+Želena temp.vtoka
+pri zunanji temp. +20°C:: MK1_IME(3)
+
+--- File: Page64.jmx ---
+Max. temperatura SV, pri
+ogrevanju s kolektorji:: SOLAR Max Temp BF
+
+--- File: PV_Cas_za_izklop.jmx ---
+Zakasnitev izklopa:: PV_Cas_za_izklop
+
+--- File: Page52 - Kopija - Kopija - Kopija.jmx ---
+Zun. temp. za vklop-izklop
+hlajenja ZIMA-POLETJE:: MK1_AF za avtom preklop HL(2)
+Zun. temp. za vklop-izklop
+hlajenja ZIMA-POLETJE:: MK1_IME(2)
+
+--- File: Page21.jmx ---
+Zunanje temp. za
+vklop tišjega delovanja:: OSN_Temp za TISJE
+
+--- File: Legio_max_cas.jmx ---
+Max. čas delovanja
+protilegionelnega programa:: LEGIONELA_max_cas
+
+--- File: Defrosti.jmx ---
+1.:: 2_Dan_DEFROSTA_1
+1.:: 2_Mesec_DEFROSTA_1
+2.:: 2_Dan_DEFROSTA_2
+2.:: 2_Mesec_DEFROSTA_2
+20: 2_Leto_DEFROSTA_1
+20: 2_Leto_DEFROSTA_2
+20: 2_Leto_DEFROSTA_3
+20: 2_Leto_DEFROSTA_4
+20: 2_Leto_DEFROSTA_5
+20: 2_Min_DEFROSTA_3
+20: 2_Min_DEFROSTA_4
+20: 2_Min_DEFROSTA_5
+20: 2_Sec_DEFROSTA_4
+20: 2_Sec_DEFROSTA_5
+20: 2_Ura_DEFROSTA_3
+20: 2_Ura_DEFROSTA_4
+20: 2_Ura_DEFROSTA_5
+3.:: 2_Dan_DEFROSTA_3
+3.:: 2_Mesec_DEFROSTA_3
+4.:: 2_Dan_DEFROSTA_4
+4.:: 2_Mesec_DEFROSTA_4
+5.:: 2_Dan_DEFROSTA_5
+5.:: 2_Mesec_DEFROSTA_5
+INFO: 2_Min_DEFROSTA_1
+INFO: 2_Min_DEFROSTA_2
+INFO: 2_Sec_DEFROSTA_1
+INFO: 2_Sec_DEFROSTA_2
+INFO: 2_Sec_DEFROSTA_3
+INFO: 2_Ura_DEFROSTA_1
+INFO: 2_Ura_DEFROSTA_2
+
+--- File: Page93 - Kopija.jmx ---
+Zakasnitev vklopa
+2.stopnje:: EH_Zakasn STOPNJA 2
+
+--- File: Page51.jmx ---
+Izbira časovnega programa
+tišjega delovanja:: OSN_TISJE_Rezim 24 Timerji 12345
+
+--- File: Page99 - Kopija.jmx ---
+Zunanja
+temperatura za vklop:: DOD VIR AF za vklop
+
+--- File: Page117 - Kopija.jmx ---
+Želena nižja temperatura
+sanitarne vode:: SV Temperatura NIZJA
+Želena nižja temperatura
+sanitarne vode:: SV_z_EH_Temperatura NIZJA
+
+--- File: Page59 - Kopija.jmx ---
+Korekcija vzporednega
+premika ogrevalne krivulje:: MK1_IME(2)
+Korekcija vzporednega
+premika ogrevalne krivulje:: MK1_Vzp premik KRIVULJE(2)
+
+--- File: Zascita_DEF_VKLOP_CAS.jmx ---
+Čas zakasnitve vklopa
+zaščite odtaljevanja:: OSN_Zascita_DEF_VKLOP_CAS
+
+--- File: Page28 - Kopija.jmx ---
+Izbira časovnega programa:: ZALOG_Rezim 24 Timerji 12345
+
+--- File: Page Datum2 - Kopija.jmx ---
+20: LETO
+20: MESEC
+Nastavitev datuma:: DAN
+
+--- File: Page60 - Kopija - Kopija (2).jmx ---
+Korekcija nagiba
+ogrevalne krivulje:: MK1_IME(2)
+Korekcija nagiba
+ogrevalne krivulje:: MK1_Nagib KRIVULJE(2)
+
+--- File: Page79.jmx ---
+Diferenca vklopa:: ZALOG Diferenca vklopa
+
+--- File: Page DATUM - Kopija.jmx ---
+20: LETO
+20: MESEC
+Nastavitev datuma:: DAN
+
+--- File: Page22.jmx ---
+Dan:: 2_Tekoci_dan_susenje_estrihov
+Program sušenja estrihov:: OSN_Estrihi Vklop
+
+--- File: Page121 - Kopija (5).jmx ---
+Naprej: 2_Pogoj_maska_pret_stik
+Nazaj: 2_Max_cas_test_C0
+Nazaj: 2_Preostanek_sekund_PV_OGR
+PV na ogrevanje prostorov:: 2_TEST_PV_OGR
+
+--- File: Page121 - Kopija (2).jmx ---
+Naprej: 2_Pogoj_maska_pret_stik
+Nazaj: 2_Max_cas_test_C0
+Nazaj: 2_Preostanek_sekund_C2
+Črpalka Č2:: 2_TEST_C2
+
+--- File: Page301 - 3.jmx ---
+IZKLOP 3:: CASOVNIK 3 MINUTA IZKLOP(3)
+IZKLOP 3:: CASOVNIK 3 URA IZKLOP(3)
+NED: 2_TIMER_3_Nedelja_3
+NED: 2_TIMER_3_Sobota_3
+PET: 2_TIMER_3_Sreda_3
+PET: 2_TIMER_3_Torek_3
+PON: 2_TIMER_3_Ponedeljek_3
+PON: 2_TIMER_3_Torek_3
+SOB: 2_TIMER_3_Cetrtek_3
+SOB: 2_TIMER_3_Petek_3
+SRE: 2_TIMER_3_Petek_3
+SRE: 2_TIMER_3_Sobota_3
+TOR: 2_TIMER_3_Cetrtek_3
+TOR: 2_TIMER_3_Sreda_3
+VKLOP 3:: CASOVNIK 3 MINUTA VKLOP(3)
+VKLOP 3:: CASOVNIK 3 URA VKLOP(3)
+ČET: 2_TIMER_3_Nedelja_3
+ČET: 2_TIMER_3_Ponedeljek_3
+
+--- File: Page45 - Kopija - Kopija - Kopija - Kopija.jmx ---
+Avtom. vklop-izklop
+ogrevanja ZIMA-POLETJE:: MK1_IME
+Avtom. vklop-izklop
+ogrevanja ZIMA-POLETJE:: MK1_Preklop zima OGR
+
+--- File: Page21 - Kopija.jmx ---
+Zunanje temp. za
+vklop tišjega delovanja:: OSN_Temp za TISJE
+
+--- File: Page29_SER.jmx ---
+Želena višja temperatura
+sanitarne vode:: SV Temperatura
+Želena višja temperatura
+sanitarne vode:: SV_z_EH_Temperatura
+
+--- File: Page31.jmx ---
+Povišanje temp. TČ
+za potrebe ogrevanja SV:: SV_Povisanje
+
+--- File: POCITNISKI_CAS - Kopija (2).jmx ---
+20: Pocitniski_LETO
+20: Pocitniski_MESEC
+KONEC POČITNIŠKEGA REŽIMA:: Pocitniski_DAN
+
+--- File: Page12.jmx ---
+Diferenca
+toplotne črpalke 0-100%:: OSN_Krivulja_TC
+
+--- File: Page118 - Kopija.jmx ---
+Vrsta kontakta
+eksternega vklopa:: MK1_IME(2)
+Vrsta kontakta
+eksternega vklopa:: MK2_Kontakt_RF2
+
+--- File: Page110.jmx ---
+20: 2_Dan_ZAGONA
+20: 2_Leto_ZAGONA
+20: 2_Mesec_ZAGONA
+Podatki o prvem zagonu:: 2_Min_ZAGONA
+Podatki o prvem zagonu:: 2_Ura_ZAGONA
+Podatki o prvem zagonu:: 2_Zagon_opravlja_oseba
+Vgrajen regulator:: 2_Izbira_mPC_pCO3
+Zunanja enota:: 2_Izbira_Mitsubishi_Fujitsu
+Zunanja enota:: 2_Verzija_programa_DAN
+Zunanja enota:: 2_Verzija_programa_LETO
+Zunanja enota:: 2_Verzija_programa_MESEC
+Zunanja enota:: 2_Verzija_programa_ZAPOREDJE
+
+--- File: Page88.jmx ---
+KOR.NAGIBA KRIVULJE:: MK1_IME(2)
+KOR.NAGIBA KRIVULJE:: MK1_Nagib KRIVULJE(2)
+VZPOR.KOR.KRIVULJE:: MK1_Vzp premik KRIVULJE(2)
+
+--- File: Page302.jmx ---
+IZKLOP 1:: CASOVNIK 3 MINUTA IZKLOP
+IZKLOP 1:: CASOVNIK 3 URA IZKLOP
+NED: 2_TIMER_3_Nedelja_1
+NED: 2_TIMER_3_Sobota_1
+PET: 2_TIMER_3_Sreda_1
+PET: 2_TIMER_3_Torek_1
+PON: 2_TIMER_3_Ponedeljek_1
+PON: 2_TIMER_3_Torek_1
+SOB: 2_TIMER_3_Cetrtek_1
+SOB: 2_TIMER_3_Petek_1
+SRE: 2_TIMER_3_Petek_1
+SRE: 2_TIMER_3_Sobota_1
+TOR: 2_TIMER_3_Cetrtek_1
+TOR: 2_TIMER_3_Sreda_1
+VKLOP 1:: CASOVNIK 3 MINUTA VKLOP
+VKLOP 1:: CASOVNIK 3 URA VKLOP
+ČET: 2_TIMER_3_Nedelja_1
+ČET: 2_TIMER_3_Ponedeljek_1
+
+--- File: Page39 - Kopija - Kopija.jmx ---
+Vrsta strojne inštalacije:: MK1_IME(3)
+Vrsta strojne inštalacije:: MK1_Instalacija(3)
+
+--- File: Page Datum3 - Kopija.jmx ---
+20: LETO
+20: MESEC
+Nastavitev datuma:: DAN
+
+--- File: Page89 - Kopija.jmx ---
+Način vklopa
+električnih grelcev:: EH_Nacin vklopa
+
+--- File: Page61_PUMP.jmx ---
+Vrsta solarne črpalke:: SOLAR Vrsta crpalke
+
+--- File: Page38 - Kopija - Kopija (2).jmx ---
+Ime ogrevalne veje 2:: MK1_IME(2)
+
+--- File: Page45 - Kopija - Kopija - Kopija.jmx ---
+Avtom. vklop-izklop
+ogrevanja ZIMA-POLETJE:: MK1_IME(2)
+Avtom. vklop-izklop
+ogrevanja ZIMA-POLETJE:: MK1_Preklop zima OGR(2)
+
+--- File: Page46 - Kopija - Kopija.jmx ---
+Avtom. vklop-izklop
+hlajenja ZIMA-POLETJE:: MK1_IME(3)
+Avtom. vklop-izklop
+hlajenja ZIMA-POLETJE:: MK1_Preklop poletje HL(3)
+
+--- File: OK3_RF_Osvezevanje.jmx ---
+Čas osveževanja podatkov
+iz prostorskega tipala:: Cas_osvezevanja_RF3
+Čas osveževanja podatkov
+iz prostorskega tipala:: MK1_IME(3)
+
+--- File: Page48 - Kopija (3) - Kopija.jmx ---
+Želena temp.vtoka
+pri zunanji temp. +20°C:: MK1_IME(2)
+Želena temp.vtoka
+pri zunanji temp. +20°C:: MK2_Tocka1_HL
+
+--- File: Page81 - 3.jmx ---
+IZKLOP 3:: CASOVNIK 1 MINUTA IZKLOP(3)
+IZKLOP 3:: CASOVNIK 1 URA IZKLOP(3)
+NED: 2_TIMER_1_Nedelja_3
+NED: 2_TIMER_1_Sobota_3
+PET: 2_TIMER_1_Sreda_3
+PET: 2_TIMER_1_Torek_3
+PON: 2_TIMER_1_Ponedeljek_3
+PON: 2_TIMER_1_Torek_3
+SOB: 2_TIMER_1_Cetrtek_3
+SOB: 2_TIMER_1_Petek_3
+SRE: 2_TIMER_1_Petek_3
+SRE: 2_TIMER_1_Sobota_3
+TOR: 2_TIMER_1_Cetrtek_3
+TOR: 2_TIMER_1_Sreda_3
+VKLOP 3:: CASOVNIK 1 MINUTA VKLOP(3)
+VKLOP 3:: CASOVNIK 1 URA VKLOP(3)
+ČET: 2_TIMER_1_Nedelja_3
+ČET: 2_TIMER_1_Ponedeljek_3
+
+--- File: Page59 - Kopija - Kopija.jmx ---
+Korekcija vzporednega
+premika ogrevalne krivulje:: MK1_IME(3)
+Korekcija vzporednega
+premika ogrevalne krivulje:: MK1_Vzp premik KRIVULJE(3)
+
+--- File: Page303 - 3.jmx ---
+IZKLOP 3:: CASOVNIK 3 MINUTA IZKLOP(3)
+IZKLOP 3:: CASOVNIK 3 URA IZKLOP(3)
+NED: 2_TIMER_3_Nedelja_3
+NED: 2_TIMER_3_Sobota_3
+PET: 2_TIMER_3_Sreda_3
+PET: 2_TIMER_3_Torek_3
+PON: 2_TIMER_3_Ponedeljek_3
+PON: 2_TIMER_3_Torek_3
+SOB: 2_TIMER_3_Cetrtek_3
+SOB: 2_TIMER_3_Petek_3
+SRE: 2_TIMER_3_Petek_3
+SRE: 2_TIMER_3_Sobota_3
+TOR: 2_TIMER_3_Cetrtek_3
+TOR: 2_TIMER_3_Sreda_3
+VKLOP 3:: CASOVNIK 3 MINUTA VKLOP(3)
+VKLOP 3:: CASOVNIK 3 URA VKLOP(3)
+ČET: 2_TIMER_3_Nedelja_3
+ČET: 2_TIMER_3_Ponedeljek_3
+
+--- File: PV_Temp_ZALOG_OGR.jmx ---
+Želena temp. zalogovnika
+pri režimu ogrevanja:: PV_Temp_ZALOG_1
+Želena temp. zalogovnika
+pri režimu ogrevanja:: PV_Temp_ZALOG_2
+
+--- File: Page41 - Kopija - Kopija - Kopija.jmx ---
+Reguliranje ogrevanja po:: MK1_IME(3)
+Reguliranje ogrevanja po:: MK1_Reguliranje OGR po(3)
+
+--- File: Page504.jmx ---
+IZKLOP 1:: CASOVNIK 5 MINUTA IZKLOP
+IZKLOP 1:: CASOVNIK 5 URA IZKLOP
+NED: 2_TIMER_5_Nedelja_1
+NED: 2_TIMER_5_Sobota_1
+PET: 2_TIMER_5_Sreda_1
+PET: 2_TIMER_5_Torek_1
+PON: 2_TIMER_5_Ponedeljek_1
+PON: 2_TIMER_5_Torek_1
+SOB: 2_TIMER_5_Cetrtek_1
+SOB: 2_TIMER_5_Petek_1
+SRE: 2_TIMER_5_Petek_1
+SRE: 2_TIMER_5_Sobota_1
+TOR: 2_TIMER_5_Cetrtek_1
+TOR: 2_TIMER_5_Sreda_1
+VKLOP 1:: CASOVNIK 5 MINUTA VKLOP
+VKLOP 1:: CASOVNIK 5 URA VKLOP
+ČET: 2_TIMER_5_Nedelja_1
+ČET: 2_TIMER_5_Ponedeljek_1
+
+--- File: PagePREKL.jmx ---
+Izbira časovnega programa:: MK1_IME
+Izbira časovnega programa:: MK1_Rezim 24 Timerji 12345
+
+--- File: PV_Moc_TC.jmx ---
+Omejitev moči delovanja
+toplotne črpalke:: PV_MAX_Moc_TC
+
+--- File: Page58.jmx ---
+Kalibracija tipala
+prostorske temperature:: MK1_IME
+Kalibracija tipala
+prostorske temperature:: MK1_Kalibracija RF1
+
+--- File: Page112.jmx ---
+IZBIRA ČASOVNEGA PROGRAMA:: SV_Rezim 24 Timerji 12345
+
+--- File: Page23.jmx ---
+Protiblokirni program:: OSN_Anti blok Vklop
+
+--- File: Zascita_DEF_VKLOP_TEMP.jmx ---
+Temperatura za vklop
+zaščite odtaljevanja:: OSN_Zascita_DEF_VKLOP_TEMP
+
+--- File: Page37 - Kopija.jmx ---
+Aktiviranje:: MK1_IME(2)
+Aktiviranje:: MK1_Vklop(2)
+
+--- File: Page403 - 3.jmx ---
+IZKLOP 3:: CASOVNIK 4 MINUTA IZKLOP(3)
+IZKLOP 3:: CASOVNIK 4 URA IZKLOP(3)
+NED: 2_TIMER_4_Nedelja_3
+NED: 2_TIMER_4_Sobota_3
+PET: 2_TIMER_4_Sreda_3
+PET: 2_TIMER_4_Torek_3
+PON: 2_TIMER_4_Ponedeljek_3
+PON: 2_TIMER_4_Torek_3
+SOB: 2_TIMER_4_Cetrtek_3
+SOB: 2_TIMER_4_Petek_3
+SRE: 2_TIMER_4_Petek_3
+SRE: 2_TIMER_4_Sobota_3
+TOR: 2_TIMER_4_Cetrtek_3
+TOR: 2_TIMER_4_Sreda_3
+VKLOP 3:: CASOVNIK 4 MINUTA VKLOP(3)
+VKLOP 3:: CASOVNIK 4 URA VKLOP(3)
+ČET: 2_TIMER_4_Nedelja_3
+ČET: 2_TIMER_4_Ponedeljek_3
+
+--- File: Page121 - Kopija (4).jmx ---
+Naprej: 2_Pogoj_maska_pret_stik
+Nazaj: 2_Max_cas_test_C0
+Nazaj: 2_Preostanek_sekund_MP1_ODP
+Odpiranje MP1:: 2_TEST_MP1_ODP
+
+--- File: Page27.jmx ---
+Aktiviranje
+protilegionelnega programa:: SV_LEGIONELA_Vklop
+
+--- File: Page34.jmx ---
+Dan pričetka delovanja
+protilegionelnega programa:: SV_Legionela_DAN
+
+--- File: Page95 - Kopija.jmx ---
+Zunanja temperatura
+za vklop 1. stopnje:: EH_AF za vklop ST 1
+
+--- File: Page Datum3.jmx ---
+20: LETO
+20: MESEC
+Nastavitev datuma:: DAN
+
+--- File: Page402 - 2.jmx ---
+IZKLOP 2:: CASOVNIK 4 MINUTA IZKLOP(2)
+IZKLOP 2:: CASOVNIK 4 URA IZKLOP(2)
+NED: 2_TIMER_4_Nedelja_2
+NED: 2_TIMER_4_Sobota_2
+PET: 2_TIMER_4_Sreda_2
+PET: 2_TIMER_4_Torek_2
+PON: 2_TIMER_4_Ponedeljek_2
+PON: 2_TIMER_4_Torek_2
+SOB: 2_TIMER_4_Cetrtek_2
+SOB: 2_TIMER_4_Petek_2
+SRE: 2_TIMER_4_Petek_2
+SRE: 2_TIMER_4_Sobota_2
+TOR: 2_TIMER_4_Cetrtek_2
+TOR: 2_TIMER_4_Sreda_2
+VKLOP 2:: CASOVNIK 4 MINUTA VKLOP(2)
+VKLOP 2:: CASOVNIK 4 URA VKLOP(2)
+ČET: 2_TIMER_4_Nedelja_2
+ČET: 2_TIMER_4_Ponedeljek_2
+
+--- File: Page203 - 2.jmx ---
+IZKLOP 2:: CASOVNIK 2 MINUTA IZKLOP(2)
+IZKLOP 2:: CASOVNIK 2 URA IZKLOP(2)
+NED: 2_TIMER_2_Nedelja_2
+NED: 2_TIMER_2_Sobota_2
+PET: 2_TIMER_2_Sreda_2
+PET: 2_TIMER_2_Torek_2
+PON: 2_TIMER_2_Ponedeljek_2
+PON: 2_TIMER_2_Torek_2
+SOB: 2_TIMER_2_Cetrtek_2
+SOB: 2_TIMER_2_Petek_2
+SRE: 2_TIMER_2_Petek_2
+SRE: 2_TIMER_2_Sobota_2
+TOR: 2_TIMER_2_Cetrtek_2
+TOR: 2_TIMER_2_Sreda_2
+VKLOP 2:: CASOVNIK 2 MINUTA VKLOP(2)
+VKLOP 2:: CASOVNIK 2 URA VKLOP(2)
+ČET: 2_TIMER_2_Nedelja_2
+ČET: 2_TIMER_2_Ponedeljek_2
+
+--- File: GESLO_EH_SPREMEMBA.jmx ---
+Sprememba gesla za
+nastavitve el.grelcev:: NOVO_GESLO_EH
+
+--- File: URE_delov_vklopi.jmx ---
+EL.grelec.:: 2_URE_EH_000XXX
+EL.grelec.:: 2_URE_EH_XXX000
+EL.grelec.:: 2_VKLOPI_EH_XXX00_0
+URE DELOVANJA: 2_URE_Komp_000XXX
+URE DELOVANJA: 2_URE_Komp_XXX000
+ŠTEVILO VKLOPOV: 2_VKLOPI_EH_00XX_0
+ŠTEVILO VKLOPOV: 2_VKLOPI_EH_0_00XX
+ŠTEVILO VKLOPOV: 2_VKLOPI_EH_0_XX00
+ŠTEVILO VKLOPOV: 2_VKLOPI_Komp_00XX_0
+ŠTEVILO VKLOPOV: 2_VKLOPI_Komp_0_00XX
+ŠTEVILO VKLOPOV: 2_VKLOPI_Komp_0_XX00
+ŠTEVILO VKLOPOV: 2_VKLOPI_Komp_XXX00_0
+
+--- File: Page118 - Kopija - Kopija.jmx ---
+Vrsta kontakta
+eksternega vklopa:: DK3_Kontakt_RF3
+Vrsta kontakta
+eksternega vklopa:: MK1_IME(3)
+
+--- File: Page44 - Kopija (2).jmx ---
+Režim delovanja:: MK1_IME
+Režim delovanja:: MK1_Rezim OGR_HLAJ
+
+--- File: Page27 - Kopija.jmx ---
+Aktiviranje
+protilegionelnega programa:: SV_LEGIONELA_Vklop
+
+--- File: Page49 - Kopija.jmx ---
+Min. temperatura
+vtoka pri hlajenju:: MK1_IME(3)
+Min. temperatura
+vtoka pri hlajenju:: MK1_MIN_temp vtoka HL(3)
+
+--- File: Page109 - Kopija.jmx ---
+ALARM: 2_Vrsta_alarma
+
+--- File: Page502 - 3.jmx ---
+IZKLOP 3:: CASOVNIK 5 MINUTA IZKLOP(3)
+IZKLOP 3:: CASOVNIK 5 URA IZKLOP(3)
+NED: 2_TIMER_5_Nedelja_3
+NED: 2_TIMER_5_Sobota_3
+PET: 2_TIMER_5_Sreda_3
+PET: 2_TIMER_5_Torek_3
+PON: 2_TIMER_5_Ponedeljek_3
+PON: 2_TIMER_5_Torek_3
+SOB: 2_TIMER_5_Cetrtek_3
+SOB: 2_TIMER_5_Petek_3
+SRE: 2_TIMER_5_Petek_3
+SRE: 2_TIMER_5_Sobota_3
+TOR: 2_TIMER_5_Cetrtek_3
+TOR: 2_TIMER_5_Sreda_3
+VKLOP 3:: CASOVNIK 5 MINUTA VKLOP(3)
+VKLOP 3:: CASOVNIK 5 URA VKLOP(3)
+ČET: 2_TIMER_5_Nedelja_3
+ČET: 2_TIMER_5_Ponedeljek_3
+
+--- File: Page63.jmx ---
+Max. temperatura
+kolektorjev:: SOLAR Max Temp
+
+--- File: PV_Temp_SV.jmx ---
+Želena temperatura
+sanitarne vode:: PV_Temp_SV_1
+Želena temperatura
+sanitarne vode:: PV_Temp_SV_2
+
+--- File: Page59.jmx ---
+Korekcija vzporednega
+premika ogrevalne krivulje:: MK1_IME
+Korekcija vzporednega
+premika ogrevalne krivulje:: MK1_Vzp premik KRIVULJE
+
+--- File: Page121 - Kopija (4) - Kopija - Kopija.jmx ---
+Naprej: 2_Pogoj_maska_pret_stik
+Nazaj: 2_Max_cas_test_C0
+Nazaj: 2_Preostanek_sekund_MP2_ZAP
+Zapiranje MP2:: 2_TEST_MP2_ZAP
+
+--- File: Page11.jmx ---
+Max. temp. vtoka
+pri sušenju estrihov:: OSN_MAX_temp Estrihi
+
+--- File: Page87 - Kopija.jmx ---
+NIŽJA TEMPERATURA:: MK1_IME(3)
+NIŽJA TEMPERATURA:: MK1_Temp NOCNA(3)
+VIŠJA TEMPERATURA:: MK1_Temp DNEVNA(3)
+
+--- File: Page15.jmx ---
+Vrsta kontakta
+eksterne blokade TČ:: OSN_Kontakt EKST IZKLOP TC
+
+--- File: Page400.jmx ---
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_4_Minute_OFF_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_4_Minute_OFF_2
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_4_Minute_ON_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_4_Ponedeljek_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_4_Ponedeljek_2
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_4_Torek_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_4_Torek_2
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_4_Ura_OFF_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_4_Ura_OFF_2
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_4_Ura_ON_1
+Naprej: 2_TIMER_4_Cetrtek_3
+Naprej: 2_TIMER_4_Nedelja_2
+Naprej: 2_TIMER_4_Nedelja_3
+Naprej: 2_TIMER_4_Petek_3
+Naprej: 2_TIMER_4_Sobota_2
+Naprej: 2_TIMER_4_Sobota_3
+Nazaj: 2_TIMER_4_Minute_OFF_3
+Nazaj: 2_TIMER_4_Minute_ON_2
+Nazaj: 2_TIMER_4_Minute_ON_3
+Nazaj: 2_TIMER_4_Ponedeljek_3
+Nazaj: 2_TIMER_4_Sreda_3
+Nazaj: 2_TIMER_4_Torek_3
+Nazaj: 2_TIMER_4_Ura_OFF_3
+Nazaj: 2_TIMER_4_Ura_ON_2
+Nazaj: 2_TIMER_4_Ura_ON_3
+ČASOVNI PROGRAM 4: 2_TIMER_4_Cetrtek_1
+ČASOVNI PROGRAM 4: 2_TIMER_4_Cetrtek_2
+ČASOVNI PROGRAM 4: 2_TIMER_4_Nedelja_1
+ČASOVNI PROGRAM 4: 2_TIMER_4_Petek_1
+ČASOVNI PROGRAM 4: 2_TIMER_4_Petek_2
+ČASOVNI PROGRAM 4: 2_TIMER_4_Sobota_1
+ČASOVNI PROGRAM 4: 2_TIMER_4_Sreda_1
+ČASOVNI PROGRAM 4: 2_TIMER_4_Sreda_2
+
+--- File: Page Ura2 - Kopija.jmx ---
+Nastavitev minut:: URA
+Shrani: MINUTA
+
+--- File: Page14.jmx ---
+Omejitev moči TČ
+pri ogrevanju prostorov:: OSN_MAX_Moc_pri_OGR_PROST
+
+--- File: Page121 - Kopija (6) - Kopija.jmx ---
+Naprej: 2_Pogoj_maska_pret_stik
+Nazaj: 2_Max_cas_test_C0
+Nazaj: 2_Preostanek_sekund_PV_SV
+PV na ogrevanje SV:: 2_TEST_PV_SV
+
+--- File: OK2_RF_Osvezevanje.jmx ---
+Čas osveževanja podatkov
+iz prostorskega tipala:: Cas_osvezevanja_RF2
+Čas osveževanja podatkov
+iz prostorskega tipala:: MK1_IME(2)
+
+--- File: Dod_vir_Vklop_kopija.jmx ---
+Dodatni vir:: DOD_VIR_Nacin vklopa
+
+--- File: Page303 - 2.jmx ---
+IZKLOP 2:: CASOVNIK 3 MINUTA IZKLOP(2)
+IZKLOP 2:: CASOVNIK 3 URA IZKLOP(2)
+NED: 2_TIMER_3_Nedelja_2
+NED: 2_TIMER_3_Sobota_2
+PET: 2_TIMER_3_Sreda_2
+PET: 2_TIMER_3_Torek_2
+PON: 2_TIMER_3_Ponedeljek_2
+PON: 2_TIMER_3_Torek_2
+SOB: 2_TIMER_3_Cetrtek_2
+SOB: 2_TIMER_3_Petek_2
+SRE: 2_TIMER_3_Petek_2
+SRE: 2_TIMER_3_Sobota_2
+TOR: 2_TIMER_3_Cetrtek_2
+TOR: 2_TIMER_3_Sreda_2
+VKLOP 2:: CASOVNIK 3 MINUTA VKLOP(2)
+VKLOP 2:: CASOVNIK 3 URA VKLOP(2)
+ČET: 2_TIMER_3_Nedelja_2
+ČET: 2_TIMER_3_Ponedeljek_2
+
+--- File: Page46 - Kopija - Kopija - Kopija.jmx ---
+Avtom. vklop-izklop
+hlajenja ZIMA-POLETJE:: MK1_IME(2)
+Avtom. vklop-izklop
+hlajenja ZIMA-POLETJE:: MK1_Preklop poletje HL(2)
+
+--- File: Page38 - Kopija.jmx ---
+Ime ogrevalne veje 2:: MK1_IME(2)
+
+--- File: Page121 - Kopija (3).jmx ---
+Naprej: 2_Pogoj_maska_pret_stik
+Nazaj: 2_Max_cas_test_C0
+Nazaj: 2_Preostanek_sekund_C3
+Črpalka Č3:: 2_TEST_C3
+
+--- File: Page39 - Kopija.jmx ---
+Vrsta strojne inštalacije:: MK1_IME(2)
+Vrsta strojne inštalacije:: MK1_Instalacija(2)
+
+--- File: Page86.jmx ---
+KOR.NAGIBA KRIVULJE:: MK1_IME
+KOR.NAGIBA KRIVULJE:: MK1_Nagib KRIVULJE
+VZPOR.KOR.KRIVULJE:: MK1_Vzp premik KRIVULJE
+
+--- File: Page96 - Kopija.jmx ---
+Zunanja temperatura
+za vklop 2. stopnje:: EH_AF za vklop ST 2
+
+--- File: Page44 - Kopija - Kopija.jmx ---
+Režim delovanja:: MK1_IME(3)
+Režim delovanja:: MK1_Rezim OGR_HLAJ(3)
+
+--- File: Page104.jmx ---
+KODA SERVISERJA:: GESLO Serviserja 1 AA
+Shrani: 2_Verzija_programa_ZAPOREDJE
+VERZIJA PROGRAMA:: 2_Verzija_programa_DAN
+VERZIJA PROGRAMA:: 2_Verzija_programa_LETO
+VERZIJA PROGRAMA:: 2_Verzija_programa_MESEC
+VERZIJA PROGRAMA:: GESLO Serviserja 2 BB
+VERZIJA PROGRAMA:: GESLO Serviserja 3 CC
+VERZIJA PROGRAMA:: GESLO Serviserja 4 DD
+
+--- File: Page48.jmx ---
+Min. temperatura
+vtoka pri ogrevanju:: MK1_IME
+Min. temperatura
+vtoka pri ogrevanju:: MK1_MIN_temp vtoka OGR
+
+--- File: Page55.jmx ---
+Zakasnitev izklopa
+obtočne črpalke Č1:: MK1_IME
+Zakasnitev izklopa
+obtočne črpalke Č1:: MK1_ZAKAS izklop C1
+
+--- File: Page36.jmx ---
+Cikel delovanja
+protilegionelnega programa:: SV_Legionela_CIKEL
+
+--- File: Page60 - Kopija - Kopija.jmx ---
+Korekcija nagiba
+ogrevalne krivulje:: MK1_IME(3)
+Korekcija nagiba
+ogrevalne krivulje:: MK1_Nagib KRIVULJE(3)
+
+--- File: Page40 - Kopija.jmx ---
+Izbira časovnega programa:: MK1_IME(2)
+Izbira časovnega programa:: MK1_Rezim 24 Timerji 12345(2)
+
+--- File: Page53 - Kopija - Kopija - Kopija.jmx ---
+Zakasnitev za vklop-izklop
+ogrevanja ZIMA-POLETJE:: MK1_IME(2)
+Zakasnitev za vklop-izklop
+ogrevanja ZIMA-POLETJE:: MK1_ZAKAS avtom preklop OGR(2)
+
+--- File: Page42 - Kopija (2).jmx ---
+Reguliranje hlajenja po:: MK1_IME
+Reguliranje hlajenja po:: MK1_Reguliranje HL po
+
+--- File: Page43 - Kopija.jmx ---
+Vrsta tipala
+prostorske temperature:: MK1_IME(2)
+Vrsta tipala
+prostorske temperature:: MK1_Vrsta prost tipala(2)
+
+--- File: PV_FUNKCIJA.jmx ---
+PV funkcija:: OSN_PV Vklop
+
+--- File: Page101 - 2.jmx ---
+IZKLOP 2:: CASOVNIK 1 MINUTA IZKLOP(2)
+IZKLOP 2:: CASOVNIK 1 URA IZKLOP(2)
+NED: 2_TIMER_1_Nedelja_2
+NED: 2_TIMER_1_Sobota_2
+PET: 2_TIMER_1_Sreda_2
+PET: 2_TIMER_1_Torek_2
+PON: 2_TIMER_1_Ponedeljek_2
+PON: 2_TIMER_1_Torek_2
+SOB: 2_TIMER_1_Cetrtek_2
+SOB: 2_TIMER_1_Petek_2
+SRE: 2_TIMER_1_Petek_2
+SRE: 2_TIMER_1_Sobota_2
+TOR: 2_TIMER_1_Cetrtek_2
+TOR: 2_TIMER_1_Sreda_2
+VKLOP 2:: CASOVNIK 1 MINUTA VKLOP(2)
+VKLOP 2:: CASOVNIK 1 URA VKLOP(2)
+ČET: 2_TIMER_1_Nedelja_2
+ČET: 2_TIMER_1_Ponedeljek_2
+
+--- File: Page204 - 2.jmx ---
+IZKLOP 2:: CASOVNIK 2 MINUTA IZKLOP(2)
+IZKLOP 2:: CASOVNIK 2 URA IZKLOP(2)
+NED: 2_TIMER_2_Nedelja_2
+NED: 2_TIMER_2_Sobota_2
+PET: 2_TIMER_2_Sreda_2
+PET: 2_TIMER_2_Torek_2
+PON: 2_TIMER_2_Ponedeljek_2
+PON: 2_TIMER_2_Torek_2
+SOB: 2_TIMER_2_Cetrtek_2
+SOB: 2_TIMER_2_Petek_2
+SRE: 2_TIMER_2_Petek_2
+SRE: 2_TIMER_2_Sobota_2
+TOR: 2_TIMER_2_Cetrtek_2
+TOR: 2_TIMER_2_Sreda_2
+VKLOP 2:: CASOVNIK 2 MINUTA VKLOP(2)
+VKLOP 2:: CASOVNIK 2 URA VKLOP(2)
+ČET: 2_TIMER_2_Nedelja_2
+ČET: 2_TIMER_2_Ponedeljek_2
+
+--- File: Page120.jmx ---
+Omejitev moči TČ
+pri ogrevanju SV:: OSN_MAX_Moc_pri_OGR_SV
+
+--- File: Page81.jmx ---
+IZKLOP 1:: CASOVNIK 1 MINUTA IZKLOP
+IZKLOP 1:: CASOVNIK 1 URA IZKLOP
+NED: 2_TIMER_1_Nedelja_1
+NED: 2_TIMER_1_Sobota_1
+PET: 2_TIMER_1_Sreda_1
+PET: 2_TIMER_1_Torek_1
+PON: 2_TIMER_1_Ponedeljek_1
+PON: 2_TIMER_1_Torek_1
+SOB: 2_TIMER_1_Cetrtek_1
+SOB: 2_TIMER_1_Petek_1
+SRE: 2_TIMER_1_Petek_1
+SRE: 2_TIMER_1_Sobota_1
+TOR: 2_TIMER_1_Cetrtek_1
+TOR: 2_TIMER_1_Sreda_1
+VKLOP 1:: CASOVNIK 1 MINUTA VKLOP
+VKLOP 1:: CASOVNIK 1 URA VKLOP
+ČET: 2_TIMER_1_Nedelja_1
+ČET: 2_TIMER_1_Ponedeljek_1
+
+--- File: Page57 - Kopija.jmx ---
+Kalibracija
+tipala vtoka:: MK1_IME(2)
+Kalibracija
+tipala vtoka:: MK1_Kalibracija VF1(2)
+
+--- File: Page62.jmx ---
+Min. temp. kolektorjev
+za vklop ogrevanja SV:: SOLAR Min Temp
+
+--- File: Page403 - 2.jmx ---
+IZKLOP 2:: CASOVNIK 4 MINUTA IZKLOP(2)
+IZKLOP 2:: CASOVNIK 4 URA IZKLOP(2)
+NED: 2_TIMER_4_Nedelja_2
+NED: 2_TIMER_4_Sobota_2
+PET: 2_TIMER_4_Sreda_2
+PET: 2_TIMER_4_Torek_2
+PON: 2_TIMER_4_Ponedeljek_2
+PON: 2_TIMER_4_Torek_2
+SOB: 2_TIMER_4_Cetrtek_2
+SOB: 2_TIMER_4_Petek_2
+SRE: 2_TIMER_4_Petek_2
+SRE: 2_TIMER_4_Sobota_2
+TOR: 2_TIMER_4_Cetrtek_2
+TOR: 2_TIMER_4_Sreda_2
+VKLOP 2:: CASOVNIK 4 MINUTA VKLOP(2)
+VKLOP 2:: CASOVNIK 4 URA VKLOP(2)
+ČET: 2_TIMER_4_Nedelja_2
+ČET: 2_TIMER_4_Ponedeljek_2
+
+--- File: Page100 - 3.jmx ---
+IZKLOP 3:: CASOVNIK 1 MINUTA IZKLOP(3)
+IZKLOP 3:: CASOVNIK 1 URA IZKLOP(3)
+NED: 2_TIMER_1_Nedelja_3
+NED: 2_TIMER_1_Sobota_3
+PET: 2_TIMER_1_Sreda_3
+PET: 2_TIMER_1_Torek_3
+PON: 2_TIMER_1_Ponedeljek_3
+PON: 2_TIMER_1_Torek_3
+SOB: 2_TIMER_1_Cetrtek_3
+SOB: 2_TIMER_1_Petek_3
+SRE: 2_TIMER_1_Petek_3
+SRE: 2_TIMER_1_Sobota_3
+TOR: 2_TIMER_1_Cetrtek_3
+TOR: 2_TIMER_1_Sreda_3
+VKLOP 3:: CASOVNIK 1 MINUTA VKLOP(3)
+VKLOP 3:: CASOVNIK 1 URA VKLOP(3)
+ČET: 2_TIMER_1_Nedelja_3
+ČET: 2_TIMER_1_Ponedeljek_3
+
+--- File: Page47 - Kopija - Kopija.jmx ---
+Max. temperatura
+vtoka pri ogrevanju:: MK1_IME(3)
+Max. temperatura
+vtoka pri ogrevanju:: MK1_MAX_temp vtoka OGR(3)
+
+--- File: Page72.jmx ---
+Vzporedno delovanje
+s toplotno črpalko:: DOD VIR Vzporedno
+
+--- File: Page111 - Kopija.jmx ---
+IZBIRA ČASOVNEGA PROGRAMA:: MK1_IME(3)
+IZBIRA ČASOVNEGA PROGRAMA:: MK1_Rezim 24 Timerji 12345(3)
+
+--- File: Page36 - Kopija.jmx ---
+Cikel delovanja
+protilegionelnega programa:: SV_Legionela_CIKEL
+
+--- File: Page93.jmx ---
+Zakasnitev vklopa
+2.stopnje:: EH_Zakasn STOPNJA 2
+
+--- File: Page57.jmx ---
+Kalibracija
+tipala vtoka:: MK1_IME
+Kalibracija
+tipala vtoka:: MK1_Kalibracija VF1
+
+--- File: Page119.jmx ---
+Limita diference TČ
+pri sanitarne vode:: OSN_Limita_moci_pri_SV
+
+--- File: HITRA IZBIRA REZIMA.jmx ---
+Hitra izbira
+prostorskega režima:: HITRA IZBIRA Rezima
+
+--- File: Page302 - 3.jmx ---
+IZKLOP 3:: CASOVNIK 3 MINUTA IZKLOP(3)
+IZKLOP 3:: CASOVNIK 3 URA IZKLOP(3)
+NED: 2_TIMER_3_Nedelja_3
+NED: 2_TIMER_3_Sobota_3
+PET: 2_TIMER_3_Sreda_3
+PET: 2_TIMER_3_Torek_3
+PON: 2_TIMER_3_Ponedeljek_3
+PON: 2_TIMER_3_Torek_3
+SOB: 2_TIMER_3_Cetrtek_3
+SOB: 2_TIMER_3_Petek_3
+SRE: 2_TIMER_3_Petek_3
+SRE: 2_TIMER_3_Sobota_3
+TOR: 2_TIMER_3_Cetrtek_3
+TOR: 2_TIMER_3_Sreda_3
+VKLOP 3:: CASOVNIK 3 MINUTA VKLOP(3)
+VKLOP 3:: CASOVNIK 3 URA VKLOP(3)
+ČET: 2_TIMER_3_Nedelja_3
+ČET: 2_TIMER_3_Ponedeljek_3
+
+--- File: MK1_OGR_Krivulja.jmx ---
+Naprej: MK1_OGR_Krivulja_Y2
+RealTime Trend: MK1_IME
+TEMP. VTOKA:: MK1_OGR_Krivulja_Y1
+ZUNANJA TEMP.:: MK1_OGR_Krivulja_X1
+ZUNANJA TEMP.:: MK1_OGR_Krivulja_X2
+
+--- File: Page DATUM.jmx ---
+20: LETO
+20: MESEC
+Nastavitev datuma:: DAN
+
+--- File: Page40.jmx ---
+Izbira časovnega programa:: MK1_IME
+Izbira časovnega programa:: MK1_Rezim 24 Timerji 12345
+
+--- File: Page54 - Kopija - Kopija - Kopija.jmx ---
+Zakasnitev za vklop-izklop
+hlajenja ZIMA-POLETJE:: MK1_IME(2)
+Zakasnitev za vklop-izklop
+hlajenja ZIMA-POLETJE:: MK1_ZAKAS avtom preklop HL(2)
+
+--- File: Page Datum2.jmx ---
+20: LETO
+20: MESEC
+Nastavitev datuma:: DAN
+
+--- File: Page501 - 2.jmx ---
+IZKLOP 2:: CASOVNIK 5 MINUTA IZKLOP(2)
+IZKLOP 2:: CASOVNIK 5 URA IZKLOP(2)
+NED: 2_TIMER_5_Nedelja_2
+NED: 2_TIMER_5_Sobota_2
+PET: 2_TIMER_5_Sreda_2
+PET: 2_TIMER_5_Torek_2
+PON: 2_TIMER_5_Ponedeljek_2
+PON: 2_TIMER_5_Torek_2
+SOB: 2_TIMER_5_Cetrtek_2
+SOB: 2_TIMER_5_Petek_2
+SRE: 2_TIMER_5_Petek_2
+SRE: 2_TIMER_5_Sobota_2
+TOR: 2_TIMER_5_Cetrtek_2
+TOR: 2_TIMER_5_Sreda_2
+VKLOP 2:: CASOVNIK 5 MINUTA VKLOP(2)
+VKLOP 2:: CASOVNIK 5 URA VKLOP(2)
+ČET: 2_TIMER_5_Nedelja_2
+ČET: 2_TIMER_5_Ponedeljek_2
+
+--- File: Page55 - Kopija.jmx ---
+Zakasnitev izklopa
+obtočne črpalke Č3:: MK1_IME(3)
+Zakasnitev izklopa
+obtočne črpalke Č3:: MK1_ZAKAS izklop C1(3)
+
+--- File: Page61.jmx ---
+Aktiviranje
+solarnega sistema:: SOLAR_Vklop
+
+--- File: Page56.jmx ---
+Čas rotacije mot. pogona
+mešalnega ventila, za 90°:: MK1_Cas pomika MP1
+Čas rotacije mot. pogona
+mešalnega ventila, za 90°:: MK1_IME
+
+--- File: Page37 - Kopija - Kopija.jmx ---
+Aktiviranje:: MK1_IME(3)
+Aktiviranje:: MK1_Vklop(3)
+
+--- File: Page304 - 3.jmx ---
+IZKLOP 3:: CASOVNIK 3 MINUTA IZKLOP(3)
+IZKLOP 3:: CASOVNIK 3 URA IZKLOP(3)
+NED: 2_TIMER_3_Nedelja_3
+NED: 2_TIMER_3_Sobota_3
+PET: 2_TIMER_3_Sreda_3
+PET: 2_TIMER_3_Torek_3
+PON: 2_TIMER_3_Ponedeljek_3
+PON: 2_TIMER_3_Torek_3
+SOB: 2_TIMER_3_Cetrtek_3
+SOB: 2_TIMER_3_Petek_3
+SRE: 2_TIMER_3_Petek_3
+SRE: 2_TIMER_3_Sobota_3
+TOR: 2_TIMER_3_Cetrtek_3
+TOR: 2_TIMER_3_Sreda_3
+VKLOP 3:: CASOVNIK 3 MINUTA VKLOP(3)
+VKLOP 3:: CASOVNIK 3 URA VKLOP(3)
+ČET: 2_TIMER_3_Nedelja_3
+ČET: 2_TIMER_3_Ponedeljek_3
+
+--- File: Page60 - Kopija - Kopija - Kopija.jmx ---
+Korekcija nagiba
+ogrevalne krivulje:: MK1_IME(3)
+Korekcija nagiba
+ogrevalne krivulje:: MK1_Nagib KRIVULJE(3)
+
+--- File: Page40 - Kopija - Kopija (2).jmx ---
+Izbira časovnega programa:: MK1_IME(2)
+Izbira časovnega programa:: MK1_Rezim 24 Timerji 12345(2)
+
+--- File: Page121 - Kopija (5) - Kopija.jmx ---
+Naprej: 2_Pogoj_maska_pret_stik
+Nazaj: 2_Max_cas_test_C0
+Nazaj: 2_Preostanek_sekund_MP2_ODP
+Odpiranje MP2:: 2_TEST_MP2_ODP
+
+--- File: Page73.jmx ---
+Želena nižja temperatura
+pri režimu ogrevanja:: ZALOG Temp Nizja OGR
+
+--- File: Page121.jmx ---
+Naprej: 2_Pogoj_maska_pret_stik
+Nazaj: 2_Max_cas_test_C0
+Nazaj: 2_Preostanek_sekund_C0
+Črpalka Č0:: 2_TEST_C0
+
+--- File: Page111.jmx ---
+IZBIRA ČASOVNEGA PROGRAMA:: MK1_IME(2)
+IZBIRA ČASOVNEGA PROGRAMA:: MK1_Rezim 24 Timerji 12345(2)
+
+--- File: Page Ura1 - Kopija.jmx ---
+Nastavitev ure:: URA
+Shrani: MINUTA
+
+--- File: Page67.jmx ---
+Diferenca temp. med
+kolektorji in SV, za izklop:: SOLAR Diferenca IZKLOPA
+
+--- File: Page40 - Kopija - Kopija.jmx ---
+Izbira časovnega programa:: MK1_IME(3)
+Izbira časovnega programa:: MK1_Rezim 24 Timerji 12345(3)
+
+--- File: Page501.jmx ---
+IZKLOP 1:: CASOVNIK 5 MINUTA IZKLOP
+IZKLOP 1:: CASOVNIK 5 URA IZKLOP
+NED: 2_TIMER_5_Nedelja_1
+NED: 2_TIMER_5_Sobota_1
+PET: 2_TIMER_5_Sreda_1
+PET: 2_TIMER_5_Torek_1
+PON: 2_TIMER_5_Ponedeljek_1
+PON: 2_TIMER_5_Torek_1
+SOB: 2_TIMER_5_Cetrtek_1
+SOB: 2_TIMER_5_Petek_1
+SRE: 2_TIMER_5_Petek_1
+SRE: 2_TIMER_5_Sobota_1
+TOR: 2_TIMER_5_Cetrtek_1
+TOR: 2_TIMER_5_Sreda_1
+VKLOP 1:: CASOVNIK 5 MINUTA VKLOP
+VKLOP 1:: CASOVNIK 5 URA VKLOP
+ČET: 2_TIMER_5_Nedelja_1
+ČET: 2_TIMER_5_Ponedeljek_1
+
+--- File: Page URA.jmx ---
+Naprej: MINUTA
+Nastavitev ure:: URA
+
+--- File: Page500.jmx ---
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_5_Minute_OFF_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_5_Minute_OFF_2
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_5_Minute_ON_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_5_Ponedeljek_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_5_Ponedeljek_2
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_5_Torek_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_5_Torek_2
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_5_Ura_OFF_1
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_5_Ura_OFF_2
+IZBIRA ČASOVNEGA PROGRAMA: 2_TIMER_5_Ura_ON_1
+Naprej: 2_TIMER_5_Cetrtek_3
+Naprej: 2_TIMER_5_Nedelja_2
+Naprej: 2_TIMER_5_Nedelja_3
+Naprej: 2_TIMER_5_Petek_3
+Naprej: 2_TIMER_5_Sobota_2
+Naprej: 2_TIMER_5_Sobota_3
+Nazaj: 2_TIMER_5_Minute_OFF_3
+Nazaj: 2_TIMER_5_Minute_ON_2
+Nazaj: 2_TIMER_5_Minute_ON_3
+Nazaj: 2_TIMER_5_Ponedeljek_3
+Nazaj: 2_TIMER_5_Sreda_3
+Nazaj: 2_TIMER_5_Torek_3
+Nazaj: 2_TIMER_5_Ura_OFF_3
+Nazaj: 2_TIMER_5_Ura_ON_2
+Nazaj: 2_TIMER_5_Ura_ON_3
+ČASOVNI PROGRAM 5: 2_TIMER_5_Cetrtek_1
+ČASOVNI PROGRAM 5: 2_TIMER_5_Cetrtek_2
+ČASOVNI PROGRAM 5: 2_TIMER_5_Nedelja_1
+ČASOVNI PROGRAM 5: 2_TIMER_5_Petek_1
+ČASOVNI PROGRAM 5: 2_TIMER_5_Petek_2
+ČASOVNI PROGRAM 5: 2_TIMER_5_Sobota_1
+ČASOVNI PROGRAM 5: 2_TIMER_5_Sreda_1
+ČASOVNI PROGRAM 5: 2_TIMER_5_Sreda_2
+
+--- File: Page37.jmx ---
+Aktiviranje:: MK1_IME
+Aktiviranje:: MK1_Vklop
+
+--- File: Page52 - Kopija - Kopija.jmx ---
+Zun. temp. za vklop-izklop
+hlajenja ZIMA-POLETJE:: MK1_AF za avtom preklop HL(3)
+Zun. temp. za vklop-izklop
+hlajenja ZIMA-POLETJE:: MK1_IME(3)
+
+--- File: Page30.jmx ---
+Diferenca vklopa:: SV_Diferenca
+
+--- File: Page32.jmx ---
+Kalibracija tipala
+sanitarne vode - ZGORAJ:: SV_Kalib_BF1
+
+--- File: Page100 - 2.jmx ---
+IZKLOP 2:: CASOVNIK 1 MINUTA IZKLOP(2)
+IZKLOP 2:: CASOVNIK 1 URA IZKLOP(2)
+NED: 2_TIMER_1_Nedelja_2
+NED: 2_TIMER_1_Sobota_2
+PET: 2_TIMER_1_Sreda_2
+PET: 2_TIMER_1_Torek_2
+PON: 2_TIMER_1_Ponedeljek_2
+PON: 2_TIMER_1_Torek_2
+SOB: 2_TIMER_1_Cetrtek_2
+SOB: 2_TIMER_1_Petek_2
+SRE: 2_TIMER_1_Petek_2
+SRE: 2_TIMER_1_Sobota_2
+TOR: 2_TIMER_1_Cetrtek_2
+TOR: 2_TIMER_1_Sreda_2
+VKLOP 2:: CASOVNIK 1 MINUTA VKLOP(2)
+VKLOP 2:: CASOVNIK 1 URA VKLOP(2)
+ČET: 2_TIMER_1_Nedelja_2
+ČET: 2_TIMER_1_Ponedeljek_2
+
+--- File: Page71 - Kopija.jmx ---
+Zakasnitev vklopa:: DOD VIR Zakasn vklopa
+
+--- File: Page303.jmx ---
+IZKLOP 1:: CASOVNIK 3 MINUTA IZKLOP
+IZKLOP 1:: CASOVNIK 3 URA IZKLOP
+NED: 2_TIMER_3_Nedelja_1
+NED: 2_TIMER_3_Sobota_1
+PET: 2_TIMER_3_Sreda_1
+PET: 2_TIMER_3_Torek_1
+PON: 2_TIMER_3_Ponedeljek_1
+PON: 2_TIMER_3_Torek_1
+SOB: 2_TIMER_3_Cetrtek_1
+SOB: 2_TIMER_3_Petek_1
+SRE: 2_TIMER_3_Petek_1
+SRE: 2_TIMER_3_Sobota_1
+TOR: 2_TIMER_3_Cetrtek_1
+TOR: 2_TIMER_3_Sreda_1
+VKLOP 1:: CASOVNIK 3 MINUTA VKLOP
+VKLOP 1:: CASOVNIK 3 URA VKLOP
+ČET: 2_TIMER_3_Nedelja_1
+ČET: 2_TIMER_3_Ponedeljek_1
+
+--- File: Page501 - 3.jmx ---
+IZKLOP 3:: CASOVNIK 5 MINUTA IZKLOP(3)
+IZKLOP 3:: CASOVNIK 5 URA IZKLOP(3)
+NED: 2_TIMER_5_Nedelja_3
+NED: 2_TIMER_5_Sobota_3
+PET: 2_TIMER_5_Sreda_3
+PET: 2_TIMER_5_Torek_3
+PON: 2_TIMER_5_Ponedeljek_3
+PON: 2_TIMER_5_Torek_3
+SOB: 2_TIMER_5_Cetrtek_3
+SOB: 2_TIMER_5_Petek_3
+SRE: 2_TIMER_5_Petek_3
+SRE: 2_TIMER_5_Sobota_3
+TOR: 2_TIMER_5_Cetrtek_3
+TOR: 2_TIMER_5_Sreda_3
+VKLOP 3:: CASOVNIK 5 MINUTA VKLOP(3)
+VKLOP 3:: CASOVNIK 5 URA VKLOP(3)
+ČET: 2_TIMER_5_Nedelja_3
+ČET: 2_TIMER_5_Ponedeljek_3
+
+--- File: Page54 - Kopija - Kopija - Kopija - Kopija.jmx ---
+Zakasnitev za vklop-izklop
+hlajenja ZIMA-POLETJE:: MK1_IME
+Zakasnitev za vklop-izklop
+hlajenja ZIMA-POLETJE:: MK1_ZAKAS avtom preklop HL
+
+--- File: POCITNISKI_CAS.jmx ---
+20: Pocitniski_LETO
+20: Pocitniski_MESEC
+KONEC POČITNIŠKEGA REŽIMA:: Pocitniski_DAN
+
+--- File: Page66.jmx ---
+Diferenca temp. med
+kolektorji in SV, za vklop:: SOLAR Diferenca VKLOPA
+
+--- File: Page203.jmx ---
+IZKLOP 1:: CASOVNIK 2 MINUTA IZKLOP
+IZKLOP 1:: CASOVNIK 2 URA IZKLOP
+NED: 2_TIMER_2_Nedelja_1
+NED: 2_TIMER_2_Sobota_1
+PET: 2_TIMER_2_Sreda_1
+PET: 2_TIMER_2_Torek_1
+PON: 2_TIMER_2_Ponedeljek_1
+PON: 2_TIMER_2_Torek_1
+SOB: 2_TIMER_2_Cetrtek_1
+SOB: 2_TIMER_2_Petek_1
+SRE: 2_TIMER_2_Petek_1
+SRE: 2_TIMER_2_Sobota_1
+TOR: 2_TIMER_2_Cetrtek_1
+TOR: 2_TIMER_2_Sreda_1
+VKLOP 1:: CASOVNIK 2 MINUTA VKLOP
+VKLOP 1:: CASOVNIK 2 URA VKLOP
+ČET: 2_TIMER_2_Nedelja_1
+ČET: 2_TIMER_2_Ponedeljek_1
+
+--- File: Page80.jmx ---
+IZKLOP 1:: CASOVNIK 1 MINUTA IZKLOP
+IZKLOP 1:: CASOVNIK 1 URA IZKLOP
+NED: 2_TIMER_1_Nedelja_1
+NED: 2_TIMER_1_Sobota_1
+PET: 2_TIMER_1_Sreda_1
+PET: 2_TIMER_1_Torek_1
+PON: 2_TIMER_1_Ponedeljek_1
+PON: 2_TIMER_1_Torek_1
+SOB: 2_TIMER_1_Cetrtek_1
+SOB: 2_TIMER_1_Petek_1
+SRE: 2_TIMER_1_Petek_1
+SRE: 2_TIMER_1_Sobota_1
+TOR: 2_TIMER_1_Cetrtek_1
+TOR: 2_TIMER_1_Sreda_1
+VKLOP 1:: CASOVNIK 1 MINUTA VKLOP
+VKLOP 1:: CASOVNIK 1 URA VKLOP
+ČET: 2_TIMER_1_Nedelja_1
+ČET: 2_TIMER_1_Ponedeljek_1
+
+--- File: PV_Temp_ZALOG_HL.jmx ---
+Želena temp. zalogovnika
+pri režimu hlajenja:: PV_Temp_ZALOG_HL
+
+--- File: GESLO_EH_UPOR.jmx ---
+Geslo za nastavitev
+električnih grelcev:: VSTAVI_GESLO_EH
+
+--- File: Nizanje_OK3.jmx ---
+Delovanje ob preklopu
+na nižji režim:: MK1_Delovanje pri nizjem rezimu(3)
+Delovanje ob preklopu
+na nižji režim:: MK1_IME(3)
+
+--- File: Page301 - 2.jmx ---
+IZKLOP 2:: CASOVNIK 3 MINUTA IZKLOP(2)
+IZKLOP 2:: CASOVNIK 3 URA IZKLOP(2)
+NED: 2_TIMER_3_Nedelja_2
+NED: 2_TIMER_3_Sobota_2
+PET: 2_TIMER_3_Sreda_2
+PET: 2_TIMER_3_Torek_2
+PON: 2_TIMER_3_Ponedeljek_2
+PON: 2_TIMER_3_Torek_2
+SOB: 2_TIMER_3_Cetrtek_2
+SOB: 2_TIMER_3_Petek_2
+SRE: 2_TIMER_3_Petek_2
+SRE: 2_TIMER_3_Sobota_2
+TOR: 2_TIMER_3_Cetrtek_2
+TOR: 2_TIMER_3_Sreda_2
+VKLOP 2:: CASOVNIK 3 MINUTA VKLOP(2)
+VKLOP 2:: CASOVNIK 3 URA VKLOP(2)
+ČET: 2_TIMER_3_Nedelja_2
+ČET: 2_TIMER_3_Ponedeljek_2
+
+--- File: Page25 - Kopija.jmx ---
+Aktiviranje ogrevanja
+sanitarne vode:: SV_Vklop
+
+--- File: Page75 - Kopija.jmx ---
+INFO: MK1_IME(2)
+Odprtost mešalnega ventila:: 2_Odstotki_odprtosti_MP2
+Prostorska temperatura:: 2_Temp_RF2
+Stanje mešalnega ventila:: 2_Delovanje_MP2
+Stanje obtočne črpalke C2:: 2_Vklop_C2
+Temperatura vtoka:: 2_Temp_VF2
+Želena prostorska temp:: 2_Zahtevana_RF_MK_2
+Želena temperatura vtoka:: 2_Temp_zelena_MK_2
+
+--- File: Page41 - Kopija - Kopija.jmx ---
+Reguliranje ogrevanja po:: MK1_IME(3)
+Reguliranje ogrevanja po:: MK1_Reguliranje OGR po(3)
+
+--- File: Page503.jmx ---
+IZKLOP 1:: CASOVNIK 5 MINUTA IZKLOP
+IZKLOP 1:: CASOVNIK 5 URA IZKLOP
+NED: 2_TIMER_5_Nedelja_1
+NED: 2_TIMER_5_Sobota_1
+PET: 2_TIMER_5_Sreda_1
+PET: 2_TIMER_5_Torek_1
+PON: 2_TIMER_5_Ponedeljek_1
+PON: 2_TIMER_5_Torek_1
+SOB: 2_TIMER_5_Cetrtek_1
+SOB: 2_TIMER_5_Petek_1
+SRE: 2_TIMER_5_Petek_1
+SRE: 2_TIMER_5_Sobota_1
+TOR: 2_TIMER_5_Cetrtek_1
+TOR: 2_TIMER_5_Sreda_1
+VKLOP 1:: CASOVNIK 5 MINUTA VKLOP
+VKLOP 1:: CASOVNIK 5 URA VKLOP
+ČET: 2_TIMER_5_Nedelja_1
+ČET: 2_TIMER_5_Ponedeljek_1
+
+--- File: Page URA - Kopija.jmx ---
+Naprej: MINUTA
+Nastavitev ure:: URA
+
+--- File: Page39.jmx ---
+Vrsta strojne inštalacije:: MK1_IME
+Vrsta strojne inštalacije:: MK1_Instalacija
+
+--- File: Page204 - 3.jmx ---
+IZKLOP 3:: CASOVNIK 2 MINUTA IZKLOP(3)
+IZKLOP 3:: CASOVNIK 2 URA IZKLOP(3)
+NED: 2_TIMER_2_Nedelja_3
+NED: 2_TIMER_2_Sobota_3
+PET: 2_TIMER_2_Sreda_3
+PET: 2_TIMER_2_Torek_3
+PON: 2_TIMER_2_Ponedeljek_3
+PON: 2_TIMER_2_Torek_3
+SOB: 2_TIMER_2_Cetrtek_3
+SOB: 2_TIMER_2_Petek_3
+SRE: 2_TIMER_2_Petek_3
+SRE: 2_TIMER_2_Sobota_3
+TOR: 2_TIMER_2_Cetrtek_3
+TOR: 2_TIMER_2_Sreda_3
+VKLOP 3:: CASOVNIK 2 MINUTA VKLOP(3)
+VKLOP 3:: CASOVNIK 2 URA VKLOP(3)
+ČET: 2_TIMER_2_Nedelja_3
+ČET: 2_TIMER_2_Ponedeljek_3
+
+--- File: Page91.jmx ---
+Število aktivnih stopenj:: EH_Stevilo STOPENJ
+
+--- File: Page67_PUMP.jmx ---
+Max. diferenca
+pri regulaciji 0-10V:: SOLAR MAX Diferenca pri PWM
+
+--- File: Page109.jmx ---
+IZBIRA ČASOVNEGA PROGRAMA:: MK1_IME
+IZBIRA ČASOVNEGA PROGRAMA:: MK1_Rezim 24 Timerji 12345
+
+--- File: Page114.jmx ---
+NIŽJA TEMPERATURA:: SV Temperatura NIZJA
+NIŽJA TEMPERATURA:: SV_z_EH_Temperatura NIZJA
+VIŠJA TEMPERATURA:: SV Temperatura
+VIŠJA TEMPERATURA:: SV_z_EH_Temperatura
+
+--- File: Page204.jmx ---
+IZKLOP 1:: CASOVNIK 2 MINUTA IZKLOP
+IZKLOP 1:: CASOVNIK 2 URA IZKLOP
+NED: 2_TIMER_2_Nedelja_1
+NED: 2_TIMER_2_Sobota_1
+PET: 2_TIMER_2_Sreda_1
+PET: 2_TIMER_2_Torek_1
+PON: 2_TIMER_2_Ponedeljek_1
+PON: 2_TIMER_2_Torek_1
+SOB: 2_TIMER_2_Cetrtek_1
+SOB: 2_TIMER_2_Petek_1
+SRE: 2_TIMER_2_Petek_1
+SRE: 2_TIMER_2_Sobota_1
+TOR: 2_TIMER_2_Cetrtek_1
+TOR: 2_TIMER_2_Sreda_1
+VKLOP 1:: CASOVNIK 2 MINUTA VKLOP
+VKLOP 1:: CASOVNIK 2 URA VKLOP
+ČET: 2_TIMER_2_Nedelja_1
+ČET: 2_TIMER_2_Ponedeljek_1
+
+--- File: Page503 - 2.jmx ---
+IZKLOP 2:: CASOVNIK 5 MINUTA IZKLOP(2)
+IZKLOP 2:: CASOVNIK 5 URA IZKLOP(2)
+NED: 2_TIMER_5_Nedelja_2
+NED: 2_TIMER_5_Sobota_2
+PET: 2_TIMER_5_Sreda_2
+PET: 2_TIMER_5_Torek_2
+PON: 2_TIMER_5_Ponedeljek_2
+PON: 2_TIMER_5_Torek_2
+SOB: 2_TIMER_5_Cetrtek_2
+SOB: 2_TIMER_5_Petek_2
+SRE: 2_TIMER_5_Petek_2
+SRE: 2_TIMER_5_Sobota_2
+TOR: 2_TIMER_5_Cetrtek_2
+TOR: 2_TIMER_5_Sreda_2
+VKLOP 2:: CASOVNIK 5 MINUTA VKLOP(2)
+VKLOP 2:: CASOVNIK 5 URA VKLOP(2)
+ČET: 2_TIMER_5_Nedelja_2
+ČET: 2_TIMER_5_Ponedeljek_2
+
+--- File: Page4.jmx ---
+Zakasnitev vklopa TČ
+po prvem vklopu Č0:: OSN_Zakasn_VKLOPA_TC
