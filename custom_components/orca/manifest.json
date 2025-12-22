@@ -1,12 +1,14 @@
 {
-  "codeowners": ["Tomasinjo"],
+  "codeowners": ["@Tomasinjo"],
   "config_flow": true,
   "dependencies": [],
-  "documentation": "-",
+  "documentation": "https://github.com/Tomasinjo/orca-energy-ha/tree/main/development_resources",
+  "issue_tracker": "https://github.com/Tomasinjo/orca-energy-ha/issues",
   "iot_class": "local_polling",
+  "integration_type": "device",
   "domain": "orca",
   "name": "Orca",
-  "version": "2.0.5-b",
+  "version": "2.0.6-b",
   "requirements": [
     "aiofiles>=0.8.0"
   ]

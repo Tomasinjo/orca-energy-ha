@@ -24,12 +24,11 @@ async def async_setup_entry(
 
     entities = []
     for unique_id, tag_value in coordinator.data.items():
-        if tag_value.config.id in EXCLUDED_IDS:
-            continue
-
-        config = tag_value.config
-
-        if config.adjustable and config.type == "boolean":
+        if (
+            tag_value.config.type == "boolean"
+            and tag_value.config.adjustable.enabled
+            and tag_value.config.id not in EXCLUDED_IDS
+        ):
             entities.append(OrcaSwitch(coordinator, unique_id))
 
     async_add_entities(entities)

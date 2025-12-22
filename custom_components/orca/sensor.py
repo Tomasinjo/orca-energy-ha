@@ -26,23 +26,11 @@ async def async_setup_entry(
 
     entities = []
     for unique_id, tag_value in coordinator.data.items():
-        # Skip if consumed by other entities
-        if tag_value.config.id in EXCLUDED_IDS:
-            continue
-
-        config = tag_value.config
-
-        # Skip adjustable tags (handled by Number/Switch)
-        if config.adjustable:
-            continue
-
-        # Create Sensor if type matches
-        if config.type in [
-            "temperature",
-            "percentage",
-            "power_factor",
-            "multimode",
-        ]:
+        if (
+            tag_value.config.type in ["float", "multimode"]
+            and not tag_value.config.adjustable.enabled
+            and tag_value.config.id not in EXCLUDED_IDS
+        ):
             entities.append(OrcaSensor(coordinator, unique_id))
 
     async_add_entities(entities)
@@ -55,17 +43,17 @@ class OrcaSensor(OrcaEntity, SensorEntity):
         """Initialize the sensor."""
         super().__init__(coordinator, unique_id)
 
-        config = self.tag_data.config
+        unit = getattr(self.tag_data.config, "unit", "")
 
-        if config.type == "temperature":
+        if unit == "°C":
             self._attr_device_class = SensorDeviceClass.TEMPERATURE
             self._attr_state_class = SensorStateClass.MEASUREMENT
-        elif config.type in {"power_factor", "percentage"}:
+        elif unit == "%":
             self._attr_device_class = SensorDeviceClass.POWER_FACTOR
             self._attr_state_class = SensorStateClass.MEASUREMENT
 
-        if config.unit:
-            self._attr_native_unit_of_measurement = config.unit
+        if unit:
+            self._attr_native_unit_of_measurement = unit
 
     @property
     def native_value(self):

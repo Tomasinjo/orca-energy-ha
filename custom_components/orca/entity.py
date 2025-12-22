@@ -34,10 +34,10 @@ class OrcaEntity(CoordinatorEntity[OrcaDataUpdateCoordinator]):
 
         if selected_lang == LANG_SI:
             # Use slovenian entity name
-            self._attr_name = tag_data.config.final_name_si
+            self._attr_name = tag_data.config.name.si
         else:
             # Use english entity name
-            self._attr_name = tag_data.config.final_name
+            self._attr_name = tag_data.config.name.en
 
         # Unique ID must be globally unique. Combine entry_id + API unique_id
         self._attr_unique_id = f"{coordinator.config_entry.entry_id}_{unique_id_}"
@@ -50,12 +50,8 @@ class OrcaEntity(CoordinatorEntity[OrcaDataUpdateCoordinator]):
         config = tag_data.config
 
         # Configuration section
-        if config.adjustable:
+        if config.adjustable.enabled:
             return EntityCategory.CONFIG
-
-        # diagnostic section
-        if config.type in ["power_factor", "boolean"]:
-            return EntityCategory.DIAGNOSTIC
 
         # default sensor section
         return None
