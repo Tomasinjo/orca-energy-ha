@@ -1,10 +1,18 @@
 {
-  "codeowners": ["tomkern"],
-  "config_flow": true,
-  "dependencies": [],
-  "documentation": "-",
   "domain": "orca",
   "name": "Orca",
-  "version": "1.0",
-  "requirements": []
+  "codeowners": ["@Tomasinjo"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/Tomasinjo/orca-energy-ha/tree/main/development_resources",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/Tomasinjo/orca-energy-ha/issues",
+  "requirements": [
+    "aiohttp>=3.8.1",
+    "aiofiles>=25.1.0",
+    "pydantic>=2.0.6",
+    "PyYAML>=6.0"
+  ],
+  "version": "2.0.6"
 }

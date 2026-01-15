@@ -3,7 +3,7 @@
     badges: []
     cards:
       - type: custom:mushroom-climate-card
-        entity: climate.orca_hp
+        entity: climate.floor
         fill_container: false
         secondary_info: state
         hvac_modes: []
@@ -16,12 +16,12 @@
         cards:
           - type: custom:mini-graph-card
             entities:
-              - entity: sensor.hp_room_temperature
+              - entity: sensor.floor_room_temperature
                 name: Soba
-              - entity: sensor.hp_desired_day_temperature
+              - entity: sensor.floor_desired_room_temperature
                 name: Željena
                 color: green
-              - entity: binary_sensor.hp_floor_heater_running
+              - entity: binary_sensor.floor_pump_status
                 show_line: false
                 show_fill: true
                 show_legend: false
@@ -43,11 +43,11 @@
                 label: Greje
       - type: custom:mini-graph-card
         entities:
-          - entity: binary_sensor.hp_pump_floor
+          - entity: binary_sensor.floor_pump_status
             show_line: false
             show_fill: true
             name: Črpalka
-          - entity: sensor.hp_outlet_temperature_floor
+          - entity: sensor.floor_outlet_temperature
             y_axis: secondary
             name: Temperatura vtoka
         hours_to_show: 48
@@ -63,9 +63,9 @@
             label: Deluje
       - type: custom:mini-graph-card
         entities:
-          - entity: sensor.hp_outdoor_unit_power
+          - entity: sensor.outdoor_unit_power
             name: Moč
-          - entity: sensor.hp_internal_temperature
+          - entity: sensor.internal_temperature
             y_axis: secondary
             name: Notranja temperatura
         hours_to_show: 48
@@ -85,27 +85,16 @@
         tap_action:
           action: more-info
         name: Bojler
-        entity: water_heater.orca_water_heater
+        entity: water_heater.water_heater
       - type: custom:mini-graph-card
         entities:
-          - entity: sensor.hp_hot_water_bottom
+          - entity: sensor.hot_water_top
             name: Zgoraj
-          - entity: sensor.hp_hot_water_top
+          - entity: sensor.hot_water_bottom
             name: Spodaj
-          - entity: binary_sensor.hp_water_heater_running
-            show_line: false
-            show_fill: true
-            show_legend: false
-            color: red
-            y_axis: secondary
         hours_to_show: 48
         name: Temperatura vode
         height: 250
         line_width: 2
         points_per_hour: 6
         smoothing: false
-        state_map:
-          - value: 'off'
-            label: Miruje
-          - value: 'on'
-            label: Greje
