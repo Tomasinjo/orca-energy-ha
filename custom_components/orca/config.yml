@@ -243,6 +243,37 @@
       step: 0.1
   heating_circuit: 1
 
+- tag: 2_Max_VF_MK1
+  id: hc_max_outlet_temp
+  name:
+    en: "max outlet temperature"
+    si: "max temperatura vtoka"
+  description: ""
+  type: "float"
+  unit: "°C"
+  adjustable:
+    enabled: true
+    range:
+      min: 8.0
+      max: 60.0
+      step: 0.1
+  heating_circuit: 1
+
+- tag: 2_Min_VF_MK1
+  id: hc_min_outlet_temp
+  name:
+    en: "min outlet temperature"
+    si: "min temperatura vtoka"
+  description: ""
+  type: "float"
+  unit: "°C"
+  adjustable:
+    enabled: true
+    range:
+      min: 8.0
+      max: 50.0
+      step: 0.1
+  heating_circuit: 1
 
 ## Heating loop 2 (Orgrevalni krog 2)
 - tag: MK1_IME(2)
@@ -468,6 +499,38 @@
     range:
       min: -9.9
       max: 9.9
+      step: 0.1
+  heating_circuit: 2
+
+- tag: 2_Max_VF_MK1
+  id: hc_max_outlet_temp
+  name:
+    en: "max outlet temperature"
+    si: "max temperatura vtoka"
+  description: ""
+  type: "float"
+  unit: "°C"
+  adjustable:
+    enabled: true
+    range:
+      min: 8.0
+      max: 60.0
+      step: 0.1
+  heating_circuit: 2
+
+- tag: 2_Min_VF_MK1
+  id: hc_min_outlet_temp
+  name:
+    en: "min outlet temperature"
+    si: "min temperatura vtoka"
+  description: ""
+  type: "float"
+  unit: "°C"
+  adjustable:
+    enabled: true
+    range:
+      min: 8.0
+      max: 50.0
       step: 0.1
   heating_circuit: 2
 

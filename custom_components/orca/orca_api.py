@@ -259,8 +259,11 @@ class OrcaApi:
                 continue
 
             processed_value = self._convert_read_value(raw_val_str, config)
+            if processed_value is not None:
+                result.append(OrcaTagValue(tag=tag, value=processed_value, config=config))
+            else:
+                _LOGGER.error(f"Failed to convert value \"{raw_val_str}\" to configured type.")
 
-            result.append(OrcaTagValue(tag=tag, value=processed_value, config=config))
         return result
 
     async def _make_request(self, url: str, attempt_auth=True) -> str:
@@ -372,15 +375,14 @@ class OrcaApi:
         if isinstance(config, FloatSensor):
             if isinstance(val, int):
                 return round(val / 10.0, 1)
-            return 0.0
 
         if isinstance(config, BooleanSensor):
-            return str(val) == "1"
+            if val in (0, 1):
+                return val == 1
 
         if isinstance(config, MultimodeSensor):
             if isinstance(val, int) and val in config.value_map:
                 return config.value_map[val]
-            return val
 
         return None
 
