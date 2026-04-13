@@ -244,10 +244,10 @@
   heating_circuit: 1
 
 - tag: 2_Max_VF_MK1
-  id: hc_max_outlet_temp
+  id: hc_max_outlet_temp_heating
   name:
-    en: "max outlet temperature"
-    si: "max temperatura vtoka"
+    en: "max outlet temperature heating"
+    si: "max temperatura vtoka ogrevanje"
   description: ""
   type: "float"
   unit: "°C"
@@ -260,10 +260,10 @@
   heating_circuit: 1
 
 - tag: 2_Min_VF_MK1
-  id: hc_min_outlet_temp
+  id: hc_min_outlet_temp_heating
   name:
-    en: "min outlet temperature"
-    si: "min temperatura vtoka"
+    en: "min outlet temperature heating"
+    si: "min temperatura vtoka ogrevanje"
   description: ""
   type: "float"
   unit: "°C"
@@ -272,6 +272,22 @@
     range:
       min: 8.0
       max: 50.0
+      step: 0.1
+  heating_circuit: 1
+
+- tag: 2_Min_VF_MK1_HL
+  id: hc_min_outlet_temp_cooling
+  name:
+    en: "min outlet temperature cooling"
+    si: "min temperatura vtoka hlajenje"
+  description: ""
+  type: "float"
+  unit: "°C"
+  adjustable:
+    enabled: true
+    range:
+      min: 9.0
+      max: 40.0
       step: 0.1
   heating_circuit: 1
 
@@ -502,11 +518,11 @@
       step: 0.1
   heating_circuit: 2
 
-- tag: 2_Max_VF_MK1
-  id: hc_max_outlet_temp
+- tag: 2_Max_VF_MK2
+  id: hc_max_outlet_temp_heating
   name:
-    en: "max outlet temperature"
-    si: "max temperatura vtoka"
+    en: "max outlet temperature heating"
+    si: "max temperatura vtoka ogrevanje"
   description: ""
   type: "float"
   unit: "°C"
@@ -518,11 +534,11 @@
       step: 0.1
   heating_circuit: 2
 
-- tag: 2_Min_VF_MK1
-  id: hc_min_outlet_temp
+- tag: 2_Min_VF_MK2
+  id: hc_min_outlet_temp_heating
   name:
-    en: "min outlet temperature"
-    si: "min temperatura vtoka"
+    en: "min outlet temperature heating"
+    si: "min temperatura vtoka ogrevanje"
   description: ""
   type: "float"
   unit: "°C"
@@ -531,6 +547,22 @@
     range:
       min: 8.0
       max: 50.0
+      step: 0.1
+  heating_circuit: 2
+
+- tag: 2_Min_VF_MK2_HL
+  id: hc_min_outlet_temp_cooling
+  name:
+    en: "min outlet temperature cooling"
+    si: "min temperatura vtoka hlajenje"
+  description: ""
+  type: "float"
+  unit: "°C"
+  adjustable:
+    enabled: true
+    range:
+      min: 9.0
+      max: 40.0
       step: 0.1
   heating_circuit: 2
 
