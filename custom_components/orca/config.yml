@@ -24,7 +24,7 @@
     si: "ime ogrevalnega kroga"
   description: ""
   type: "multimode"
-  value_map:  # first three are default names, typically indicate unconfigured circuit
+  value_map: # first three are default names, typically indicate unconfigured circuit
     4: "Heating Circuit 2"
     5: "Heating Circuit 3"
     6: "Direct Circuit 1"
@@ -243,6 +243,7 @@
       step: 0.1
   heating_circuit: 1
 
+<<<<<<< HEAD
 - tag: 2_Max_VF_MK1
   id: hc_max_outlet_temp_heating
   name:
@@ -291,6 +292,8 @@
       step: 0.1
   heating_circuit: 1
 
+=======
+>>>>>>> 853137148d2725f0ccca61cec00560d7d1082b79
 ## Heating loop 2 (Orgrevalni krog 2)
 - tag: MK1_IME(2)
   id: hc_name
@@ -518,6 +521,7 @@
       step: 0.1
   heating_circuit: 2
 
+<<<<<<< HEAD
 - tag: 2_Max_VF_MK2
   id: hc_max_outlet_temp_heating
   name:
@@ -567,6 +571,8 @@
   heating_circuit: 2
 
 
+=======
+>>>>>>> 853137148d2725f0ccca61cec00560d7d1082b79
 ## Internal sensors ##
 - tag: 2_Temp_Zunanja
   id: outdoor_temp
@@ -825,7 +831,7 @@
   description: "Ali je ogrevanje sanitarne vode s sončno energijo vklopljeno"
   type: "boolean"
   adjustable:
-    enabled: true
+    enabled: false
   heating_circuit: 3
 
 - tag: 2_Vklop_C3
@@ -850,7 +856,6 @@
   adjustable:
     enabled: false
   heating_circuit: 3
-
 
 ## Buffer tank - zalogovnik, simulated heating circuit 5 ##
 - tag: 2_Temp_Zalog
