@@ -25,10 +25,12 @@ class OrcaApi:
         self.fetch_data(url, test=True)
 
     def sensor_status_all(self):
+        raw_data = ""
         for uri in self.generate_uri(self.config.keys()):
             url = f'http://{self.host}{uri}'
-            self.fetch_data(url)
+            raw_data += str(self.fetch_data(url))    
             time.sleep(1)
+        return raw_data
 
     def sensor_status_by_tag(self, fields: list):
         uri = self.generate_uri(fields)[0]
@@ -80,6 +82,7 @@ class OrcaApi:
             print(f'Error while retrieving data. Response: {data_raw}')
     
         print(data_raw)
+        return data_raw
             
     @staticmethod
     def generate_uri(tags: list) -> list:
