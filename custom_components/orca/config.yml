@@ -25,6 +25,7 @@
   description: ""
   type: "multimode"
   value_map: # first three are default names, typically indicate unconfigured circuit
+    2: "Unset"
     4: "Heating Circuit 2"
     5: "Heating Circuit 3"
     6: "Direct Circuit 1"
@@ -300,6 +301,7 @@
   description: ""
   type: "multimode"
   value_map:
+    2: "Unset"
     4: "Heating Circuit 2"
     5: "Heating Circuit 3"
     6: "Direct Circuit 1"
@@ -923,3 +925,81 @@
       max: 9.0
       step: 0.1
   heating_circuit: 5
+
+## circuit 99: Tags used for validation and internal use - not visible in orca_api output or in home assistant
+- tag: 2_Shema_MK1
+  id: shema1_1
+  name:
+    en: ""
+    si: ""
+  description: "Indicates presence of HC 1"
+  type: "boolean"
+  adjustable:
+    enabled: false
+  heating_circuit: 99
+
+- tag: 2_Shema_DK1
+  id: shema1_2
+  name:
+    en: ""
+    si: ""
+  description: "Indicates presence of HC 1"
+  type: "boolean"
+  adjustable:
+    enabled: false
+  heating_circuit: 99
+
+- tag: 2_Shema_MK2
+  id: shema2_1
+  name:
+    en: ""
+    si: ""
+  description: "Indicates presence of HC 2"
+  type: "boolean"
+  adjustable:
+    enabled: false
+  heating_circuit: 99
+
+- tag: 2_Shema_DK2
+  id: shema1_2_2
+  name:
+    en: ""
+    si: ""
+  description: "Indicates presence of HC 1"
+  type: "boolean"
+  adjustable:
+    enabled: false
+  heating_circuit: 99
+
+- tag: 2_Shema_SOLAR
+  id: shema3
+  name:
+    en: ""
+    si: ""
+  description: "Indicates presence of HC 3"
+  type: "boolean"
+  adjustable:
+    enabled: false
+  heating_circuit: 99
+
+- tag: 2_Shema_SV
+  id: shema4
+  name:
+    en: ""
+    si: ""
+  description: "Indicates presence of HC 4"
+  type: "boolean"
+  adjustable:
+    enabled: false
+  heating_circuit: 99
+
+- tag: 2_Shema_ZALOG
+  id: shema5
+  name:
+    en: ""
+    si: ""
+  description: "Indicates presence of HC 5"
+  type: "boolean"
+  adjustable:
+    enabled: false
+  heating_circuit: 99

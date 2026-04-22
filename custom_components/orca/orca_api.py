@@ -66,7 +66,7 @@ class OrcaApi:
         self.username = username
         self.password = password
         self.host = host
-        self.available_circuits: list[int] = []
+        self.available_circuits: list[int] = [0]
         self._token = None
 
         # _config holds the validated Pydantic models
@@ -177,17 +177,15 @@ class OrcaApi:
             if s.id == "hc_name"
         }
 
-        # The following defines which fields must be available (return non-9999 value)
-        # to treat the heating circle as in use.
-        # If all tags don't return a valid value, all config.yml entries belonging
-        # to this circuit will not be fetched.
+        # The following defines tags that indicate presence of a circuit.
+        # if at least one of the tags in the list returns a valid value,
+        # we can assume the circuit is configured and should be included in the final config.
         circuit_tags = {
-            0: ["2_Poti1"],
-            1: ["2_Temp_Prostora"],
-            2: ["2_Temp_RF2"],
-            3: ["2_Poti5"],
-            4: ["2_Poti3", "2_Poti3"],
-            5: ["2_Temp_Zalog"],
+            1: ["2_Shema_MK1", "2_Shema_DK1"],
+            2: ["2_Shema_MK2", "2_Shema_DK2"],
+            3: ["2_Shema_SOLAR"],
+            4: ["2_Shema_SV"],
+            5: ["2_Shema_ZALOG"],
         }
 
         tags_to_get = list(name_tags_map.values()) + [
@@ -198,9 +196,12 @@ class OrcaApi:
         results_map = {v.tag: v for v in results}
 
         for circuit_id, tags in circuit_tags.items():
-            # means all tags are in results and have valid value - the circuit is available
-            if len([t for t in tags if t in results_map]) == len(tags):
-                self.available_circuits.append(circuit_id)
+            # means at least one tag in the results have value of True - the circuit is available
+            # note that self.available_circuits is initiated with [0] - the default circuit that is always present.
+            for tag in tags:
+                if results_map.get(tag) and results_map[tag].value:
+                    self.available_circuits.append(circuit_id)
+                    break
 
         final_config = []
 
