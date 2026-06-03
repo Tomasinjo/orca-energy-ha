@@ -17,5 +17,19 @@
     "abort": {
       "already_configured": "[%key:common::config_flow::abort::already_configured_device%]"
     }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "language": "Language",
+          "circuit_1": "Heating Circuit 1",
+          "circuit_2": "Heating Circuit 2",
+          "circuit_3": "Solar",
+          "circuit_4": "Domestic Hot Water",
+          "circuit_5": "Buffer Tank"
+        }
+      }
+    }
   }
 }

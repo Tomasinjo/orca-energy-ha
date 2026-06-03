@@ -24,4 +24,9 @@ Orca heat pump does not provide this information, but can be easily done with ch
 ## Contributing
 Read [Development resources](development_resources/).
 
+## Circuit setup detection
+The integration attempts to recognize specific circuit configuration of your heat pump. While it usually works, it is possible that lack of certain sensors cause integration to miss a circuit. If that happens, you can manually add missing circuit yourself by re-configuring integration:  
 
+![alt text](development_resources/manual_circuit.png)
+
+Automatically detected circuits will be checked in advance and you can manually add missing circuits.  

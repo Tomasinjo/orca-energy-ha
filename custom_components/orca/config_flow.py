@@ -11,6 +11,7 @@ from homeassistant.config_entries import ConfigFlowResult
 from homeassistant.core import callback
 
 from .const import (
+    CONF_CIRCUITS,
     CONF_HOSTNAME,
     CONF_LANGUAGE,
     CONF_PASSWORD,
@@ -76,34 +77,81 @@ class OrcaConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             errors=errors,
         )
 
-
 class OrcaOptionsFlowHandler(config_entries.OptionsFlow):
     """Handle options."""
 
     def __init__(self, config_entry: config_entries.ConfigEntry) -> None:
         """Initialize options flow."""
-        # self.config_entry = config_entry
-        pass
+        self._entry = config_entry
 
     async def async_step_init(
         self, user_input: dict[str, Any] | None = None
     ) -> ConfigFlowResult:
         """Manage the options."""
         if user_input is not None:
+            # Collect selected circuits from individual checkboxes
+            circuits = []
+            for circuit_id in ["1", "2", "3", "4", "5"]:
+                if user_input.get(f"circuit_{circuit_id}", False):
+                    circuits.append(int(circuit_id))
+            
+            new_data = {**self._entry.data}
+            # Only store circuits if non-empty, otherwise remove to use auto-detect
+            if circuits:
+                new_data[CONF_CIRCUITS] = circuits
+            elif CONF_CIRCUITS in new_data:
+                del new_data[CONF_CIRCUITS]
+            
             self.hass.config_entries.async_update_entry(
-                self.config_entry, data={**self.config_entry.data, **user_input}
+                self._entry, data=new_data
             )
             return self.async_create_entry(title="", data={})
 
-        current_lang = self.config_entry.data.get(CONF_LANGUAGE, LANG_EN)
+        current_lang = self._entry.data.get(CONF_LANGUAGE, LANG_EN)
+        current_circuits = self._entry.data.get(CONF_CIRCUITS, [])
+        
+        # If circuits are not configured, run auto-detection to pre-select
+        if not current_circuits:
+            host = self._entry.data[CONF_HOSTNAME]
+            username = self._entry.data[CONF_USERNAME]
+            password = self._entry.data[CONF_PASSWORD]
+            
+            orca = OrcaApi(username, password, host)
+            try:
+                await orca.initialize()
+                # Get detected circuits (excluding circuit 0 which is always present)
+                current_circuits = [c for c in orca.available_circuits if c != 0]
+            except Exception as err:
+                LOGGER.error("Error detecting circuits: %s", err)
+                # Fall back to empty list if detection fails
+                current_circuits = []
 
+        # Build schema with individual checkboxes for each circuit
+        schema_dict = {
+            vol.Required(CONF_LANGUAGE, default=current_lang): vol.In(
+                LANGUAGES
+            ),
+        }
+        
+        circuit_options = {
+            "1": "Heating Circuit 1",
+            "2": "Heating Circuit 2",
+            "3": "Solar",
+            "4": "Domestic Hot Water",
+            "5": "Buffer Tank",
+        }
+        
+        for circuit_id, label in circuit_options.items():
+            schema_dict[
+                vol.Optional(
+                    f"circuit_{circuit_id}",
+                    default=(int(circuit_id) in current_circuits)
+                )
+            ] = bool
+        
+        data_schema = vol.Schema(schema_dict)
+        
         return self.async_show_form(
             step_id="init",
-            data_schema=vol.Schema(
-                {
-                    vol.Required(CONF_LANGUAGE, default=current_lang): vol.In(
-                        LANGUAGES
-                    ),
-                }
-            ),
+            data_schema=data_schema,
         )
