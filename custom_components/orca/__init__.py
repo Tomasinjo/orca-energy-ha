@@ -6,7 +6,14 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 
-from .const import CONF_HOSTNAME, CONF_PASSWORD, CONF_USERNAME, DOMAIN, LOGGER
+from .const import (
+    CONF_CIRCUITS,
+    CONF_HOSTNAME,
+    CONF_PASSWORD,
+    CONF_USERNAME,
+    DOMAIN,
+    LOGGER,
+)
 from .coordinator import OrcaDataUpdateCoordinator
 from .orca_api import OrcaApi
 
@@ -27,10 +34,11 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     host = entry.data[CONF_HOSTNAME]
     user = entry.data[CONF_USERNAME]
     passwd = entry.data[CONF_PASSWORD]
+    circuits = entry.data.get(CONF_CIRCUITS)
 
     orca_api = OrcaApi(user, passwd, host)
     try:
-        await orca_api.initialize()
+        await orca_api.initialize(circuits_override=circuits)
     except Exception as err:
         LOGGER.error("Failed to initialize Orca API: %s", err)
         return False

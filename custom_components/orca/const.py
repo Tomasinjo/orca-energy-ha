@@ -8,8 +8,8 @@ LOGGER: Logger = getLogger(__package__)
 CONF_HOSTNAME = "hostname"
 CONF_USERNAME = "username"
 CONF_PASSWORD = "password"
-
-CONF_LANGUAGE = "Language"
+CONF_CIRCUITS = "circuits"
+CONF_LANGUAGE = "language"
 LANG_EN = "English"
 LANG_SI = "Slovenščina"
 LANGUAGES = [LANG_EN, LANG_SI]

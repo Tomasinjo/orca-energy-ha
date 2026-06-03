@@ -81,11 +81,14 @@ class OrcaApi:
             current_dir = Path(__file__).parent
             self._config_path = current_dir / "config.yml"
 
-    async def initialize(self):
+    async def initialize(self, circuits_override: list[int] | None = None):
         """Load configuration and authenticate.
 
         Loads config, authenticates, determines circuit names,
         and updates tag definitions accordingly.
+
+        Args:
+            circuits_override: Optional list of circuit IDs to use instead of auto-detection.
         """
         # Load raw configuration and convert to OrcaTagConfig models
         initial_config = await self._load_config()
@@ -94,7 +97,9 @@ class OrcaApi:
         self._config_by_tags = {s.tag: s for s in initial_config}
 
         # Authenticate and determine valid circuits
-        self._config = await self._filter_and_rename_circuits(initial_config)
+        self._config = await self._filter_and_rename_circuits(
+            initial_config, circuits_override=circuits_override
+        )
 
         # Rebuild lookups with final filtered/renamed config
         self._config_by_tags = {s.tag: s for s in self._config}
@@ -157,7 +162,8 @@ class OrcaApi:
         return adapter.validate_python(yaml_data)
 
     async def _filter_and_rename_circuits(
-        self, config_entries: list[OrcaTagConfig]
+        self, config_entries: list[OrcaTagConfig],
+        circuits_override: list[int] | None = None
     ) -> list[OrcaTagConfig]:
         """Post-initialization to set final names and unique ID.
 
@@ -165,6 +171,10 @@ class OrcaApi:
         whether all tags in "circuit_tags" return a valid value.
         Furthermore, circuits defined in "name_tags" are used to generate dynamic
         name according to name set in heat pump (TALNO, FLOOR, RADIATOR...)
+
+        Args:
+            config_entries: List of OrcaTagConfig entries to filter.
+            circuits_override: Optional list of circuit IDs to use instead of auto-detection.
 
         Returns only circuits that are actually configured.
         """
@@ -195,13 +205,18 @@ class OrcaApi:
         results = await self._get_bulk_values(tags=tags_to_get)
         results_map = {v.tag: v for v in results}
 
-        for circuit_id, tags in circuit_tags.items():
-            # means at least one tag in the results have value of True - the circuit is available
-            # note that self.available_circuits is initiated with [0] - the default circuit that is always present.
-            for tag in tags:
-                if results_map.get(tag) and results_map[tag].value:
-                    self.available_circuits.append(circuit_id)
-                    break
+        # If circuits_override is provided and non-empty, use it instead of auto-detection
+        if circuits_override:
+            self.available_circuits = [0] + circuits_override
+        else:
+            # Auto-detect circuits (when circuits_override is None or empty)
+            for circuit_id, tags in circuit_tags.items():
+                # means at least one tag in the results have value of True - the circuit is available
+                # note that self.available_circuits is initiated with [0] - the default circuit that is always present.
+                for tag in tags:
+                    if results_map.get(tag) and results_map[tag].value:
+                        self.available_circuits.append(circuit_id)
+                        break
 
         final_config = []
 
