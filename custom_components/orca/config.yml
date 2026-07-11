@@ -889,7 +889,7 @@
   adjustable:
     enabled: true
     range:
-      min: 25.0
+      min: 15.0
       max: 55.0
       step: 0.1
   heating_circuit: 5
@@ -905,7 +905,7 @@
   adjustable:
     enabled: true
     range:
-      min: 25.0
+      min: 15.0
       max: 55.0
       step: 0.1
   heating_circuit: 5
