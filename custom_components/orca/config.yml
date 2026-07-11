@@ -686,6 +686,22 @@
       step: 0.1
   heating_circuit: 0
 
+- tag: 2_Max_moc_TC_pri_HLAJ
+  id: max_power_cooling
+  name:
+    en: "max power cooling"
+    si: "max moč hlajenje"
+  description: ""
+  type: "float"
+  unit: "%"
+  adjustable:
+    enabled: true
+    range:
+      min: 10.0
+      max: 100.0
+      step: 0.1
+  heating_circuit: 0
+
 - tag: 2_Max_moc_TC_pri_SV
   id: max_power_water
   name:
