@@ -180,7 +180,7 @@
     2: "cool"
     3: "auto"
   adjustable:
-    enabled: false
+    enabled: true
   heating_circuit: 1
 
 - tag: 2_Izbira_TIMERJA_MK1
@@ -456,7 +456,7 @@
     2: "cool"
     3: "auto"
   adjustable:
-    enabled: false
+    enabled: true
   heating_circuit: 2
 
 - tag: 2_Izbira_TIMERJA_MK2

@@ -50,7 +50,7 @@ CIRCUIT_NAME_MAP_SI = {
     "1. Floor": "1. nadstropje",
     "2. Floor": "2. nadstropje",
     "Attic": "mansarda",
-    "Radiator": "tadiatorji",
+    "Radiator": "radiatorji",
     "Convector": "konvektorji",
     "Heating": "gretje",
     "Cooling": "hlajenje",
