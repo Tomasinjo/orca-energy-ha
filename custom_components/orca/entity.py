@@ -17,7 +17,7 @@ class OrcaEntity(CoordinatorEntity[OrcaDataUpdateCoordinator]):
     def __init__(
         self,
         coordinator: OrcaDataUpdateCoordinator,
-        unique_id_: str,  # as defined in config.yml
+        unique_id_: str | None,  # as defined in config.yml
         entity_description=None,
     ) -> None:
         """Initialize the entity."""
@@ -26,24 +26,21 @@ class OrcaEntity(CoordinatorEntity[OrcaDataUpdateCoordinator]):
         if entity_description:
             self.entity_description = entity_description
 
-        # Determine name and unique ID from the coordinator data
-        tag_data = self.coordinator.data[self.unique_id_]
+        if tag_data := self.coordinator.data.get(self.unique_id_):
+            # get language according to setup
+            selected_lang = self.coordinator.config_entry.data.get(CONF_LANGUAGE, LANG_EN)
 
-        # get language according to setup
-        selected_lang = self.coordinator.config_entry.data.get(CONF_LANGUAGE, LANG_EN)
+            if selected_lang == LANG_SI:
+                # Use slovenian entity name
+                self._attr_name = tag_data.config.name.si
+            else:
+                # Use english entity name
+                self._attr_name = tag_data.config.name.en
 
-        if selected_lang == LANG_SI:
-            # Use slovenian entity name
-            self._attr_name = tag_data.config.name.si
-        else:
-            # Use english entity name
-            self._attr_name = tag_data.config.name.en
-
-        # Unique ID must be globally unique. Combine entry_id + API unique_id
-        self._attr_unique_id = f"{coordinator.config_entry.entry_id}_{unique_id_}"
+            # Unique ID must be globally unique. Combine entry_id + API unique_id
+            self._attr_unique_id = f"{coordinator.config_entry.entry_id}_{unique_id_}"
+            self._attr_entity_category = self._get_category(tag_data)
         self._attr_has_entity_name = False
-
-        self._attr_entity_category = self._get_category(tag_data)
 
     def _get_category(self, tag_data: OrcaTagValue) -> EntityCategory | None:
         """Determine the category based on config flags."""
@@ -74,4 +71,4 @@ class OrcaEntity(CoordinatorEntity[OrcaDataUpdateCoordinator]):
     @property
     def available(self) -> bool:
         """Return if entity is available."""
-        return super().available and self.unique_id_ in self.coordinator.data
+        return super().available and (self.unique_id_ is None or self.unique_id_ in self.coordinator.data)

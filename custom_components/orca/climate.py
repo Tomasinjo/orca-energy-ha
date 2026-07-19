@@ -70,12 +70,13 @@ class OrcaClimate(OrcaEntity, ClimateEntity):
     def __init__(self, coordinator: OrcaDataUpdateCoordinator, circuit_id: int) -> None:
         """Initialize the climate entity."""
         self._circuit_id = circuit_id
-        super().__init__(coordinator, self._get_unique_id("hc_room_temp"))
+        super().__init__(coordinator, None)
 
         # support for both languages
-        eng_name: str = self.coordinator.data.get(self._get_unique_id("hc_name")).value
+        name_tag = self.coordinator.data.get(self._get_unique_id("hc_name"))
+        eng_name = str(name_tag.value) if name_tag else f"Heating Circuit {circuit_id}"
         if coordinator.config_entry.data.get(CONF_LANGUAGE, LANG_EN) == LANG_SI:
-            self._attr_name = str(CIRCUIT_NAME_MAP_SI[eng_name]).title()
+            self._attr_name = CIRCUIT_NAME_MAP_SI.get(eng_name, eng_name).title()
         else:
             self._attr_name = eng_name
         self._attr_unique_id = (
@@ -182,10 +183,10 @@ class OrcaClimate(OrcaEntity, ClimateEntity):
             return
 
         if val == "off":
-            await self.coordinator.api.set_value_by_id("hc_turned_on", False)
+            await self.coordinator.api.set_value_by_id(self._get_unique_id("hc_turned_on"), False)
         else:
             # Ensure On, then set mode
-            await self.coordinator.api.set_value_by_id("hc_turned_on", True)
-            await self.coordinator.api.set_value_by_id("hc_mode", val)
+            await self.coordinator.api.set_value_by_id(self._get_unique_id("hc_turned_on"), True)
+            await self.coordinator.api.set_value_by_id(self._get_unique_id("hc_mode"), val)
 
         await self.coordinator.async_request_refresh()
