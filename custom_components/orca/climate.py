@@ -20,11 +20,14 @@ from .coordinator import OrcaDataUpdateCoordinator
 from .entity import OrcaEntity
 from .orca_api import CIRCUIT_NAME_MAP_SI
 
-# Mapping of Orca modes to HA modes
+# Controller-managed modes have no direct HA equivalent, so this mapping is
+# lossy; the API data retains the actual selector value.
 MODE_MAPPING = {
     "auto": HVACMode.HEAT_COOL,
     "cool": HVACMode.COOL,
+    "external_input_id2": HVACMode.HEAT_COOL,
     "heat": HVACMode.HEAT,
+    "manual": HVACMode.HEAT_COOL,
 }
 
 REVERSE_MODE_MAPPING = {
