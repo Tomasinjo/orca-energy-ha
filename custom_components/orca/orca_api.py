@@ -278,7 +278,12 @@ class OrcaApi:
             if processed_value is not None:
                 result.append(OrcaTagValue(tag=tag, value=processed_value, config=config))
             else:
-                _LOGGER.error(f"Failed to convert value \"{raw_val_str}\" to configured type.")
+                _LOGGER.error(
+                    "Failed to convert tag %s value %r to configured type %s.",
+                    tag,
+                    raw_val_str,
+                    config.type,
+                )
 
         return result
 
