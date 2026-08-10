@@ -270,15 +270,17 @@ class OrcaApi:
         for tag, raw_val_str in parsed_data.items():
             config = self._config_by_tags[tag]
 
-            # Check for non-existent sensors
-            if raw_val_str == "-9999":
+            # Check for unavailable sensor values
+            if raw_val_str in ("", "-9999"):
                 continue
 
             processed_value = self._convert_read_value(raw_val_str, config)
             if processed_value is not None:
                 result.append(OrcaTagValue(tag=tag, value=processed_value, config=config))
             else:
-                _LOGGER.error(f"Failed to convert value \"{raw_val_str}\" to configured type.")
+                _LOGGER.error(
+                    "Failed to convert value tag: %s raw_value: %r", tag, raw_val_str
+                )
 
         return result
 
