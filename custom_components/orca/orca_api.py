@@ -270,8 +270,8 @@ class OrcaApi:
         for tag, raw_val_str in parsed_data.items():
             config = self._config_by_tags[tag]
 
-            # Check for non-existent sensors
-            if raw_val_str == "-9999":
+            # Check for unavailable sensor values
+            if raw_val_str in ("", "-9999"):
                 continue
 
             processed_value = self._convert_read_value(raw_val_str, config)
