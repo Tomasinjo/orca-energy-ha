@@ -279,7 +279,10 @@ class OrcaApi:
                 result.append(OrcaTagValue(tag=tag, value=processed_value, config=config))
             else:
                 _LOGGER.error(
-                    "Failed to convert value tag: %s raw_value: %r", tag, raw_val_str
+                    "Failed to convert tag %s value %r to configured type %s.",
+                    tag,
+                    raw_val_str,
+                    config.type,
                 )
 
         return result

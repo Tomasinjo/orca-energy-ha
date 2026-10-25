@@ -179,6 +179,8 @@
     1: "heat"
     2: "cool"
     3: "auto"
+    4: "external_input_id2"
+    5: "manual"
   adjustable:
     enabled: false
   heating_circuit: 1
@@ -455,6 +457,8 @@
     1: "heat"
     2: "cool"
     3: "auto"
+    4: "external_input_id2"
+    5: "manual"
   adjustable:
     enabled: false
   heating_circuit: 2
