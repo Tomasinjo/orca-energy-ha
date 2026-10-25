@@ -25,6 +25,7 @@
   description: ""
   type: "multimode"
   value_map: # first three are default names, typically indicate unconfigured circuit
+    1: "Circuit"
     2: "Unset"
     4: "Heating Circuit 2"
     5: "Heating Circuit 3"
@@ -303,6 +304,7 @@
   description: ""
   type: "multimode"
   value_map:
+    1: "Circuit"
     2: "Unset"
     4: "Heating Circuit 2"
     5: "Heating Circuit 3"
