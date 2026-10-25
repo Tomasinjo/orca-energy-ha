@@ -182,7 +182,7 @@
     4: "external_input_id2"
     5: "manual"
   adjustable:
-    enabled: false
+    enabled: true
   heating_circuit: 1
 
 - tag: 2_Izbira_TIMERJA_MK1
@@ -460,7 +460,7 @@
     4: "external_input_id2"
     5: "manual"
   adjustable:
-    enabled: false
+    enabled: true
   heating_circuit: 2
 
 - tag: 2_Izbira_TIMERJA_MK2
